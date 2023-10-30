@@ -5,7 +5,7 @@
 web:
   
   - id: "{{package.name}}"
-    name: Super 8
+    name: "Super 8"
     type: software
     subtypes:
       - web
