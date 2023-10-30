@@ -1,0 +1,10 @@
+/**
+ * Super 8 styles.
+ *
+ * @description Styles for all extension parts.
+ */
+ 
+/* tailwind */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -1,0 +1,24 @@
+###############################################################################
+# FOR PIGEONPOSSE USAGE
+###############################################################################
+
+web:
+  
+  - id: "{{package.name}}"
+    name: Super 8
+    type: software
+    subtypes:
+      - web
+      - wordpress-plugin
+      - browser-extension
+      - Chrome-extension
+      - Firefox-extension
+    version: "{{package.version}}"
+    description: "{{package.description}}"
+    homepage: "{{package.homepage}}"
+    repo: "https://github.com/pigeonposse/{{package.name}}"
+    logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/logo.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/banner.png"
+    status: "active"
+
+###############################################################################

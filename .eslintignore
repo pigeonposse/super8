@@ -1,0 +1,43 @@
+
+.DS_Store
+**/.DS_Store
+
+# builds or dev folders
+
+node_modules/*
+**/node_modules/*
+
+vendor/*
+**/vendor/*
+
+static/*
+**/static/*
+
+public/*
+**/public/*
+
+build/*
+**/build/*
+
+dist
+**/dist/*
+
+/.svelte-kit/*
+**/.svelte-kit/*
+
+# ENV
+.env
+.env.*
+!.env.example
+
+# TYPESCRIPT
+**/*.d.ts
+
+# Ignore files for PNPM, NPM and YARN
+pnpm-lock.yaml
+pnpm-workspace.yaml
+package-lock.json
+yarn.lock
+
+# OTHERS
+**/*.timestamp-*

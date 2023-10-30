@@ -1,0 +1,23 @@
+{
+  "name": "@super8/web",
+  "version": "1.0.0",
+  "description": "Super8 Web Page.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "rimraf dist && vite build && vite preview --host",
+    "coverage": "browserslist --coverage",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
+  },
+  "dependencies": {
+    "@super8/core": "workspace:*",
+    "@super8/docs": "workspace:*"
+  },
+  "devDependencies": {
+    "flowbite": "^1.8.1",
+    "flowbite-svelte": "^0.39.3",
+    "sveltekit-i18n": "^2.4.2"
+  }
+}

@@ -1,0 +1,12 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "super-8",
+	"dockerComposeFile": [
+		"./docker-compose.yml" // the docker compose file that we want to run
+	],
+	"service": "super8-dev-env",
+	"workspaceFolder": "/workspaces",
+	"postCreateCommand": ". /workspaces/.devcontainer/dev-init.sh",
+	"shutdownAction": "stopCompose"
+}

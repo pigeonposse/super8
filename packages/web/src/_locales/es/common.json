@@ -1,0 +1,46 @@
+{
+    "name": {
+      "message": "Super8",
+      "description": "El nombre de mi extensión"
+    },
+    "description": {
+      "message": "Agrega estilos a videos web como iFrames, videos de YouTube y Vimeo, Netflix, Amazon, etc.",
+      "description": "La descripción de mi extensión"
+    },
+    "web": {
+      "message": "Web",
+      "description": "Para enlaces web"
+    },
+    "about": {
+      "message": "Acerca de",
+      "description": "Para enlaces sobre"
+    },
+    "moreProjects": {
+      "message": "Más proyectos",
+      "description": "Para enlaces a más proyectos"
+    },
+    "extMenuDesc": {
+      "message": "Acerca de la extensión",
+      "description": "Descripción del menú contextual de la extensión"
+    },
+    "orgMenuDesc": {
+      "message": "Información del desarrollador",
+      "description": "Descripción del menú contextual de la organización"
+    },
+    "donate": {
+      "message": "Donar",
+      "description": "Para enlaces de donación"
+    },
+    "issues": {
+      "message": "Problemas",
+      "description": "Para enlaces a problemas"
+    },
+    "contribute": {
+      "message": "Contribuir",
+      "description": "Para enlaces de contribución"
+    },
+    "review": {
+      "message": "Reseña",
+      "description": "Para enlaces de reseñas"
+    }
+}

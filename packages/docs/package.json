@@ -1,0 +1,12 @@
+{
+  "name": "@super8/docs",
+  "description": "A Super8 Documentation site by PigeonPosse",
+  "scripts": {
+    "dev": "vitepress dev src --port 13128",
+    "build": "vitepress build dist",
+    "preview": "vitepress preview dist"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.24"
+  }
+}

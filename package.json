@@ -1,0 +1,151 @@
+{
+  "name": "super8",
+  "version": "1.0.0",
+  "description": "Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=21.1.0",
+    "pnpm": ">=8.10"
+  },
+  "packageManager": "pnpm@8.10.0",
+  "scripts": {
+    "core": "pnpm --filter core $@",
+    "docs": "pnpm --filter docs $@",
+    "exts": "pnpm --filter exts $@",
+    "web": "pnpm --filter web $@",
+    "dev-info": "md docs/dev-info.md",
+    "dev:core": "pnpm --filter web core",
+    "dev:docs": "pnpm --filter docs dev",
+    "dev:exts": "pnpm --filter exts dev",
+    "dev:web": "pnpm --filter web dev",
+    "lint": "pnpm eslint .",
+    "test": "pnpm core test && pnpm web test",
+    "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
+    "co": "cz",
+    "prepare": "husky install .dev/husky"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.39.0",
+    "@sveltejs/adapter-auto": "^2.1.0",
+    "@sveltejs/kit": "^1.27.1",
+    "@sveltejs/package": "^2.2.2",
+    "@sveltejs/vite-plugin-svelte": "^2.4.6",
+    "@tsconfig/svelte": "^5.0.2",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "autoprefixer": "^10.4.16",
+    "browserslist": "^4.22.1",
+    "cli-markdown": "^3.0.5",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-emoji": "1.3.2-canary.2",
+    "eslint": "^8.52.0",
+    "eslint-plugin-align-assignments": "^1.1.2",
+    "eslint-plugin-align-import": "^1.0.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsdoc": "^46.8.2",
+    "eslint-plugin-json": "^3.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-svelte": "^2.34.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "eslint-plugin-yaml": "^0.5.0",
+    "husky": "^8.0.3",
+    "inquirer": "^9.2.11",
+    "markdownlint": "^0.31.1",
+    "npm-run-all": "^4.1.5",
+    "open": "^9.1.0",
+    "postcss": "^8.4.31",
+    "publint": "^0.1.16",
+    "rimraf": "^5.0.5",
+    "svelte": "^4.2.2",
+    "svelte-check": "^3.5.2",
+    "svelte-eslint-parser": "^0.33.1",
+    "svelte-preprocess": "5.0.4",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss": "^3.3.5",
+    "terser": "^5.22.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "4.2.3",
+    "vite-plugin-dts": "^3.6.2",
+    "web-ext": "^7.8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "extra": {
+    "productName": "Super 8 Documentation",
+    "socialLinks": [
+      {
+        "icon": "github",
+        "link": "https://github.com/pigeonpose/super8"
+      },
+      {
+        "icon": "twitter",
+        "link": "https://twitter.com/pigeonposse_"
+      }
+    ],
+    "store": {
+      "chrome": {
+        "url": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
+        "id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
+      },
+      "mozilla": {
+        "url": "https://addons.mozilla.org/es/firefox/addon/stylegpt/",
+        "id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
+      },
+      "wpPlugin": {
+        "url": "https://addons.mozilla.org/es/firefox/addon/stylegpt/"
+      },
+      "wpPluginPremium": {
+        "url": "https://addons.mozilla.org/es/firefox/addon/stylegpt/"
+      }
+    },
+    "collective": {
+      "name": "PigeonPosse",
+      "gh": "https://github.com/pigeonposse",
+      "about": "https://pigeonposse.com?popup=about",
+      "url": "https://pigeonposse.com",
+      "web": "https://pigeonposse.com",
+      "email": "dev@pigeonposse.com"
+    }
+  },
+  "keywords": [
+    "super-8",
+    "youtube",
+    "styles",
+    "video",
+    "iframe",
+    "browser-extension",
+    "chrome-extension",
+    "web"
+  ],
+  "author": {
+    "name": "Angelo",
+    "email": "angelo@pigeonposse.com",
+    "url": "https://pigeonposse.com"
+  },
+  "bugs": {
+    "url": "https://github.com/pigeonposse/super8/issues",
+    "email": "dev@pigeonposse.com"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://pigeonposse.com/?popup=donate"
+  },
+  "homepage": "https://super8.pigeonposse.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pigeonposse/super8"
+  },
+  "dependencies": {
+    "lint-staged": "^15.0.2",
+    "ts-node": "^10.9.1"
+  }
+}

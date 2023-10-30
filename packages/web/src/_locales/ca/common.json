@@ -1,0 +1,46 @@
+{
+    "name": {
+      "message": "Super8",
+      "description": "El nom de la meva extensió"
+    },
+    "description": {
+      "message": "Afegeix estils als vídeos web com ara iFrames, vídeos de YouTube i Vimeo, Netflix, Amazon, etc.",
+      "description": "La descripció de la meva extensió"
+    },
+    "web": {
+      "message": "Web",
+      "description": "Per a enllaços web"
+    },
+    "about": {
+      "message": "Sobre",
+      "description": "Per a enllaços sobre"
+    },
+    "moreProjects": {
+      "message": "Més projectes",
+      "description": "Per a enllaços a més projectes"
+    },
+    "extMenuDesc": {
+      "message": "Sobre l'extensió",
+      "description": "Descripció del menú contextual de l'extensió"
+    },
+    "orgMenuDesc": {
+      "message": "Informació col·lectiva del desenvolupador",
+      "description": "Descripció del menú contextual de l'organització"
+    },
+    "donate": {
+      "message": "Dóna",
+      "description": "Per a enllaços de donacions"
+    },
+    "issues": {
+      "message": "Problemes",
+      "description": "Per a enllaços de problemes."
+    },
+    "contribute": {
+      "message": "Contribueix",
+      "description": "Per a enllaços de contribució."
+    },
+    "review": {
+      "message": "Revisió",
+      "description": "Per a enllaços de revisió."
+    }
+}
