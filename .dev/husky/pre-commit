@@ -5,4 +5,4 @@ pnpm eslint
 # pnpm svelte-check
 pnpm test
 
-exec < /dev/tty && node_modules/.bin/cz --hook || true
+# exec < /dev/tty && node_modules/.bin/cz --hook || true

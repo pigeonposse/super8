@@ -24,6 +24,7 @@
     "lint": "pnpm eslint .",
     "test": "pnpm core test && pnpm web test",
     "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
+    "push-main": "git add . && pnpm co && git push f origin main",
     "co": "cz",
     "prepare": "husky install .dev/husky"
   },
