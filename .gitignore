@@ -27,10 +27,6 @@ build
 *.sln
 *.sw?
 
-# vitepress
-/.vitepress
-**/.vitepress
-
 # Svelte
 /.svelte-kit
 **/.svelte-kit
