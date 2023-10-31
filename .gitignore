@@ -27,6 +27,10 @@ build
 *.sln
 *.sw?
 
+# Tuborepo
+/.turbo
+**/.turbo
+
 # Svelte
 /.svelte-kit
 **/.svelte-kit
