@@ -26,14 +26,16 @@
     "prepare": "husky install .dev/husky"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@commitlint/config-conventional": "^18.1.0",
     "@playwright/test": "^1.39.0",
     "@sveltejs/adapter-auto": "^2.1.0",
-    "@sveltejs/kit": "^1.27.1",
+    "@sveltejs/kit": "^1.27.2",
     "@sveltejs/package": "^2.2.2",
     "@sveltejs/vite-plugin-svelte": "^2.4.6",
     "@tsconfig/svelte": "^5.0.2",
-    "@typescript-eslint/eslint-plugin": "^6.9.0",
-    "@typescript-eslint/parser": "^6.9.0",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "@typescript-eslint/parser": "^6.9.1",
     "autoprefixer": "^10.4.16",
     "browserslist": "^4.22.1",
     "cli-markdown": "^3.0.5",
@@ -64,12 +66,12 @@
     "svelte-preprocess": "5.0.4",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.5",
-    "terser": "^5.22.0",
+    "terser": "^5.24.0",
     "tslib": "^2.6.2",
     "turbo": "^1.10.16",
     "typescript": "^5.2.2",
     "vite": "4.2.3",
-    "vite-plugin-dts": "^3.6.2",
+    "vite-plugin-dts": "^3.6.3",
     "web-ext": "^7.8.0"
   },
   "config": {
@@ -141,9 +143,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/pigeonposse/super8"
-  },
-  "dependencies": {
-    "lint-staged": "^15.0.2",
-    "ts-node": "^10.9.1"
   }
 }

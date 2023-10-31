@@ -5,10 +5,20 @@
  */
 // @ts-nocheck
 import { defaultLocale, loadTranslations, locales } from '$lib/i18n'
+import { building }                                 from '$app/environment'
 
 const routeRegex = new RegExp( /^\/[^.]*([?#].*)?$/ )
 
 export const handle = async ( { event, resolve } ) => {
+
+	// this is for cloudfalre build adapter
+	// @see https://github.com/sveltejs/kit/issues/9386#issuecomment-1714660627
+	if ( building ) {
+
+		const response = await resolve( event )
+		return response // bailing here allows the 404 page to build
+	
+	}
 
 	const { url, request, isDataRequest } = event
 	const { pathname, origin }            = url
