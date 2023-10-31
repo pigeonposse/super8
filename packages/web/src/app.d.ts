@@ -2,10 +2,22 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface Platform {}
+		/**
+		 * FOR GLOUDFLARE
+		 * @see https://developers.cloudflare.com/pages/framework-guides/deploy-a-svelte-site/
+		 */
+		interface Locals {}
+		interface Platform {
+			env: {
+				COUNTER: DurableObjectNamespace;
+			};
+			context: {
+				waitUntil(promise: Promise<any>): void;
+			};
+			caches: CacheStorage & { default: Cache }
+		}
+		interface Session {}
+		interface Stuff {}
 	}
 	declare const MAIN_PKG: typeof import('../../../package.json');
 	declare const PKG: typeof import('../package.json');
