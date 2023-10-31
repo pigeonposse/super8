@@ -1,6 +1,6 @@
 {
 	"name": "@super8/core",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "Super8 core functionality",
 	"type": "module",
 	"scripts": {

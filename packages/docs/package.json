@@ -1,5 +1,6 @@
 {
   "name": "@super8/docs",
+  "version": "0.0.1",
   "description": "A Super8 Documentation site by PigeonPosse",
   "scripts": {
     "dev": "vitepress dev src --port 13128",

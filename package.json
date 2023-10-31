@@ -1,6 +1,6 @@
 {
   "name": "super8",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "🎬🎨🧩 Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
   "private": true,
   "workspaces": [
