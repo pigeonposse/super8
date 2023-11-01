@@ -103,6 +103,7 @@
     "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
     "build-web": "turbo build --filter=core --filter=web",
     "push-main": "git add . && pnpm cm && git push -f origin main",
+    "push-dev": "git add . && pnpm cm && git push -f origin development",
     "publish-npm": "turbo run build lint test --filter=core && changeset version && changeset publish",
     "cm": "cz",
     "prepare": "husky install .dev/husky"
