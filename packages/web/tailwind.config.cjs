@@ -9,7 +9,7 @@
 const config = {
 	content : [
 		'./src/**/*.{html,js,svelte,ts}',
-		'./node_modules/@super8/core/**/*.{html,js,svelte,ts}',
+		'./node_modules/@s-8/core/**/*.{html,js,svelte,ts}',
 		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}',
 	],
 	plugins : [

@@ -1,6 +1,6 @@
 <script lang="ts">
     
-    import {Option, componentTypes, type ComponentOption} from "@super8/core"
+    import {Option, componentTypes, type ComponentOption} from "@s-8/core"
     import Section from './section.svelte'
     import { context } from "./context"
     import type { ComponentOptionSection, ComponentOptions } from "../../../types"

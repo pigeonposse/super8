@@ -11,7 +11,7 @@ export * from './_shared/main'
 export * from './style-class'
 
 // CORE
-export * from '@super8/core'
+export * from '@s-8/core'
 
 // COMPONENTS
 export { default as Content } from './components/content/main.svelte'

@@ -6,7 +6,7 @@
 
 // SHARED
 export * from './_shared/main'
-export * from '@super8/core'
+export * from '@s-8/core'
 
 // Components
 export { default as ContentFilters } from './components/filters/main.svelte'

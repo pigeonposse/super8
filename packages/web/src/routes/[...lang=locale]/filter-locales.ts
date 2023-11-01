@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { filterCustomIds } from '@super8/core'
+import { filterCustomIds } from '@s-8/core'
 
 export const locales =  ( i18n: ( v: string ) => string ) => {
  

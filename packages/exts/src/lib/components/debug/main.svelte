@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import { Badge, Not, componentTypes } from "@super8/core";
+    import { Badge, Not, componentTypes } from "@s-8/core";
     import { browser } from "../../_shared/main";
     import { messagesIds, type Message } from "../../types";
     import { messageStore } from './store';

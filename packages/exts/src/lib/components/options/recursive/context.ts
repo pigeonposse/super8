@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { type ComponentOption }         from '@super8/core'
+import { type ComponentOption }         from '@s-8/core'
 import { get, writable, type Writable } from 'svelte/store'
 import type {  OptionsStore }           from '../../../types'
 

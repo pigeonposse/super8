@@ -8,7 +8,7 @@ import { store }                                                                
 import { storageIds,storageSetIds, type StorageAppValues, storageGroupsIds, type StorageAppOptionValues, type StorageSetType, type StorageInit } from '../types'
 import { defaultData as allowedSitesData }                                                                                                       from '../../lib/components/allowed-sites/data'
 import { defaultData as filtersStyleData }                                                                                                       from '../../lib/components/filters-config/data'
-import { functs }                                                                                                                                from '@super8/core'
+import { functs }                                                                                                                                from '@s-8/core'
 
 const getOptsDefaultValue = () => {
 

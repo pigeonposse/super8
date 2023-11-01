@@ -1,6 +1,6 @@
 <script lang="ts">
     
-    import {Option } from "@super8/core"
+    import {Option } from "@s-8/core"
     import OptionRecursive from './option.svelte'
     import type { ComponentOptionSection } from "../../../types"
     

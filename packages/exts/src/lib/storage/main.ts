@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { functs }                                                                                        from '@super8/core'
+import { functs }                                                                                        from '@s-8/core'
 import { store }                                                                                         from '../_shared/main'
 import { storageGroupsIds, type StorageAppOptionValues, type StorageAppContentValues, type StorageInit } from '../types'
 import { storageApp }                                                                                    from './super'

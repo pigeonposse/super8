@@ -1,17 +1,17 @@
-# @super8 Core
+# @s-8 Core
 
-The `@super8/core` library is a collection of **Svelte components**, specifically designed for integration with the Super8 software. These components have been created to simplify the development of consistent and appealing user interfaces within the Super8 application.
+The `@s-8/core` library is a collection of **Svelte components**, specifically designed for integration with the Super8 software. These components have been created to simplify the development of consistent and appealing user interfaces within the Super8 application.
 
 ## Installation
 
 You can install this library via npm:
 
 ```bash
-npm install @super8/core
+npm install @s-8/core
 // or
-pnpm i @super8/core
+pnpm i @s-8/core
 // or 
-yarn add @super8/core
+yarn add @s-8/core
 ```
 
 ## Documentation

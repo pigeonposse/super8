@@ -1,5 +1,5 @@
 {
-  "name": "super8",
+  "name": "s-8",
   "version": "0.0.1",
   "description": "🎬🎨🧩 Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
   "private": true,
@@ -74,7 +74,7 @@
   "homepage": "https://super8.pigeonposse.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pigeonposse/super8"
+    "url": "https://github.com/pigeonposse/super8.git"
   },
   "config": {
     "commitizen": {

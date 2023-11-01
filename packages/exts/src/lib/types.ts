@@ -12,7 +12,7 @@ import type {
 	ObjectValues, 
 	OmitNeverInobjectValues, 
 	componentTypes, 
-} from '@super8/core'
+} from '@s-8/core'
 
 /**
  * ****************************************************************************.

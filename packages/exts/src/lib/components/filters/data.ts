@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { componentPositions, componentTypes, type ComponentFilters } from '@super8/core'
+import { componentPositions, componentTypes, type ComponentFilters } from '@s-8/core'
 import { browser }                                                   from '../../_shared/main'
 import { optBtnStylesIds, type BtnStylesClasses }                    from '../../types'
 

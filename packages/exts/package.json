@@ -1,8 +1,8 @@
 {
-  "name": "@super8/exts",
+  "name": "@s-8/exts",
   "description": "Super8 browser extensions",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "scripts": {
     "dev": "run-p dev:chrome",
@@ -20,7 +20,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@super8/core": "workspace:*",
+    "@s-8/core": "workspace:core@0.0.2",
     "@types/chrome": "0.0.243",
     "@types/webextension-polyfill": "^0.10.5",
     "flowbite": "^1.8.1",

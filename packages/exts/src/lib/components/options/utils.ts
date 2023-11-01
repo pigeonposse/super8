@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { componentTypes, type ComponentOption }                                                   from '@super8/core'
+import { componentTypes, type ComponentOption }                                                   from '@s-8/core'
 import type { ComponentOptionSection, ComponentOptions, ComponentOptionsRecursive, OptionsStore } from '../../types'
 
 export const updateOptions = ( optionsArray: ComponentOptionsRecursive, updateObject: OptionsStore ) => {

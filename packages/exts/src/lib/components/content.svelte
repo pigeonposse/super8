@@ -1,6 +1,6 @@
 <script lang="ts">
 
-    import {Btn, componentTypes} from "@super8/core";
+    import {Btn, componentTypes} from "@s-8/core";
     import { contentIds, type ContentType } from "../types";
     import { browser, extStoreUrl, openOptionsPage, extWebUrl, collectiveFundingUrl, extRepoUrl, extImagesSrc, extVersion } from "../_shared/main";
 

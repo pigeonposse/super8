@@ -1,10 +1,11 @@
 {
-	"name": "@super8/core",
+	"name": "@s-8/core",
 	"description": "Super8 core functionality",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"publishConfig": {
-		"access": "public"
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
 	},
 	"scripts": {
 		"dev": "vite dev",
@@ -33,7 +34,6 @@
 		},
 		"./tailwind-config": "./tailwind.config.cjs",
 		"./package.json": "./package.json"
-		
 	},
 	"author": {
 		"name": "Angelo",
@@ -48,7 +48,7 @@
 	"homepage": "https:/super8.pigeonposse.com/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pigeonposse/super8",
+		"url": "https://github.com/pigeonposse/super8.git",
 		"directory": "packages/_core"
 	},
 	"dependencies": {

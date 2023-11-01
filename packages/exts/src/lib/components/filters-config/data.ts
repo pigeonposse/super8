@@ -4,7 +4,7 @@
  * @description Todo.
  */
 
-import { componentPositions, componentTypes }                          from '@super8/core'
+import { componentPositions, componentTypes }                          from '@s-8/core'
 import { optionsIds, type ComponentOptionsRecursive, optBtnStylesIds } from '../../types'
 import { browser }                                                     from '../../_shared/main'
 

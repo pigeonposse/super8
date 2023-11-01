@@ -1,6 +1,6 @@
 <script lang="ts">
 
-  import { Filters, type ComponentFilters, type ComponentBtnFilters, componentTypes } from "@super8/core";
+  import { Filters, type ComponentFilters, type ComponentBtnFilters, componentTypes } from "@s-8/core";
   import { optionsIds, storageIds, type OptionsStore, type BtnStylesClasses, type FilterComponentProps, storageSetIds, storageGroupsIds, type StorageAppContentValues, type AllowedSitesValue, messagesIds } from "../../types";
   import { locales } from "./locales";
   import { browser } from "../../_shared/main";
