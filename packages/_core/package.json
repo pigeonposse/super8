@@ -1,8 +1,9 @@
 {
 	"name": "@super8/core",
-	"version": "0.0.1",
 	"description": "Super8 core functionality",
+	"version": "0.0.1",
 	"type": "module",
+	"access": "publish",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && pnpm package && pnpm create-docs",
@@ -31,6 +32,28 @@
 		"./tailwind-config": "./tailwind.config.cjs",
 		"./package.json": "./package.json"
 		
+	},
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://pigeonposse.com"
+	},
+	"contributors": [
+		{
+			"name": "PigeonPosse",
+			"email": "dev@pigeonposse.com",
+			"url": "https://pigeonposse.com"
+		}
+	],
+	"license": "GPL-3.0",
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/?popup=donate"
+	},
+	"homepage": "https:/super8.pigeonposse.com/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pigeonposse/super8"
 	},
 	"dependencies": {
 		"@codemirror/lang-json": "^6.0.1",

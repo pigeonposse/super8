@@ -1,6 +1,7 @@
 {
   "name": "@super8/exts",
   "description": "Super8 browser extensions",
+  "private": true,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
