@@ -86,14 +86,17 @@
     "test": "pnpm core test && pnpm web test",
     "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
     "build-web": "turbo build --filter=core --filter=web",
-    "push-main": "git add . && pnpm co && git push -f origin main",
+    "push-main": "git add . && pnpm cm && git push -f origin main",
     "publish-npm": "turbo run build lint test --filter=core && changeset version && changeset publish",
-    "co": "cz",
+    "cm": "cz",
     "prepare": "husky install .dev/husky"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-emoji"
+      "path": "./node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".dev/cz-config.cjs"
     }
   },
   "devDependencies": {
@@ -111,6 +114,8 @@
     "browserslist": "^4.22.1",
     "cli-markdown": "^3.0.5",
     "commitizen": "^4.3.0",
+    "commitlint-config-gitmoji": "^2.3.1",
+    "cz-customizable": "^7.0.0",
     "cz-emoji": "1.3.2-canary.2",
     "eslint": "^8.52.0",
     "eslint-plugin-align-assignments": "^1.1.2",
