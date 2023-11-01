@@ -16,4 +16,4 @@ yarn add @s-8/core
 
 ## Documentation
 
-Find detailed information about each component in [documentation](../../docs/components-index.md).
+Find detailed information about each component in [documentation](../../docs/dev-components-info.md).
