@@ -99,6 +99,14 @@
       "config": ".dev/cz-config.cjs"
     }
   },
+  "commitlint": {
+    "extends" : [ 
+      "gitmoji" 
+    ],
+    "rules"   : {
+      "header-max-length" : [ 0, "always", 100 ]
+    }
+  },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^18.2.0",
