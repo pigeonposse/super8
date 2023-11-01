@@ -3,7 +3,9 @@
 	"description": "Super8 core functionality",
 	"version": "0.0.1",
 	"type": "module",
-	"access": "publish",
+	"publishConfig": {
+		"access": "public"
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && pnpm package && pnpm create-docs",
@@ -38,13 +40,6 @@
 		"email": "angelo@pigeonposse.com",
 		"url": "https://pigeonposse.com"
 	},
-	"contributors": [
-		{
-			"name": "PigeonPosse",
-			"email": "dev@pigeonposse.com",
-			"url": "https://pigeonposse.com"
-		}
-	],
 	"license": "GPL-3.0",
 	"funding": {
 		"type": "individual",
@@ -53,7 +48,8 @@
 	"homepage": "https:/super8.pigeonposse.com/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pigeonposse/super8"
+		"url": "https://github.com/pigeonposse/super8",
+		"directory": "packages/_core"
 	},
 	"dependencies": {
 		"@codemirror/lang-json": "^6.0.1",
