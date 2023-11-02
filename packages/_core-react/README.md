@@ -1,4 +1,4 @@
-# @s-8 Core
+# @s-8 Core for React apps
 
 The `@s-8/core-react` is a conversion of `@s-8/core` for use with react.
 
