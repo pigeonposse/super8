@@ -1,25 +1,40 @@
 {
   "name": "@s-8/core-react",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "main": "./dist/lib/bundle.cjs",
   "module": "./dist/lib/bundle.js",
   "types": "./dist/lib/main.d.ts",
-
   "files": [
     "/dist/lib"
   ],
   "exports": {
     ".": {
-        "import": "./dist/lib/bundle.js",
-        "require": "./dist/lib/bundle.cjs"
+      "import": "./dist/lib/bundle.js",
+      "require": "./dist/lib/bundle.cjs"
     },
-    "./style.css" : "./dist/lib/style.css"
+    "./style.css": "./dist/lib/style.css"
+  },
+  "author": {
+    "name": "Angelo",
+    "email": "angelo@pigeonposse.com",
+    "url": "https://pigeonposse.com"
+  },
+  "license": "GPL-3.0",
+  "funding": {
+    "type": "individual",
+    "url": "https://pigeonposse.com/?popup=donate"
+  },
+  "homepage": "https:/super8.pigeonposse.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pigeonposse/super8.git",
+    "directory": "packages/_core-react"
   },
   "scripts": {
     "dev": "vite",
