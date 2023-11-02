@@ -18,6 +18,6 @@
 		// More
 		"target": "ESNext",
 		"useDefineForClassFields": true,
-		"isolatedModules": true,
+		"isolatedModules": true
 	}
 }

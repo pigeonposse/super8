@@ -44,6 +44,7 @@ module.exports = {
 
   scopes: [
     { name: 'core' },
+    { name: 'core-react' },
     { name: 'docs' },
     { name: 'exts' },
     { name: 'web' },

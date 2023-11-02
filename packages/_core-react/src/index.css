@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #111;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 800;
+}
+#root > div {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}

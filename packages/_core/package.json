@@ -33,7 +33,9 @@
 			"svelte": "./dist/index.js"
 		},
 		"./tailwind-config": "./tailwind.config.cjs",
-		"./package.json": "./package.json"
+		"./components": "./dist/components.js",
+		"./package.json": "./package.json",
+		"./types": "./dist/types.js"
 	},
 	"author": {
 		"name": "Angelo",

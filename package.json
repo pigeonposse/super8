@@ -94,6 +94,7 @@
   },
   "scripts": {
     "core": "pnpm --filter core $@",
+    "core-react": "pnpm --filter core-react $@",
     "docs": "pnpm --filter docs $@",
     "exts": "pnpm --filter exts $@",
     "web": "pnpm --filter web $@",
@@ -104,7 +105,7 @@
     "build-web": "turbo build --filter=core --filter=web",
     "push-main": "git add . && pnpm cm && git push -f origin main",
     "push-dev": "git add . && pnpm cm && git push -f origin development",
-    "publish-npm": "turbo run build lint test --filter=core && changeset version && changeset publish",
+    "publish-npm": "turbo run build lint test --filter=core --filter=core-react && changeset version && changeset publish",
     "cm": "cz",
     "prepare": "husky install .dev/husky"
   },
