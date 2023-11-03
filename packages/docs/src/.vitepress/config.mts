@@ -9,7 +9,7 @@ export default defineConfig({
   titleTemplate: ':title - Documentation',
   description: json.description,
   srcDir: '../../../docs',
-  base: '/docs/',
+  // base: '/docs/',
   // cleanUrls: true,
   // assetsDir: './_assets',
   head: [[
