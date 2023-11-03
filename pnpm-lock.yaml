@@ -255,6 +255,10 @@ importers:
         version: 4.5.0(@types/node@18.18.8)(terser@5.24.0)
 
   packages/docs:
+    dependencies:
+      markdown-it-task-lists:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       vitepress:
         specifier: 1.0.0-rc.24
@@ -263,7 +267,7 @@ importers:
   packages/exts:
     devDependencies:
       '@s-8/core':
-        specifier: 0.0.2
+        specifier: 0.0.3
         version: link:../_core
       '@types/chrome':
         specifier: 0.0.243
@@ -290,7 +294,7 @@ importers:
   packages/web:
     devDependencies:
       '@s-8/core':
-        specifier: 0.0.2
+        specifier: 0.0.3
         version: link:../_core
       '@sveltejs/adapter-cloudflare':
         specifier: ^2.3.3
@@ -7465,6 +7469,10 @@ packages:
   /mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
     dev: true
+
+  /markdown-it-task-lists@2.1.1:
+    resolution: {integrity: sha512-TxFAc76Jnhb2OUu+n3yz9RMu4CwGfaT788br6HhEDlvWfdeJcLUsxk1Hgw2yJio0OXsxv7pyIPmvECY7bMbluA==}
+    dev: false
 
   /markdown-it@13.0.1:
     resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}

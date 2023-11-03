@@ -1,10 +1,36 @@
 <script lang="ts">
     
-    import { InputText } from "$lib";
+    import { Btn, InputText, Not, copyText } from "$lib";
     import { locales } from "../locales/main";
-    import { srcIframe } from "../storage/main";
+    import { id, responseWidth, srcIframe, stylesId, windowWidth } from "../storage/main";
+    
+    /**
+     * VARIABLES
+     */
+    let copied = false
 
-    export let id: string
+    /**
+     * EVENTS
+     */
+    const copyIframe = () => {
+
+        const styleElement = document.querySelector('#'+$stylesId)
+        let copiedStyles = ''; 
+        if (styleElement) {
+
+            const styleContent = styleElement.innerHTML
+            if (styleContent) {
+                // const stylesWithoutSelector = styleContent.replace(/#pp-super8-custom\s*{([^}]*)}/, '$1').trim()
+                const stylesWithoutSelector = styleContent.replace(new RegExp(`#${$id}\\s*{([^}]*)}`), '$1').trim()
+                copiedStyles = stylesWithoutSelector
+            }
+        }
+
+        const iframeString = `<iframe src="${$srcIframe}" title="${$locales.iframe.title}" style="${copiedStyles}" width="600px" height="350px" ></iframe>`;
+        copyText(iframeString)
+        copied = true
+        setTimeout(() => copied = false, 3000)
+    }
 
     const isValidUrl = (url: typeof $srcIframe) => {
 
@@ -16,33 +42,62 @@
 
 </script>
 
-{#if isValidUrl($srcIframe)}
+<div class="w-full p-4">
 
-    <iframe 
-        loading="lazy"
-        {id}
-        width="600px"
-        height="350px" 
-        title={$locales.iframe.title}
-        class="min-w-[200px] min-h-[100px] max-h-full max-w-full"
-        src={$srcIframe}
-        {...$$restProps}
-    />
+    {#if isValidUrl($srcIframe)}
+
+        <iframe 
+            loading="lazy"
+            id={$id}
+            width="100%"
+            height="350px" 
+            title={$locales.iframe.title}
+            class="max-h-full max-w-full min-h-[350px]"
+            src={$srcIframe}
+        />
 
     {:else}
 
-    <div 
-        {id}
-        class="w-[600px] h-[350px] bg-gray-800/80 flex flex-col items-center justify-center"
+        <div 
+            id={$id}
+            class="bg-gray-950 !rounded-lg w-full flex flex-col items-center justify-center"
+            style="height:350px"
+        >
+            {#if $srcIframe == ""}
+                {$locales.iframe.add} ✨
+            {:else}
+                {$locales.iframe.error} 👎
+            {/if}
+        
+        </div>
+
+    {/if}
+
+    <InputText 
+        id="{id}-input"
+        bind:value={$srcIframe}
+        placeholder={$locales.iframe.placeholder}
+        customClasses="w-full mt-4 {!isValidUrl($srcIframe) ? $srcIframe == "" ? '!border-blue-500 !ring-blue-500' : '!border-red-500 !ring-red-500' : ''}"
+    />
+
+    <Btn 
+        id="{$id}-btn"
+        color="grayReverse"
+        customClasses="w-full mt-4"
+        on:click={copyIframe}
     >
-    {$locales.iframe.error}
-    </div>
+        {$locales.copyBtn.value}
+    </Btn>
 
-{/if}
+    {#if copied}
 
-<InputText 
-    id="{id}-input"
-    bind:value={$srcIframe}
-    placeholder={$locales.iframe.placeholder}
-    customClasses="w-full mt-4 {!isValidUrl($srcIframe) ? '!border-red-500 !ring-red-500' : ''}"
-/>
+        <Not 
+            type="success"
+            customClasses="w-full"
+        >
+            {$locales.copyBtn.copied}
+        </Not>
+
+    {/if}
+
+</div>

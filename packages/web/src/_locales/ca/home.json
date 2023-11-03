@@ -1,6 +1,6 @@
 {
     "filters_btn": {
-      "message": "Super8"
+      "message": "Obri Super8"
     },
     "filters_reset": {
       "message": "Restableix"
@@ -271,6 +271,9 @@
     },
     "iframe_error": {
         "message": "Error a la URL de l'iframe"
+    },
+    "iframe_add": {
+      "message": "Afegeix l'URL iframe"
     },
     "iframe_input_placeholder": {
         "message": "Afegeix aquí la URL del teu iframe"

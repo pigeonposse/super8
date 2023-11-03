@@ -1,27 +1,39 @@
+/**
+ * Vitepress config.
+ *
+ * @description Vitepress config.
+ * @see https://vitepress.dev/reference/site-config
+ * @see https://vitepress.dev/reference/default-theme-config
+ */
+
 import { DefaultTheme, defineConfig } from 'vitepress'
 import json from '../../../../package.json'
 import {join} from 'node:path'
+import MarkdownItTaskList from 'markdown-it-task-lists'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'en-US',
   title: json.extra.productName,
-  titleTemplate: ':title - Documentation',
+  titleTemplate: ':title - Super8 Documentation',
+  appearance:'force-dark',
   description: json.description,
   srcDir: '../../../docs',
   // base: '/docs/',
-  // cleanUrls: true,
-  // assetsDir: './_assets',
+  cleanUrls: true,
+  markdown: {
+    config: (md) => {
+        md.use(MarkdownItTaskList)
+    }
+  },
   head: [[
     'link', 
     { 
       rel: 'icon', 
-      href: 'images/favicon.png' 
+      href: '/images/favicon.png' // use first "/" for child routes
     }
   ]],
-  // https://vitepress.dev/reference/default-theme-config
   themeConfig: {
-    logo: 'images/logo.png',
+    logo: '/images/logo.png', // use first "/" for child routes
     siteTitle: false,
     editLink: {
       pattern: join(json.repository.url,'edit/main/docs/:path')
@@ -90,7 +102,7 @@ export default defineConfig({
             items: [
               { text: 'Getting Started', link: '/dev-getting-started' },
               { text: 'Core components', link: '/dev-components-info' },
-              { text: 'Todo', link: join(json.repository.url, 'todo' )},
+              { text: 'Todo', link: '/todo/v1.md' },
             ]
           },
         ]
@@ -99,7 +111,7 @@ export default defineConfig({
         text: 'About',
         items: [
           { text: 'History', link: '/history' },
-          { text: 'License', link: join(json.repository.url, 'LICENSE' ) },
+          { text: 'License', link: join(json.repository.url, 'blob/main/LICENSE' ) },
           { text: 'More projects', link: json.extra.collective.web },
         ]
       }

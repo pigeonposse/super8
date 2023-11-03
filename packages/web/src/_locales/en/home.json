@@ -1,6 +1,6 @@
 {
     "filters_btn": {
-        "message": "Super8"
+        "message": "Open Super8"
     },
     "filters_reset": {
         "message": "Reset"
@@ -271,6 +271,9 @@
     },
     "iframe_error" : {
         "message": "Error in iframe url"
+    },
+    "iframe_add": {
+        "message": "Add iframe URL"
     },
     "iframe_input_placeholder" : {
         "message": "Add here your iframe url"

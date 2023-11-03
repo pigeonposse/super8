@@ -75,7 +75,7 @@
   "homepage": "https://super8.pigeonposse.com/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pigeonposse/super8.git"
+    "url": "https://github.com/pigeonposse/super8"
   },
   "config": {
     "commitizen": {

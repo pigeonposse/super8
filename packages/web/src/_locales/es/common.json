@@ -4,7 +4,7 @@
       "description": "El nombre de mi extensión"
     },
     "description": {
-      "message": "Agrega estilos a videos web como iFrames, videos de YouTube y Vimeo, Netflix, Amazon, etc.",
+      "message": "Agrega estilos a tus iFrames, videos o media",
       "description": "La descripción de mi extensión"
     },
     "web": {
@@ -48,5 +48,20 @@
     },
     "documentation": {
       "message": "Documentación"
-    }
+    },
+    "learn": {
+      "message": "Aprende más"
+    },
+    "show": {
+      "message": "Ver"
+    },
+    "goHome": {
+      "message": "Ir a inicio"
+    },
+    "error": {
+      "title": "¡Oh, cielos...",
+      "404": "Página no encontrada.",
+      "500": "Error interno del servidor.",
+      "default": "Se ha producido algún error."
+  }
 }

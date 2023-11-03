@@ -4,7 +4,7 @@
         "description": "The name of my extension"
     },
     "description": {
-        "message":  "Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
+        "message":  "Add styles to web iFrames, videos or media",
         "description": "The description of my extension"
     },
 	"web": {
@@ -48,5 +48,20 @@
 	},
 	"documentation": {
 		"message": "Documentation"
+	},
+    "learn": {
+        "message": "Learn more"
+      },
+    "show": {
+        "message": "View"
+    },
+    "goHome": {
+		"message": "Go home"
+	},
+    "error": {
+		"title": "Oh, dear...",
+		"404": "Page not found.",
+		"500": "Server internal error.",
+		"default": "Some error occurred."
 	}
 }

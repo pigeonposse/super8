@@ -5,6 +5,7 @@
  * @see https://tailwindcss.com/docs/
  * @see https://flowbite.com/docs/
  */
+const plugin = require( 'tailwindcss/plugin' )
 
 const config = {
 	content : [
@@ -14,10 +15,29 @@ const config = {
 	],
 	plugins : [
 		require( 'flowbite/plugin' ),
+		plugin( function ( { matchUtilities, theme } ) {
+
+			matchUtilities(
+				{
+					'text-shadow' : value => ( {
+						textShadow : value,
+					} ),
+				},
+				{ 
+					values : theme( 'textShadow' ), 
+				},
+			)
+		
+		} ),
 	],
 	darkMode : 'class',
 	theme    : {
 		extend : {
+			textShadow : {
+				sm      : '0 1px 2px var(--tw-shadow-color)',
+				DEFAULT : '0 2px 4px var(--tw-shadow-color)',
+				lg      : '0 8px 16px var(--tw-shadow-color)',
+			},
 			colors : {
 				/**
 				 * Colors of interface.

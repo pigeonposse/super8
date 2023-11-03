@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # Welcome to Super 8 Documentation 🎥🎨
 
 ## What is Super8?

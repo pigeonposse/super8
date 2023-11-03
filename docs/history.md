@@ -1,7 +1,3 @@
----
-outline: deep
----
-
 # History of Super8 by _PigeonPosse_
 
 - **Written by:** _[Angelo](https://github.com/AngelEspejo)_
@@ -11,9 +7,9 @@ outline: deep
 
 ## La idea
 
-Hace más de un año, Super8 comenzó como una idea, probablemente mientras estábamos en las etapas iniciales de  _[PigeonPosse](https://github.com/PigeonPosse)_. _[Alejo](https://github.com/alejomalia)_ presentó la idea de una extensión que pudiera cambiar los estilos de los videos de YouTube en línea. Sin embargo, lo que se inició como una simple extensión se transformó en algo mucho más extenso.
+Hace más de un año, **Super8** comenzó como una idea, probablemente mientras estábamos en las etapas iniciales de  _[PigeonPosse](https://github.com/PigeonPosse)_. _[Alejo](https://github.com/alejomalia)_ presentó la idea de una extensión que pudiera cambiar los estilos de los videos de YouTube en línea. Sin embargo, lo que se inició como una simple extensión se transformó en algo mucho más extenso.
 
-En ese momento, _[Irfaelo](https://github.com/irfaelo)_ asumió el proyecto y, en su tiempo libre, creó un script en JavaScript que permitía modificar los estilos de elementos HTML. Con el tiempo, como _[Irfaelo](https://github.com/irfaelo)_ no podía continuar con el desarrollo, tomé el relevo. _[Alejo](https://github.com/alejomalia)_ ya había diseñado los presets oficiales que se mantienen en **Super8** hasta el día de hoy, así como los logotipos e imágenes de **Super8**.
+En ese momento, _[Irfaelo](https://github.com/irfaelo)_ asumió el proyecto y, en su tiempo libre, creó un script en _JavaScript_ que permitía modificar los estilos de elementos _HTML_. Con el tiempo, como _[Irfaelo](https://github.com/irfaelo)_ no podía continuar con el desarrollo, tomé el relevo. _[Alejo](https://github.com/alejomalia)_ ya había diseñado los presets oficiales que se mantienen en **Super8** hasta el día de hoy, así como los logotipos e imágenes de **Super8**.
 
 ## Empezando
 

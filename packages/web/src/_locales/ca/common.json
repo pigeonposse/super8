@@ -4,7 +4,7 @@
       "description": "El nom de la meva extensió"
     },
     "description": {
-      "message": "Afegeix estils als vídeos web com ara iFrames, vídeos de YouTube i Vimeo, Netflix, Amazon, etc.",
+      "message": "Afegeix estils als iFrames, videos o media",
       "description": "La descripció de la meva extensió"
     },
     "web": {
@@ -48,5 +48,20 @@
     },
     "documentation": {
       "message": "Documentació"
+    },
+    "learn": {
+      "message": "Apren més"
+    },
+    "show": {
+        "message": "Veure"
+    },
+    "goHome": {
+      "message": "Anar a l'inici"
+    },
+    "error": {
+      "title": "Oh, Déu meu...",
+      "404": "Pàgina no trobada.",
+      "500": "Error intern del servidor.",
+      "default": "S'ha produït algun error."
     }
 }

@@ -1,5 +1,11 @@
 # @s-8/web
 
+## 0.2.0
+
+### Minor Changes
+
+- Add and fix style
+
 ## 0.1.0
 
 ### Minor Changes

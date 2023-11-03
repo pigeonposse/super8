@@ -70,8 +70,54 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: var(--vp-c-red-soft);
+
+}
+/* override bg in dark */
+.dark {
+    --vp-c-bg: #0d0d0d;
+    --vp-c-bg-alt: #141414;
+    --vp-c-bg-elv: #131313;
+    --vp-c-bg-soft: #141414;
+    --vp-nav-bg-color: #14141496;
+    --vp-sidebar-bg-color: #14141496;
+}
+.dark body {
+  background: url("/images/background.png");
+}
+.dark .VPContent {
+  backdrop-filter: brightness(0.5);
 }
 
+.dark .VPSidebar.open {
+  backdrop-filter: blur(12px);
+}
+
+.dark .task-list-item:has(> input[type=checkbox]:disabled:checked)::after {
+  width: 14px;
+  height: 14px;
+  font-size: 9px;
+  background: var(--vp-c-brand-1);
+  opacity: 0.6;
+  border: 1px solid #626262;
+  border-radius: 4px;
+  color: white;
+  position: relative;
+  content: "✔";
+  text-align: center;
+  float: left;
+  margin: 3px 6px 0 2px;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* remove display of default disabled checked checkbox */
+.dark .task-list-item > input[type=checkbox]:disabled:checked {
+  display: none
+}
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */

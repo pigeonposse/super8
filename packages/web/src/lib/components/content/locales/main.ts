@@ -202,7 +202,8 @@ export const locales =  derived( t, $t => {
 		iframe : {
 			title       : $t( 'home.iframe_title.message' ),
 			error       : $t( 'home.iframe_error.message' ),
-			placeholder : $t( 'home.iframe_placeholder.message' ),
+			add         : $t( 'home.iframe_add.message' ),
+			placeholder : $t( 'home.iframe_input_placeholder.message' ),
 		},
 		title       : $t( 'home.title.message' ),
 		description : $t( 'home.description.message' ),

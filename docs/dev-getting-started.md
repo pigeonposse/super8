@@ -16,7 +16,7 @@ To get started, please follow these steps:
 5. Commit your changes and push them to your forked repository.
 6. Create a pull request to our repository and explain the changes you have made.
 
-## 🐞 Reporting Issues
+## 🐛 Reporting Issues
 
 If you encounter any issues or bugs, please report them to our issue tracker on GitHub. Be sure to provide as much detail as possible, including steps to reproduce the issue and any error messages you may have received.
 

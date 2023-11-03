@@ -2,7 +2,7 @@
 
 Presets are **Super8** style configurations.
 
-## Types of Presets
+## 📚 Types of Presets
 
 There are two types of presets:
 

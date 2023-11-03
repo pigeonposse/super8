@@ -21,12 +21,12 @@ const langLoaderFunct = ( langKey: string ) => {
 			routes : [ '', '/' ],
 			loader : async () => ( await import( `../_locales/${langKey}/home.json` ) ).default,
 		},
-		{
-			locale : langKey,
-			key    : 'error',
-			routes : [ 'error' ],
-			loader : async () => ( await import( `../_locales/${langKey}/error.json` ) ).default,
-		},
+		// {
+		// 	locale : langKey,
+		// 	key    : 'error',
+		// 	routes : [ 'error' ],
+		// 	loader : async () => ( await import( `../_locales/${langKey}/error.json` ) ).default,
+		// },
 	]
 
 }

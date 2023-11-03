@@ -8,13 +8,12 @@
       styleClass
     } from "$lib";
     import { t } from "$lib/i18n";
-
-    // import { page } from '$app/stores';
+    import Logo from "$lib/assets/logo.png";
 
     /**
      * CLASSES
      */
-    let headerClass="fixed top-0 right-0 left-0 flex flex-row items-center justify-between m-2 z-[20000]"
+    let headerClass="flex w-full flex-row items-center justify-between m-2 z-[20000]"
     
     let downloadMenu = [
         { 
@@ -58,7 +57,13 @@
     
     <Navbar let:hidden let:toggle class="p-2 dark:bg-transparent">
         <NavBrand href="/">
-            <img src="/logo.png" class="mr-3 h-6 sm:h-9" alt="Super8 Logo" />
+            <img 
+                src={Logo}
+                class="mr-3 h-6 sm:h-9 hover-change-hue" 
+                alt="Super8 Logo" 
+                width="100%"
+                height="50px"
+            />
         </NavBrand>
         <NavHamburger on:click={toggle} />
         <NavUl {hidden}  class="bg-gray-900 {styleClass.sectionBorder}">
@@ -68,13 +73,13 @@
             </NavLi>
             <Dropdown>
                 {#each downloadMenu as item }
-                <DropdownItem 
-                    href={item.href} 
-                    target={item.target} 
-                    class="hover:text-primary-600 dark:hover:text-primary-500"
-                >
-                    {item.name}
-                </DropdownItem>
+                    <DropdownItem 
+                        href={item.href} 
+                        target={item.target} 
+                        class="hover:text-primary-600 dark:hover:text-primary-500"
+                    >
+                        {item.name}
+                    </DropdownItem>
                 {/each}
             </Dropdown>  
             <NavLi href="{docsUrl}" target="_blank">{$t('common.documentation.message')}</NavLi>
