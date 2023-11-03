@@ -42,5 +42,11 @@
     "review": {
       "message": "Reseña",
       "description": "Para enlaces de reseñas"
+    },
+    "download": {
+      "message": "Descargar"
+    },
+    "documentation": {
+      "message": "Documentación"
     }
 }

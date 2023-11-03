@@ -4,18 +4,17 @@
  * @description Vite config.
  * @see https://vitejs.dev/config/
  */
-import { defineConfig }      from 'vite'
-import react                 from '@vitejs/plugin-react'
-import { svelte }            from '@sveltejs/vite-plugin-svelte'
-import dts                   from 'vite-plugin-dts'
-import { resolve }           from 'path'
-import type { PluginOption } from 'vite'
+import { defineConfig } from 'vite'
+import react            from '@vitejs/plugin-react'
+import { svelte }       from '@sveltejs/vite-plugin-svelte'
+import dts              from 'vite-plugin-dts'
+import { resolve }      from 'path'
 
 export default defineConfig( {
 	plugins : [
 		react(),
-		svelte() as PluginOption,
-		dts( { include: [ 'src/lib' ] } ) as PluginOption,
+		svelte(),
+		dts( { include: [ 'src/lib' ] } ),
 	],
 	build : {
 		outDir : 'dist/lib',

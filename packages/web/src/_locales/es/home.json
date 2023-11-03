@@ -259,5 +259,29 @@
     },
     "filters_custom_values_addPreset_desc": {
       "message": "Crea un preset de usuario con la configuración personalizada que establezcas."
+    },
+    "copyBtn": {
+      "message": "¡Copiar iframe con estilo!"
+    },
+    "copyBtn_copied": {
+        "message": "¡Copiado exitosamente!"
+    },
+    "iframe_title": {
+        "message": "Iframe personalizado por Super8!!"
+    },
+    "iframe_error": {
+        "message": "Error en la URL del iframe"
+    },
+    "iframe_input_placeholder": {
+        "message": "Añade aquí la URL de tu iframe"
+    },
+    "ad_placeholder": {
+        "message": "Espacio para publicidad"
+    },
+    "title": {
+        "message": "¡Añade estilos a un vídeo!"
+    },
+    "description": {
+        "message": "¿Quieres personalizar la apariencia de videos en línea? ¡No necesitas ser un experto! Super8 es tu solución. Cambia bordes, sombras y filtros de tus videos en línea con un solo clic. ¡Dale a tus videos en línea un aspecto único en segundos! ¡Pruébalo ahora y experimenta la diferencia con Super8."
     }
 }

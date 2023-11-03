@@ -4,6 +4,7 @@
     import { DarkMode } from '$lib';
 
     const mainPkg = MAIN_PKG
+    const pkg = PKG
 
     /**
      * CLASSES
@@ -16,19 +17,23 @@
     <!-- <div class="p-4 bg-gray-500 w-full rounded-lg">
 
     </div> -->
-    <span >
-        <span class="opacity-60 {$page.data.classes.fontColor}">
-            © copyright
-        </span> 
-
-        <a 
-            class="opacity-100 italic {$page.data.classes.fontColor}" 
-            href={mainPkg.extra.collective.web}
-            target="_blank"
-        >
-            {mainPkg.extra.collective.name}
-        </a>
-    </span>
+    <div class="flex flex-col items-center">
+        <div class="flex flex-row">
+            <span class="opacity-60 {$page.data.classes.fontColor}">
+                © copyright
+            </span> 
+            <a 
+                class="opacity-100 italic ml-2 {$page.data.classes.fontColor}" 
+                href={mainPkg.extra.collective.web}
+                target="_blank"
+            >
+                {mainPkg.extra.collective.name}
+            </a>
+        </div>
+        <span class="text-[11px] m-2 opacity-80">
+            v{pkg.version}
+        </span>
+    </div>
 
 </footer>
 

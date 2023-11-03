@@ -4,6 +4,9 @@
  * @description Export all components in package.
  */
 
+// export flowbite library
+export * as flowbite from 'flowbite-svelte'
+
 // FILTERS
 export { default as Filters } from './filters/main.svelte'
 export { default as FiltersBtn } from './filters/sidebar/btn.svelte'

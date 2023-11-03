@@ -22,7 +22,7 @@ export const handle = async ( { event, resolve } ) => {
 
 	const { url, request, isDataRequest } = event
 	const { pathname, origin }            = url
-
+	
 	// If this request is a route request
 	if ( routeRegex.test( pathname ) ) {
 

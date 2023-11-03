@@ -12,7 +12,8 @@
   },
   "packageManager": "pnpm@8.10.0",
   "extra": {
-    "productName": "Super 8 Documentation",
+    "productName": "Super 8",
+    "docsUrl": "https://docs.super8.pigeonpose.com",
     "socialLinks": [
       {
         "icon": "github",
@@ -85,11 +86,15 @@
     }
   },
   "commitlint": {
-    "extends" : [ 
-      "gitmoji" 
+    "extends": [
+      "gitmoji"
     ],
-    "rules"   : {
-      "header-max-length" : [ 0, "always", 100 ]
+    "rules": {
+      "header-max-length": [
+        0,
+        "always",
+        100
+      ]
     }
   },
   "scripts": {
@@ -102,7 +107,8 @@
     "lint": "pnpm eslint .",
     "test": "pnpm core test && pnpm web test",
     "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
-    "build-web": "turbo build --filter=core --filter=web",
+    "dev-web": "turbo dev --filter=core --filter=web --filter=docs",
+    "build-web": "turbo build --filter=core --filter=web --filter=docs",
     "push-main": "git add . && pnpm cm && git push -f origin main",
     "push-dev": "git add . && pnpm cm && git push -f origin development",
     "publish-npm": "turbo run build lint test --filter=core --filter=core-react && changeset version && changeset publish",
@@ -135,7 +141,7 @@
     "eslint-plugin-jsdoc": "^46.8.2",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-svelte": "^2.34.0",
+    "eslint-plugin-svelte": "^2.34.1",
     "eslint-plugin-tailwindcss": "^3.13.0",
     "eslint-plugin-yaml": "^0.5.0",
     "husky": "^8.0.3",

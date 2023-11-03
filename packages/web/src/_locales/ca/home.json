@@ -259,5 +259,29 @@
     },
     "filters_custom_values_addPreset_desc": {
       "message": "Crea una preconfiguració de l'usuari amb la configuració personalitzada que has establert."
+    },
+    "copyBtn": {
+      "message": "Copia l'iframe estilitzat!"
+    },
+    "copyBtn_copied": {
+        "message": "Còpia amb èxit!"
+    },
+    "iframe_title": {
+        "message": "Iframe personalitzat per Super8!!"
+    },
+    "iframe_error": {
+        "message": "Error a la URL de l'iframe"
+    },
+    "iframe_input_placeholder": {
+        "message": "Afegeix aquí la URL del teu iframe"
+    },
+    "ad_placeholder": {
+        "message": "Espai per a la publicitat"
+    },
+    "title": {
+        "message": "Afegeix estils a un vídeo!"
+    },
+    "description": {
+        "message": "Vols personalitzar l'aparença dels vídeos en línia? No cal ser un expert! Super8 és la teva solució. Canvia vores, ombres i filtres dels teus vídeos en línia amb un sol clic. Dóna als teus vídeos en línia una aparença única en segons! Prova-ho ara i experimenta la diferència amb Super8."
     }
 }  

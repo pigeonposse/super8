@@ -20,7 +20,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@s-8/core": "0.0.2",
+    "@s-8/core": "0.0.3",
     "@types/chrome": "0.0.243",
     "@types/webextension-polyfill": "^0.10.5",
     "flowbite": "^1.8.1",

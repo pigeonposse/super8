@@ -1,76 +1,135 @@
 <script lang="ts">
     
-    import { CodeEditor, InputText, type IFilterJsonValues, Btn, Tooltip } from "$lib"
-
-    export let src: string
-    export let id: string
-    export let value: IFilterJsonValues | undefined
-
-    let iframeValue: string
+    import { onMount } from 'svelte';
+    import { 
+        Filters, 
+        componentTypes, 
+        styleClass,
+        Btn, 
+        copyText,
+        Not, 
+        type ComponentFilters,
+    } from "$lib"
+    import Ad from "./ad/main.svelte";
+    import Desc from "./desc/main.svelte";
+    import Iframe from "./iframe/main.svelte";
+    import { filtersHide, filtersPresetsValue, filtersValue, srcIframe } from "./storage/main";
+    import { locales } from "./locales/main";
     
-    const isValidUrl = (url: typeof src) => {
+    /**
+     * VARIABLES
+     */
+    let active = false
+    let innerWidth = 0
+    let responseWidth = 950
+    let value = filtersValue
+    let isHide = filtersHide
+    let presetsValue = filtersPresetsValue
+    let copied = false
+	const id = 'pp-super8-custom'
+    const stylesId = 'ps-s8-styles'
+	const filterOpts: Omit<ComponentFilters, 'type' > = {
+		active : true,
+		id     : stylesId,
+		btn    : {
+            title: 'ADD FILTERS',
+            indicator: {
+                type: 'main',
+                position: 'top'
+            },
+            customClasses: '!w-full'
+        },
+		content     : undefined,
+		locales     : undefined,
+		toSelectors : [ 
+			'#' + id,
+		],
+		document : undefined,
+		// optionsLimit : 5,
+	}
+    
+    onMount(() => filterOpts.document = document)
 
-        if(!url || url === "" || !url.startsWith('https://' )) return false
+    // $: if($value) iframeValue = JSON.stringify($value, null, 2)
 
-        return true
+    const copyIframe = () => {
+        
+        const styleElement = document.querySelector('#'+stylesId)
+        let copiedStyles = ''; 
+        if (styleElement) {
 
+            const styleContent = styleElement.innerHTML
+            if (styleContent) {
+                const stylesWithoutSelector = styleContent.replace(/#pp-super8-custom\s*{([^}]*)}/, '$1').trim()
+                copiedStyles = stylesWithoutSelector
+            }
+        }
+
+        const iframeString = `<iframe src="${$srcIframe}" title="${$locales.iframe.title}" style="${copiedStyles}" width="600px" height="350px" ></iframe>`;
+        copyText(iframeString)
+        copied = true
+        setTimeout(() => {
+            copied = false;
+        }, 3000);
     }
-
-    $: if(value) iframeValue = JSON.stringify(value, null, 2)
 
 </script>
 
-<div class="rounded-xl m-4 flex flex-col items-center">
-   
-    {#if isValidUrl(src)}
+<svelte:window bind:innerWidth />
 
-        <iframe 
-            loading="lazy"
-            {id}
-            width="600px"
-            height="350px" 
-            title="Super8 iframe customed!!"
-            {src}
-            {...$$restProps}
-            on:change={() => console.log(0)}
-        />
-
-    {:else}
-
-        <div 
-            {id}
-            class="w-[360px] h-[215px] bg-gray-800/80 flex flex-col items-center justify-center"
-        >
-            Error in iframe or url
-        </div>
-
+<div class="{ innerWidth >= responseWidth ? styleClass.pageContentRow : styleClass.pageContentCol} max-w-[1000px]">
+        
+    {#if innerWidth <= responseWidth}
+        <Desc/>    
     {/if}
+    
 
-    <InputText 
-        id="{id}-input"
-        bind:value={src}
-        placeholder="Add here your iframe or your image url"
-        customClasses="w-full mt-4 {!isValidUrl(src) ? '!border-red-500 !ring-red-500' : ''}"
-    />
+    <div class="bg-gray-900 dark:bg-gray-900 {innerWidth >= responseWidth ? styleClass.sectionBorder : ''}">
 
-    <!-- CHANGE TO STYLES IFRAME -->
-    <Btn 
-        id="{id}-btn"
-        color="primary"
-        customClasses="w-full mt-4"
-    >
-        COPY VALUE
-    </Btn>
-    <Tooltip
-        type="main"
-        id="{id}-btn"
-        position="bottom"
-    >
-        <CodeEditor 
-            value="{iframeValue}"
-
-            customClasses="w-full mt-4"
+        <Filters
+            {...filterOpts}
+            type={innerWidth >= responseWidth ? componentTypes.filters.main : componentTypes.filters.sidebar }
+            content={{
+                ...filterOpts.content,
+                height: '80vh',
+            }}
+            locales={$locales.filters}
+            bind:active={active}
+            bind:value={$value}
+            bind:hide={$isHide}
+            bind:presetsValue={$presetsValue}
         />
-    </Tooltip>
+
+    </div>
+
+    <div class="rounded-xl m-4 flex flex-col items-center">
+        
+        {#if innerWidth >= responseWidth}
+            <Desc/>    
+        {/if}
+
+        <Iframe {id} />
+
+        <Btn 
+            id="{id}-btn"
+            color="grayReverse"
+            customClasses="w-full mt-4"
+            on:click={copyIframe}
+        >
+            {$locales.copyBtn.value}
+        </Btn>
+        
+        {#if copied}
+            <Not 
+                type="success"
+                customClasses="w-full"
+            >
+                {$locales.copyBtn.copied}
+            </Not>
+        {/if}
+        <Ad/>
+
+
+    </div>
 
 </div>

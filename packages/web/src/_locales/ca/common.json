@@ -42,5 +42,11 @@
     "review": {
       "message": "Revisió",
       "description": "Per a enllaços de revisió."
+    },
+    "download": {
+      "message": "Baixar"
+    },
+    "documentation": {
+      "message": "Documentació"
     }
 }

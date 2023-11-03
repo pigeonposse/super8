@@ -1,35 +1,89 @@
 <script lang="ts" >
 
     import {
-      LangSelect
+      LangSelect,
+      flowbite,
+      Fa,
+      faChevronDown,
+      styleClass
     } from "$lib";
+    import { t } from "$lib/i18n";
 
-    import { page } from '$app/stores';
+    // import { page } from '$app/stores';
 
     /**
      * CLASSES
      */
     let headerClass="fixed top-0 right-0 left-0 flex flex-row items-center justify-between m-2 z-[20000]"
+    
+    let downloadMenu = [
+        { 
+            name: 'Chrome extension', 
+            href: MAIN_PKG.extra.store.chrome.url,
+            target:"_blank"
+        },
+        { 
+            name: 'Firefox extension', 
+            href: MAIN_PKG.extra.store.mozilla.url,
+            target:"_blank" 
+        },
+        { 
+            name: 'WP plugin', 
+            href: MAIN_PKG.extra.store.wpPlugin.url,
+            target:"_blank"
+        },
+        { 
+            name: 'WP plugin (premium)', 
+            href: MAIN_PKG.extra.store.wpPluginPremium.url,
+            target:"_blank"
+        },
+    ]  
+
+    const donateUrl = MAIN_PKG.funding.url
+    const docsUrl = MAIN_PKG.extra.docsUrl
+    const Dropdown = flowbite.Dropdown
+    const DropdownItem = flowbite.DropdownItem
+
+    // const MegaMenu = flowbite.MegaMenu
+    const Navbar = flowbite.Navbar
+    const NavBrand = flowbite.NavBrand
+    const NavHamburger = flowbite.NavHamburger
+    const NavUl = flowbite.NavUl
+    const NavLi = flowbite.NavLi
+
 
 </script>
 
 <header class="{headerClass}">
-    <h2 class="flex flex-row items-center justify-center text-[20px] font-bold p-2">
-        <a href="/" class="flex flex-row items-center justify-center">
-            <img src="/logo.png" width="100px" alt="logo"/>
-        </a>
-    </h2>
-    <nav >
-        <ul class="flex flex-row [&>li]:mx-2 [&>li]:py-1 [&>li]:px-4 [&>li]:rounded-full [&>li]:bg-gray-100 [&>li]:dark:bg-gray-700/50">
-            
-            {#each $page.data.routes as route}
-                <li class=" {$page.url.pathname === route.route? '!bg-primary-700': ''}"><a href="{route.route}" class="{$page.data.classes.fontColor}">{route.name}</a></li>
-            {/each}
-            <li>
+    
+    <Navbar let:hidden let:toggle class="p-2 dark:bg-transparent">
+        <NavBrand href="/">
+            <img src="/logo.png" class="mr-3 h-6 sm:h-9" alt="Super8 Logo" />
+        </NavBrand>
+        <NavHamburger on:click={toggle} />
+        <NavUl {hidden}  class="bg-gray-900 {styleClass.sectionBorder}">
+            <NavLi class="cursor-pointer flex flex-row items-center">
+                {$t('common.download.message')}
+                <Fa icon={faChevronDown} class="ml-4 text-[13px]"/>
+            </NavLi>
+            <Dropdown>
+                {#each downloadMenu as item }
+                <DropdownItem 
+                    href={item.href} 
+                    target={item.target} 
+                    class="hover:text-primary-600 dark:hover:text-primary-500"
+                >
+                    {item.name}
+                </DropdownItem>
+                {/each}
+            </Dropdown>  
+            <NavLi href="{docsUrl}" target="_blank">{$t('common.documentation.message')}</NavLi>
+            <NavLi href="{donateUrl}" target="_blank">{$t('common.donate.message')}</NavLi>
+            <NavLi>
                 <LangSelect/>
-            </li>
-            
-        </ul>
-    </nav>
+            </NavLi>      
+        </NavUl>
+
+    </Navbar>
 
 </header>

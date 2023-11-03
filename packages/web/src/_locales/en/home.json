@@ -259,5 +259,29 @@
     },
     "filters_custom_values_addPreset_desc": {
         "message": "Create user preset with the custom config that you set."
+    },
+    "copyBtn": {
+        "message": "Copy iframe styled!"
+    },
+    "copyBtn_copied": {
+        "message": "Succesfully copied!"
+    },
+    "iframe_title" : {
+        "message": "Iframe customed by Super8!!"
+    },
+    "iframe_error" : {
+        "message": "Error in iframe url"
+    },
+    "iframe_input_placeholder" : {
+        "message": "Add here your iframe url"
+    },
+    "ad_placeholder" : {
+        "message": "Space for advertisement"
+    },
+    "title" : {
+        "message": "Add styles to a video!"
+    },
+    "description" : {
+        "message": "Want to customize the look of online videos? You don't need to be an expert! Super8 is your solution. Change borders, shadows, and filters of your online videos with a single click. Give your online videos a unique look in seconds! Try it now and experience the difference with Super8."
     }
 }
