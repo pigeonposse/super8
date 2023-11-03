@@ -1,0 +1,81 @@
+###############################################################################
+# DEPLOY WEBS TO CLOUDFLARE
+###############################################################################
+
+name: Deploy webs
+
+
+###############################################################################
+# ON
+###############################################################################
+
+on:
+    push:
+      branches:
+        - main
+
+###############################################################################
+# JOBS
+###############################################################################
+
+jobs:
+
+    deploy:
+
+        name: Deploy SUPER8 webs
+        runs-on: ubuntu-latest
+        permissions:
+            contents: read
+            deployments: write
+
+        #######################################################################
+        # STEPS
+        #######################################################################
+
+        steps:
+
+            #########################################################################
+            # INIT & BUILD PKG
+            #########################################################################
+            
+            - name: 🛎 Checkout
+              uses: actions/checkout@v3
+
+
+            #########################################################################
+            # BUILD PKG
+            #########################################################################
+
+            - name: 🏗 Install pnpm
+              uses: pnpm/action-setup@v2
+              id: pnpm-install
+
+            - name: 👨🏻‍💻 Install pkg dependencies
+              run: |
+                pnpm install
+                pnpm build-web
+            
+
+            ###################################################################
+            # INIT & BUILD PKG
+            ###################################################################
+
+            - name: 🌥 Deploy WEB in cloudflare pages
+              uses: cloudflare/pages-action@v1
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+                branch: main
+                projectName: "super8"
+                directory: '/packages/web/.svelte-kit/cloudflare'
+
+            - name: 🌥 Deploy DOCS in cloudflare pages
+              uses: cloudflare/pages-action@v1
+              with:
+                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+                branch: main
+                projectName: "super8-docs"
+                directory: '/packages/docs/dist/.vitepress/dist'

@@ -2,10 +2,10 @@
 
     import { 
         componentTypes, 
-        type ComponentBtnFilters,
         componentPositions, 
         Btn, 
-        Indicator
+        Indicator,
+        type ComponentBtnFilters,
     } from "../../index";
 
     import { filters } from "../store/main";
@@ -19,10 +19,12 @@
     export let customClasses: ComponentBtnFilters['customClasses'] = ''
     export let color: ComponentBtnFilters['color'] = componentTypes.btn.primary
     export let indicator: Partial<ComponentBtnFilters['indicator']> = undefined
+    export let active: ComponentBtnFilters['active'] = true
 
     const pBtn = componentPositions.filters.btn
     const p = !position ? pBtn.none : position
-    const { active, styles } = filters
+    const {  styles } = filters
+    const activeFilters = filters.active
     const storeID = styles.id
     const customCount = filters.custom.valuesNotInDefault.count
 
@@ -41,25 +43,30 @@
 
 </script>
 
-<Btn
-    id="{$storeID}-btn"
-    on:click={() => $active = true}
-    {color}
-    customClasses="{classPosition[p]} {$active ? shadowClass : ''} !p-0 {customClasses}"
->
-    <div class="relative w-full h-full px-3 py-2 {customClasses}">
-        {title}
+{#if active}
 
-        {#if indicator && $customCount > 0}
-            <Indicator 
-                title={String($customCount)}
-                position={componentPositions.indicator.topRight}
-                {...indicator}
-            />
-        {/if}
-    </div>
+    <Btn
+        id="{$storeID}-btn"
+        on:click={() => $activeFilters = true}
+        {color}
+        customClasses="{classPosition[p]} {$activeFilters ? shadowClass : ''} !p-0 {customClasses}"
+    >
+        <div class="relative w-full h-full px-3 py-2 {customClasses}">
+            {title}
 
-</Btn>
+            {#if indicator && $customCount > 0}
+                <Indicator 
+                    title={String($customCount)}
+                    position={componentPositions.indicator.topRight}
+                    {...indicator}
+                />
+            {/if}
+        </div>
+
+    </Btn>
+
+{/if}
+
 <!-- 
 @component
 

@@ -4,6 +4,9 @@
  * @description Export all components and functions in package.
  */
 
+// export flowbite library
+export * as flowbite from 'flowbite-svelte'
+
 // FA & ICONS
 export * from './fa/main'
 

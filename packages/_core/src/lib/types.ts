@@ -448,6 +448,7 @@ export type ComponentBtnFilters = {
     customClasses? : string
     color?: ComponentBtn['type']
 	indicator?: ComponentIndicator
+	active?: boolean
 }
 
 export type ComponentFilters = ComponentInputShared<typeof componentTypes.filters> & {

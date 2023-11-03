@@ -2,7 +2,7 @@
 
 The core of Super8 is built using the Svelte JavaScript framework. Here's a list of all the components and their properties for Super8 developers.
 
-> 19 components exported from @s-8/core@0.0.2.
+> 19 components exported from @s-8/core@0.0.3.
 
 ## Components
 
@@ -180,13 +180,14 @@ None.
 
 ### Props
 
-| Prop name     | Required | Kind             | Reactive | Type                | Default value          | Description |
-| :------------ | :------- | :--------------- | :------- | ------------------- | ---------------------- | ----------- |
-| title         | No       | <code>let</code> | No       | <code>string</code> | <code>''</code>        | VARIABLES   |
-| position      | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
-| customClasses | No       | <code>let</code> | No       | <code>string</code> | <code>''</code>        | --          |
-| color         | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
-| indicator     | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
+| Prop name     | Required | Kind             | Reactive | Type                 | Default value          | Description |
+| :------------ | :------- | :--------------- | :------- | -------------------- | ---------------------- | ----------- |
+| title         | No       | <code>let</code> | No       | <code>string</code>  | <code>''</code>        | VARIABLES   |
+| position      | No       | <code>let</code> | No       | --                   | <code>undefined</code> | --          |
+| customClasses | No       | <code>let</code> | No       | <code>string</code>  | <code>''</code>        | --          |
+| color         | No       | <code>let</code> | No       | --                   | <code>undefined</code> | --          |
+| indicator     | No       | <code>let</code> | No       | --                   | <code>undefined</code> | --          |
+| active        | No       | <code>let</code> | No       | <code>boolean</code> | <code>true</code>      | --          |
 
 ### Slots
 
