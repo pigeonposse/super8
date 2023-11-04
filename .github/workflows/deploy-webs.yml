@@ -79,5 +79,5 @@ jobs:
                 gitHubToken: ${{ secrets.GITHUB_TOKEN }}
                 branch: main
                 projectName: "super8-docs"
-                directory: 'packages/docs/.vitepress/dist'
+                directory: 'packages/docs/dist'
                 wranglerVersion: '3'

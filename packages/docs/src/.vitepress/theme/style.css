@@ -73,6 +73,38 @@
 
 }
 /* override bg in dark */
+::-moz-selection {
+  color: black;
+  background: var(--vp-c-brand-1);
+}
+::selection {
+  color: black;
+  background: var(--vp-c-brand-1);
+}
+@keyframes changeHue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.VPImage.logo:hover {
+  animation: changeHue 5s linear infinite;
+}
+.edit-link-button {
+  color: var(--vp-c-brand-1) !important;
+}
+.content-container a:hover,
+.VPLink:hover {
+  color: var(--vp-c-brand-1);
+  animation: changeHue 5s linear infinite;
+  text-shadow: 0 0px 16px var(--vp-c-brand-1);
+}
+.vp-doc a:hover > code {
+  color: var(--vp-c-brand-1);
+}
+
 .dark {
     --vp-c-bg: #0d0d0d;
     --vp-c-bg-alt: #141414;

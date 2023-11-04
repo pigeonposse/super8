@@ -16,7 +16,7 @@ The border radius determines how rounded the edges of the element will be. You c
 
 You can select the style of the border that you like the most. Options include "Solid" "Dashed" "Double" etc, giving you the flexibility to choose the visual effect you desire.
 
-### Color
+### Border Color
 
 Choose a color for the border. You can fully customize the appearance of the border by selecting the color that best suits your overall design.
 

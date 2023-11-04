@@ -4,7 +4,7 @@
 
 web:
   
-  - id: "{{package.name}}"
+  - id: "super8"
     name: "Super 8"
     type: software
     subtypes:
@@ -16,9 +16,9 @@ web:
     version: "{{package.version}}"
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
-    repo: "https://github.com/pigeonposse/{{package.name}}"
-    logo: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/images/logo-short.png"
-    banner: "https://raw.githubusercontent.com/pigeonposse/{{package.name}}/main/docs/banner.png"
+    repo: "https://github.com/pigeonposse/super8"
+    logo: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/logo-short.png"
+    banner: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/banner.png"
     status: "active"
 
 ###############################################################################

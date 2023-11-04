@@ -12,14 +12,17 @@ import {join} from 'node:path'
 import MarkdownItTaskList from 'markdown-it-task-lists'
 
 export default defineConfig({
-  lang: 'en-US',
+  lang: 'en',
   title: json.extra.productName,
+  description: json.description,
   titleTemplate: ':title - Super8 Documentation',
   appearance:'force-dark',
-  description: json.description,
-  srcDir: '../../../docs',
   // base: '/docs/',
+  srcDir: '../../../docs',
+  cacheDir: '../.cache',
+  outDir: '../dist',
   cleanUrls: true,
+  ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
         md.use(MarkdownItTaskList)
@@ -50,7 +53,7 @@ export default defineConfig({
       },
       { 
         text: 'Documentation', 
-        link: '/index' 
+        link: '/' 
       },
       { 
         text: 'Download', 
@@ -82,7 +85,7 @@ export default defineConfig({
       {
         text: 'Introduction',
         items: [
-          { text: 'What is Super 8', link: '/index' },
+          { text: 'What is Super 8', link: '/' },
           { text: 'Getting Started', link: '/getting-started' },
         ]
       },
@@ -102,7 +105,7 @@ export default defineConfig({
             items: [
               { text: 'Getting Started', link: '/dev-getting-started' },
               { text: 'Core components', link: '/dev-components-info' },
-              { text: 'Todo', link: '/todo/v1.md' },
+              { text: 'Todo', link: '/todo/v1' },
             ]
           },
         ]
@@ -120,6 +123,13 @@ export default defineConfig({
     footer: {
       message: `Made with ♥️ by <a href="${json.extra.collective.url}" target="_blank">${json.extra.collective.name}</a>`,
       copyright: `Copyright © ${new Date().getFullYear()}`
-    }
-  }
+    },
+  },
+  // vite: {
+  //   build: {
+  //       rollupOptions: {
+  //           external: ["vue/server-renderer", "vue"]
+  //       }
+  //   }
+  // }
 })

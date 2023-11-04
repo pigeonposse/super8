@@ -4,12 +4,13 @@
   "private": true,
   "description": "A Super8 Documentation site by PigeonPosse",
   "scripts": {
-    "dev": "vitepress dev src",
-    "build": "vitepress build",
-    "preview": "vitepress preview"
+    "dev": "vitepress dev src --strictPort --open",
+    "build": "vitepress build src --force",
+    "preview": "vitepress preview src"
   },
   "devDependencies": {
-    "vitepress": "1.0.0-rc.24"
+    "vitepress": "1.0.0-rc.24",
+    "vue": "^3.3.7"
   },
   "dependencies": {
     "markdown-it-task-lists": "^2.1.1"

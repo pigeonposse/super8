@@ -11,21 +11,26 @@
     {#if dev}
 
         {$locales.ad.placeholder} 📢
-        
+
     {:else}
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7603475796200263"
-        crossorigin="anonymous"></script>
+        <script 
+            async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7603475796200263"
+            crossorigin="anonymous"
+        ></script>
          <!-- super8 -->
         <ins class="adsbygoogle"
             style="display:block"
             data-ad-client="ca-pub-7603475796200263"
             data-ad-slot="3925261583"
             data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
+            data-full-width-responsive="true">
+        </ins>
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        
     {/if}
 
 </div>
