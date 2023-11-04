@@ -87,7 +87,8 @@ export const locales =  derived( t, $t => {
 				desc   : $t( 'home.filters_custom_desc.message' ),
 				border : {
 					title  : $t( 'home.filters_custom_border.message' ),
-					desc   : $t( 'home.filters_custom_border_desc.message' ),
+					// desc   : $t( 'home.filters_custom_border_desc.message' ),
+					desc   : '',
 					values : {
 						[filterCustomIds.borderWidth] : {
 							title : $t( 'home.filters_custom_values_borderWidth.message' ),
@@ -109,7 +110,8 @@ export const locales =  derived( t, $t => {
 				},
 				shadow : {
 					title  : $t( 'home.filters_custom_values_shadow.message' ),
-					desc   : $t( 'home.filters_custom_values_shadow_desc.message' ),
+					// desc   : $t( 'home.filters_custom_values_shadow_desc.message' ),
+					desc   : '',
 					values : {
 						[filterCustomIds.shadowX] : {
 							title : $t( 'home.filters_custom_values_shadowX.message' ),
@@ -139,7 +141,8 @@ export const locales =  derived( t, $t => {
 				},
 				filter : {
 					title  : $t( 'home.filters_custom_values_filter.message' ),
-					desc   : $t( 'home.filters_custom_values_filter_desc.message' ),
+					// desc   : $t( 'home.filters_custom_values_filter_desc.message' ),
+					desc   : '',
 					values : {
 						[filterCustomIds.filterBlur] : {
 							title : $t( 'home.filters_custom_values_filterBlur.message' ),
@@ -181,7 +184,8 @@ export const locales =  derived( t, $t => {
 				},
 				animation : {
 					title : $t( 'home.filters_custom_values_animation.message' ),
-					desc  : $t( 'home.filters_custom_values_animation_desc.message' ),
+					// desc  : $t( 'home.filters_custom_values_animation_desc.message' ),
+					desc  : '',
 					nots  : {
 						comingsoon : {
 							title : $t( 'home.filters_custom_values_animation_nots_comingsoon.message' ),

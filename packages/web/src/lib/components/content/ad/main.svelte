@@ -8,11 +8,9 @@
 
 <div class="{styleClass.sectionBorder} bg-gray-600/20 text-gray-50 mt-4 w-full h-40 flex items-center justify-center">
     
-    {#if dev}
-
-        {$locales.ad.placeholder} 📢
-
-    {:else}
+    {$locales.ad.placeholder} 📢
+    
+    {#if !dev}
 
         <script 
             async 

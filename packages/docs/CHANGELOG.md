@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.2.1
+
+### Patch Changes
+
+- fix issues and add feats in web
+
 ## 0.2.0
 
 ### Minor Changes

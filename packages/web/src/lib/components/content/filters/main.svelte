@@ -51,7 +51,7 @@
         type={$windowWidth >= $responseWidth ? componentTypes.filters.main : componentTypes.filters.sidebar }
         content={{
             ...filterOpts.content,
-            width: $windowWidth >= $responseWidth ? '450px' : ($windowWidth - ( $windowWidth * 0.4))+'px',
+            width: $windowWidth >= $responseWidth ? '450px' : ($windowWidth - ( $windowWidth * 0.2))+'px',
             height: $windowWidth >= $responseWidth ? '80vh' : '100vh'
         }}
         btn={{

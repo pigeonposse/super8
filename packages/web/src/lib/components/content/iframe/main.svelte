@@ -2,7 +2,8 @@
     
     import { Btn, InputText, Not, copyText } from "$lib";
     import { locales } from "../locales/main";
-    import { id, responseWidth, srcIframe, stylesId, windowWidth } from "../storage/main";
+    import { id, srcIframe, stylesId } from "../storage/main";
+    import { convertYoutubeUrlToEmbed, getIframeString, isValidUrl } from "./functs";
     
     /**
      * VARIABLES
@@ -13,31 +14,26 @@
      * EVENTS
      */
     const copyIframe = () => {
+        
+        const iframeString = getIframeString( { 
+            stylesId: $stylesId, 
+            id : $id, 
+            iframeTxt: $locales.iframe.title,
+            url : $srcIframe,
+        } )
 
-        const styleElement = document.querySelector('#'+$stylesId)
-        let copiedStyles = ''; 
-        if (styleElement) {
-
-            const styleContent = styleElement.innerHTML
-            if (styleContent) {
-                // const stylesWithoutSelector = styleContent.replace(/#pp-super8-custom\s*{([^}]*)}/, '$1').trim()
-                const stylesWithoutSelector = styleContent.replace(new RegExp(`#${$id}\\s*{([^}]*)}`), '$1').trim()
-                copiedStyles = stylesWithoutSelector
-            }
+        if(iframeString){
+            copyText(iframeString)
+            copied = true
+            setTimeout(() => copied = false, 3000)
         }
-
-        const iframeString = `<iframe src="${$srcIframe}" title="${$locales.iframe.title}" style="${copiedStyles}" width="600px" height="350px" ></iframe>`;
-        copyText(iframeString)
-        copied = true
-        setTimeout(() => copied = false, 3000)
     }
 
-    const isValidUrl = (url: typeof $srcIframe) => {
+    // IF IS YOUTUBE URL CONVERT TO EMBDEBED
 
-        if(!url || url === "" || !url.startsWith('https://' )) return false
-
-        return true
-
+    $: if(isValidUrl($srcIframe) && $srcIframe.startsWith('https://www.youtube.com/watch')) {
+        const convertedUrl = convertYoutubeUrlToEmbed( $srcIframe)
+        if(convertedUrl) $srcIframe = convertedUrl
     }
 
 </script>
