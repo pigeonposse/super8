@@ -1,5 +1,11 @@
 # @s-8/web
 
+## 0.2.3
+
+### Patch Changes
+
+- Fix issues with logo and add preload in super8 component
+
 ## 0.2.2
 
 ### Patch Changes

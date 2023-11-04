@@ -4,8 +4,9 @@
  * @description File for set core types.
  */
 
-import i18n from 'sveltekit-i18n'
-import lang from '../_locales/lang.json'
+import i18n        from 'sveltekit-i18n'
+import lang        from '../_locales/lang.json'
+import { derived } from 'svelte/store'
 
 const langLoaderFunct = ( langKey: string ) => {
 
@@ -48,13 +49,18 @@ export const defaultLocale = 'en'
 
 export const { t, locale, locales, loading, addTranslations, loadTranslations, translations, setRoute, setLocale } = new i18n( config )
 
+export const currLocaleRoute = derived( locale, $locale => {
+
+	return $locale === defaultLocale ? '/' : '/' + $locale
+
+} )
+
 // Translations logs
 loading.subscribe( async $loading => {
 
 	if ( $loading ) {
 
 		// console.log( 'Loading translations...' )
-
 		await loading.toPromise()
 		// console.log( 'Updated translations', translations.get() )
 	

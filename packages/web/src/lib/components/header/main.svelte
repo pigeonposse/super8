@@ -7,7 +7,7 @@
       faChevronDown,
       styleClass
     } from "$lib";
-    import { t } from "$lib/i18n";
+    import { currLocaleRoute, t } from "$lib/i18n";
     import Logo from "$lib/assets/logo.png";
 
     /**
@@ -56,7 +56,7 @@
 <header class="{headerClass}">
     
     <Navbar let:hidden let:toggle class="p-2 dark:bg-transparent">
-        <NavBrand href="/">
+        <NavBrand href="{$currLocaleRoute}">
             <img 
                 src={Logo}
                 class="h-6 sm:h-9 hover-change-hue object-contain" 

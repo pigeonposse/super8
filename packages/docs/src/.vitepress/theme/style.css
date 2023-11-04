@@ -104,6 +104,11 @@
 .vp-doc a:hover > code {
   color: var(--vp-c-brand-1);
 }
+@media (max-width: 960px) {
+  .VPNav {
+    background: var(--vp-local-nav-bg-color);
+  }
+}
 
 .dark {
     --vp-c-bg: #0d0d0d;
