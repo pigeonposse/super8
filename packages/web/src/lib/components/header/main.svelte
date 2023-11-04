@@ -59,9 +59,9 @@
         <NavBrand href="/">
             <img 
                 src={Logo}
-                class="mr-3 h-6 sm:h-9 hover-change-hue" 
+                class="h-6 sm:h-9 hover-change-hue object-contain" 
                 alt="Super8 Logo" 
-                width="100%"
+                width="150px"
                 height="50px"
             />
         </NavBrand>

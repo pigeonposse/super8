@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.2.2
+
+### Patch Changes
+
+- fix style issues
+
 ## 0.2.1
 
 ### Patch Changes

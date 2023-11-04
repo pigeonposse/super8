@@ -35,11 +35,11 @@ export default defineConfig({
     'link', 
     { 
       rel: 'icon', 
-      href: '/images/favicon.png' // use first "/" for child routes
+      href: '/favicon.png' // use first "/" for child routes
     }
   ]],
   themeConfig: {
-    logo: '/images/logo.png', // use first "/" for child routes
+    logo: '/logo.png', // use first "/" for child routes
     siteTitle: false,
     editLink: {
       pattern: join(json.repository.url,'edit/main/docs/:path')
