@@ -36,7 +36,8 @@ build
 **/.svelte-kit
 
 # playwright 
-**/test-result
+/test-results
+**/test-results
 
 # project 
 **/dist

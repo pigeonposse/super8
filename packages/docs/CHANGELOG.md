@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.2.3
+
+### Patch Changes
+
+- add headers to web and docs
+
 ## 0.2.2
 
 ### Patch Changes

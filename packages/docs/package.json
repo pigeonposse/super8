@@ -1,6 +1,6 @@
 {
   "name": "@s-8/docs",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "type": "module",
   "description": "A Super8 Documentation site by PigeonPosse",
@@ -8,6 +8,7 @@
     "dev": "vitepress dev src --strictPort --open",
     "build": "pnpm copy-docs && vitepress build src --force && pnpm rm-docs",
     "preview": "vitepress preview src",
+    "test": "playwright test",
     "copy-docs": "node src/copyDocs.js",
     "rm-docs": "node src/copyDocs.js --rm-dest"
   },

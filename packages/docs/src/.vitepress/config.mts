@@ -14,7 +14,6 @@ import MarkdownItTaskList from 'markdown-it-task-lists'
 const isDev = process.env.NODE_ENV !== 'production'
 const srcDir = isDev ? '../../../docs' : './__temp__/docs'
 
-
 export default defineConfig({
   lang: 'en',
   title: json.extra.productName,
@@ -24,7 +23,7 @@ export default defineConfig({
   srcDir,
   cacheDir: '../__cache__',
   outDir: '../dist',
-  cleanUrls: true,
+  // cleanUrls: true,
   // ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
