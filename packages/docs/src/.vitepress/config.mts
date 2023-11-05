@@ -23,8 +23,8 @@ export default defineConfig({
   srcDir,
   cacheDir: '../__cache__',
   outDir: '../dist',
-  // cleanUrls: true,
-  // ignoreDeadLinks: true,
+  cleanUrls: true,
+  ignoreDeadLinks: true,
   markdown: {
     config: (md) => {
         md.use(MarkdownItTaskList)

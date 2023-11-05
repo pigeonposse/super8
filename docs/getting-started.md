@@ -6,7 +6,7 @@ We are happy to announce that we also offer a **web version** of our extension f
 
 Our web version is easy to use and works in any modern browser. Just visit our website, upload the video you want to customize, and start adjusting the styles to your personal preferences.
 
-- [Web version](https://github.com/pigeonposse/super8)
+- [Web version](https://super8.pigeonposse.com/)
 
 ## 🧩 Browser extension
 
@@ -22,7 +22,7 @@ Once you have installed our extension, you will be able to adjust the styles of 
 
 You can download the extension from the releases section of the GitHub repository.
 
-- [Github releases](https://github.com/pigeonposse/super8)
+- [Github releases](https://github.com/pigeonposse/super8/releases)
 
 Or you can copy this code to your terminal to automatically download.
 
