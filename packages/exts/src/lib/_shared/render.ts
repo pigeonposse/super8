@@ -29,7 +29,7 @@ export const renderComponent = async ( {
 		let targetCreated = document.getElementById( id )
 		
 		if ( !targetCreated ) {
-
+			
 			targetCreated    = document.createElement( 'div' )
 			targetCreated.id = id
 

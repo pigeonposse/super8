@@ -6,17 +6,14 @@
   "type": "module",
   "scripts": {
     "dev": "run-p dev:chrome",
-    "dev:chrome": "rimraf dist/chrome && pnpm build:chrome && run-p dev:chrome:*",
-    "dev:chrome:vite": "TARGET=chrome vite",
-    "dev:chrome:web-ext": "web-ext run -t chromium --no-reload --source-dir ./dist/chrome",
-    "dev:firefox": "rimraf dist/firefox && run-s build:firefox && run-p dev:firefox:*",
-    "dev:firefox:vite": "TARGET=firefox vite",
-    "dev:firefox:web-ext": "web-ext run -t firefox-desktop --no-reload --source-dir ./dist/firefox",
-    "build": "rimraf dist && run-p build:* && pnpm zip",
-    "build:chrome": "NODE_ENV=production TARGET=chrome vite build",
-    "build:firefox": "NODE_ENV=production TARGET=firefox vite build",
+    "dev:chrome": "rimraf dist/chrome && TARGET=chrome vite dev",
+    "dev:firefox": "rimraf dist/chrome && TARGET=firefox vite",
+    "build": "run-p build:* && pnpm zip",
+    "build:chrome": "rimraf dist/chrome && NODE_ENV=production TARGET=chrome vite build",
+    "build:firefox": "rimraf dist/firefox && NODE_ENV=production TARGET=firefox vite build",
     "zip": "node zip.js",
     "watch:chrome": "NODE_ENV=development TARGET=chrome vite build --watch",
+    "watch:firefox": "NODE_ENV=development TARGET=firefox vite build --watch",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
@@ -25,6 +22,8 @@
     "@types/webextension-polyfill": "^0.10.5",
     "flowbite": "^1.8.1",
     "flowbite-svelte": "^0.39.3",
+    "lightningcss": "^1.22.0",
+    "postcss-prefix-selector": "^1.16.0",
     "vite-plugin-web-extension": "^3.2.0",
     "webextension-polyfill": "^0.10.0",
     "zip-a-folder": "^2.0.2"

@@ -7,10 +7,10 @@ import { renderComponentOnDOMContentLoaded } from '../lib'
 import Options                               from './main.svelte'
 
 try {
-			
+
 	renderComponentOnDOMContentLoaded( {
 		componentClass : Options,
-		querySelelctor : '#app',
+		querySelelctor : '#pp-s8-content',
 	} )
 
 }catch( e ){

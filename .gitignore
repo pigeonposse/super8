@@ -44,3 +44,4 @@ build
 **/__temp__
 /__cache__
 **/__cache__
+**/*.timestamp-*

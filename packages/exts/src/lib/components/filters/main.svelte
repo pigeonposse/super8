@@ -151,9 +151,11 @@
     document={documentValue}
     {...filterOpts}
   >  
-  <div slot="header" class="flex flex-col items-center my-4">
-    <img src="{logUrl}" alt="Logo" width="200px" >
-  </div>
+    
+    <div slot="header" class="flex flex-col items-center my-4">
+      <img src="{logUrl}" alt="Logo" width="200px" >
+    </div>
+
   </Filters>
 
 {/if}

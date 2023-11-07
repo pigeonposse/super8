@@ -7,6 +7,6 @@
 <Content 
     type={contentIds.popup} 
     description={browser.i18n.getMessage( 'description' )}
->
+> 
     <AllowedSites/>
 </Content>

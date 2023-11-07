@@ -22,17 +22,19 @@ import pkg                                      from './package.json'
 import { include }                              from './tsconfig.node.json'
 import { isDev }                                from './src/man/manifest'
 
-// const isDev      = process.env.NODE_ENV == 'development' ? true : false
 const target     = process.env.TARGET || 'chrome'
 const distPath   = 'dist'
 const distTarget = join( distPath, target )
 const manifest   = target === 'firefox' ? manifestFirefox : manifestChrome
 const webExt     = { 
-	browser           : target,
-	manifest          : () => manifest, 
-	watchFilePaths    : [ ...include, 'src/**/*.html' ],
-	disableAutoLaunch : true, // web extension set manually
-	webExtConfig      : {
+	browser        : target,
+	manifest       : () => manifest, 
+	watchFilePaths : [ 
+		...include, 
+		'src/**/*.html',
+	],
+	// disableAutoLaunch : true, // web extension set manually
+	webExtConfig : {
 		...pkg.webExt.run,
 	},
 }
@@ -43,15 +45,6 @@ export default defineConfig( {
 		svelte(), 
 		webExtension( webExt ) as PluginOption,
 	],
-	// Hack: https://github.com/crxjs/chrome-extension-tools/issues/696
-	// https://github.com/crxjs/chrome-extension-tools/issues/746
-	server : {
-		port       : Number( pkg.extra.devServerPort ),
-		strictPort : true,
-		hmr        : {
-			clientPort : Number( pkg.extra.devServerPort ),
-		},
-	},
 	assetsInclude : [ '**/*.png' ],
 	build         : {
 		terserOptions : {
@@ -64,13 +57,8 @@ export default defineConfig( {
 		},
 		minify                : 'terser',
 		outDir                : `${distTarget}`,
-		// minify                : isDev ? false : true,
-		cssMinify             : isDev ? false : true,
+		cssMinify             : isDev ? false : 'lightningcss',
 		chunkSizeWarningLimit : 1600,
-		// lib                   : {
-		// 	entry   : resolve( __dirname, 'src/content/main.ts' ),
-		// 	name    : 'test-contet',
-		// 	formats : [ 'es' ],
-		// },
 	},
+
 } )

@@ -7,10 +7,11 @@
 import { componentTypes }                                                                          from '@s-8/core'
 import { optionsIds, type AllowedSites, type ComponentOptionsRecursive, insertedAdjacentPosition } from '../../types'
 import { browser }                                                                                 from '../../_shared/browser/main'
+import { allowSites }                                                                              from '../../../man/manifest'
 
 export const defaultData: AllowedSites = {
 	[optionsIds.allowSites.youtube] : {
-		urlStarts      : [ 'https://www.youtube.com/' ],
+		urlStarts      : allowSites.youtube,
 		// CHECKED
 		videoSelector  : [ 'video' ],
 		defaultValue   : true,
@@ -20,7 +21,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.vimeo] : {
-		urlStarts      : [ 'https://vimeo.com/' ],
+		urlStarts      : allowSites.vimeo,
 		// CHECKED but in home page multiple videos are with filters, maybe is not ok for user (?)
 		videoSelector  : [ 'video' ],
 		defaultValue   : true,
@@ -30,7 +31,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.twitch] : {
-		urlStarts      : [ 'https://www.twitch.tv/' ],
+		urlStarts      : allowSites.twitch,
 		// CHECKED
 		videoSelector  : [ 'video' ],
 		defaultValue   : false,
@@ -40,7 +41,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.filmin] : {
-		urlStarts      : [ 'https://www.filmin.es/' ],
+		urlStarts      : allowSites.filmin,
 		// HALF CHECKED 
 		videoSelector  : [ 'video' ],
 		defaultValue   : false,
@@ -50,7 +51,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.disney] : {
-		urlStarts      : [ 'https://www.disneyplus.com/' ],
+		urlStarts      : allowSites.disney,
 		// HALF CHECKED because the element video exist but is not tested
 		videoSelector  : [ 'video' ],
 		defaultValue   : false,
@@ -60,7 +61,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.netflix] : {
-		urlStarts      : [ 'https://www.netflix.com/' ],
+		urlStarts      : allowSites.netflix,
 		videoSelector  : [ 'video' ],
 		defaultValue   : false,
 		selectorForBtn : [ {
@@ -69,7 +70,7 @@ export const defaultData: AllowedSites = {
 		} ],
 	},
 	[optionsIds.allowSites.primevideo] : {
-		urlStarts      : [ 'https://www.primevideo.com/' ],
+		urlStarts      : allowSites.primevideo,
 		videoSelector  : [ 'video' ],
 		defaultValue   : false,
 		selectorForBtn : [ {

@@ -3,7 +3,9 @@
  *
  * @description Todo.
  */
-import '../styles.css'
+
+// The styles are added from the manifest to avoid conflicts with some websites such as YouTube
+import './style.css'
 
 import Main                                                                        from './main.svelte'
 import { insertedAdjacentPosition, optionsIds, renderComponentOnDOMContentLoaded } from '../lib'
@@ -11,10 +13,13 @@ import { site }                                                                 
 
 try {
 
-	const run = async ()=> {
+	const init =  async ()=> {
 
 		const isAllowed = await site()
-		if( isAllowed )
+
+		if( isAllowed ) {
+
+			console.log( 'pataka' )
 			renderComponentOnDOMContentLoaded( {
 				componentClass : Main,
 				querySelelctor : 'body',
@@ -23,14 +28,24 @@ try {
 					elementID : optionsIds.contentDiv,
 				},
 			} )
+		
+		}
 	
 	}
+	const run = async ()=> {
+		
+		document.addEventListener( 'readystatechange', () => {
+
+			if ( document.readyState === 'complete' ) init()
+			
+		} )
 	
+	}
+
 	run()
 
 }catch( e ){
 
-	console.error( e )
+	console.error( 'Super8 error: ',e )
 
 }
-

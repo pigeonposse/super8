@@ -178,7 +178,8 @@
 		"**/.svelte-kit/*",
 		"**/*.timestamp-*",
 		// "**/__test__/*",
-		"**/*.d.ts"
+		"**/*.d.ts",
+		"packages/exts/*.html"
 	],
 	"overrides": [
 		{

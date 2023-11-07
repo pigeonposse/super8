@@ -51,7 +51,7 @@ if( isDev ) {
 
 	manifestFirefoxConf['browser_specific_settings'] = {
 		gecko : {
-			id : '{8f0f11ab-1cc1-4db9-81a3-251de69235d9}', 
+			id : '{63bba7f4-510b-4478-b401-a2726a9703ba}', 
 		},
 	}
 

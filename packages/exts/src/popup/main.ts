@@ -10,7 +10,7 @@ try {
 			
 	renderComponentOnDOMContentLoaded( {
 		componentClass : Popup,
-		querySelelctor : '#app',
+		querySelelctor : '#pp-s8-content',
 	} )
 
 }catch( e ){

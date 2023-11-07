@@ -11,7 +11,7 @@
   },
   "packageManager": "pnpm@8.10.0",
   "extra": {
-    "productName": "Super 8",
+    "productName": "Super8",
     "docsUrl": "https://docs.super8.pigeonposse.com",
     "socialLinks": [
       {
@@ -29,12 +29,12 @@
     ],
     "store": {
       "chrome": {
-        "url": "https://chrome.google.com/webstore/detail/stylegpt/khoggafmiibmeihpkpbkllkkdfhmokoj",
-        "id": "khoggafmiibmeihpkpbkllkkdfhmokoj"
+        "url": "https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd",
+        "id": "aejkinmllndkgoodkfbhfkffnebmibkd"
       },
       "mozilla": {
         "url": "https://addons.mozilla.org/es/firefox/addon/stylegpt/",
-        "id": "{8f0f11ab-1cc1-4db9-81a3-251de69235d9}"
+        "id": "{63bba7f4-510b-4478-b401-a2726a9703ba}"
       },
       "wpPlugin": {
         "url": "https://es.wordpress.org/plugins/fake-admin/"
@@ -107,16 +107,18 @@
     "exts": "pnpm --filter exts $@",
     "web": "pnpm --filter web $@",
     "dev-info": "md docs/dev-info.md",
-    "lint": "pnpm eslint .",
-    "test": "pnpm core test && pnpm web test",
-    "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check",
+    "dev-exts": "turbo dev --filter=core --filter=exts",
     "dev-web": "turbo dev --filter=core --filter=web --filter=docs",
+    "build-exts": "turbo build --filter=core --filter=exts",
     "build-web": "turbo build --filter=core --filter=web --filter=docs",
     "push-main": "git add . && pnpm cm && git push -f origin main",
     "push-dev": "git add . && pnpm cm && git push -f origin development",
     "publish-npm": "turbo run build lint test --filter=core --filter=core-react && changeset version && changeset publish",
     "cm": "cz",
-    "prepare": "husky install .dev/husky"
+    "prepare": "husky install .dev/husky",
+    "lint": "pnpm eslint .",
+    "test": "pnpm core test && pnpm web test",
+    "svelte-check": "pnpm core check && pnpm web check && pnpm run exts check"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

@@ -26,7 +26,7 @@ try {
 		distChrome  : `dist/${browsers.chrome}`,
 		distFirefox : `dist/${browsers.firefox}`,
 	}
-	const getNameZip = n => `${path.distZip}/${n}-${pkgMain.name}-${pkg.version}.zip`
+	const getNameZip = n => `${path.distZip}/${n}-${pkgMain.extra.productName.toLowerCase()}-${pkg.version}.zip`
 
 	if ( !existsSync( path.dist ) ) throw '❌ You need build a distribution code'
 	if ( !existsSync( path.distZip ) ) mkdirSync( path.distZip )
