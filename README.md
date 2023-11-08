@@ -49,15 +49,15 @@ Adds styles to web videos like _iFrames_, _YouTube_ and _Vimeo_ videos, _Netflix
 
 #### 🆕 Available in
 
-- [🧩 Chrome extension](https://chrome.google.com/webstore)
-- [🧩 Firefox extension](https://addons.mozilla.org/es/firefox/addon/super8)
+- [🧩 Chrome extension](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
+- [🧩 Firefox extension](https://addons.mozilla.org/es/firefox/addon/super8/)
 - [🌐 Web](https://super8.pigeonposse.com)
 
 ## 👨‍💻 Development
 
 **Super 8** is an open-source project and its development is open to anyone who wants to participate.
 
-[![Readmore](https://img.shields.io/badge/Read%20more-grey?style=flat-square)](https://docs.super8.pigeonposse.com/development)
+[![Readmore](https://img.shields.io/badge/Read%20more-grey?style=flat-square)](https://docs.super8.pigeonposse.com/dev-getting-started)
 
 ## ☕ Donate
 
