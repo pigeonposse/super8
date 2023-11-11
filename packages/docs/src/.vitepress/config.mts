@@ -13,6 +13,7 @@ import MarkdownItTaskList from 'markdown-it-task-lists'
 
 const isDev = process.env.NODE_ENV !== 'production'
 const srcDir = isDev ? '../../../docs' : './__temp__/docs'
+const repoUrl = json.repository.url.endsWith('/') ? json.repository.url : json.repository.url +'/' ;
 
 export default defineConfig({
   lang: 'en',
@@ -41,7 +42,7 @@ export default defineConfig({
     logo: '/logo.png', // use first "/" for child routes
     siteTitle: false,
     editLink: {
-      pattern: join(json.repository.url,'edit/main/docs/:path')
+      pattern: repoUrl+ 'edit/main/docs/:path',
     },
     outline: 'deep',
     search: {
@@ -94,8 +95,22 @@ export default defineConfig({
       {
         text: 'Guide',
         items: [
-          { text: 'Filters', link: '/guide-filters' },
-          { text: 'Presets', link: '/guide-presets' },
+          { 
+            text: 'Filters', 
+            link: '/guide-filters' 
+          },
+          { 
+            text: 'Presets', 
+            link: '/guide-presets' 
+          },
+          { 
+            text: 'Extension', 
+            link: '/guide-extension'
+          },
+          { 
+            text: 'Wordpress plugin', 
+            link: '/guide-wordpress'
+          },
         ]
       },
       {
@@ -116,7 +131,7 @@ export default defineConfig({
         text: 'About',
         items: [
           { text: 'History', link: '/history' },
-          { text: 'License', link: join(json.repository.url, 'blob/main/LICENSE' ) },
+          { text: 'License', link: repoUrl+ 'blob/main/LICENSE'},
           { text: 'More projects', link: json.extra.collective.web },
         ]
       }

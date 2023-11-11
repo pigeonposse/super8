@@ -1,4 +1,4 @@
-# Filters
+# Super8 Filters Guide
 
 ## 🎞️ Filters
 

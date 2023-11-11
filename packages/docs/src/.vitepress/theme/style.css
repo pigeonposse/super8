@@ -119,6 +119,12 @@
 .main img {
   border-radius: 10px;
 }
+.main .history-images p {
+  display: flex;
+}
+.main .history-images p a {
+  margin: auto 5px;
+}
 .dark {
     --vp-c-bg: #0d0d0d;
     --vp-c-bg-alt: #141414;

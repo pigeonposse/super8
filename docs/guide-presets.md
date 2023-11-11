@@ -1,4 +1,4 @@
-# Presets
+# Super8 Presets Guide
 
 Presets are **Super8** style configurations.
 

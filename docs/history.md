@@ -1,9 +1,12 @@
-# History of Super8 by _PigeonPosse_
+# History of Super8
 
-- **Written by:** _[Angelo](https://github.com/AngelEspejo)_
-- **Language:** _Spanish_
-- **Date:** _11/28/2023_
-- **Version:** _1.0.0_
+A project by _PigeonPosse_
+
+|   **Written by:**    |          [Angelo](https://github.com/AngelEspejo)           |
+|-------|---------------------|
+| **Language:** | Spanish |
+| **Date:** | 11/28/2023 |
+| **Version:** | 1.0.0 |
 
 ## La idea
 
@@ -43,3 +46,10 @@ La versión del plugin de _WordPress_ se lanzará próximamente, ¡pero se lanza
 Este proyecto nos enseñó muchas lecciones, nos mostró errores que no cometeremos de nuevo y errores recurrentes que estaremos preparados para gestionar de manera más efectiva.
 
 Esta es la historia de **Super8**. ¡Lo más importante es que finalmente está listo para todxs! 🚀🎉
+
+<div class="history-images" style="display: flex; justify-content: flex-end;">
+
+[![Angelo LOGO](https://github.com/angelespejo.png?size=72)](https://pigeonposse.com)
+[![PIGEONPOSE LOGO](https://github.com/PigeonPosse.png?size=72)](https://pigeonposse.com)
+
+</div>

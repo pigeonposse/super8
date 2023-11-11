@@ -1,4 +1,4 @@
-# Getting started
+# Getting started with Super8
 
 ## 🌐 Web version
 
