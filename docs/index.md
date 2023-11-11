@@ -1,5 +1,7 @@
 # Welcome to Super 8 Documentation 🎥🎨
 
+[![Banner](images/banner.png)](<https://super8.pigeonposse.com>)
+
 ## What is Super8?
 
 What exactly is **Super8**? Our tool gives you the ability to adjust a wide variety of visual characteristics, such as contrast, saturation, color temperature, and much more. In other words, you can customize the appearance of website elements to suit your personal tastes and preferences.

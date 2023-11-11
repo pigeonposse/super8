@@ -2,6 +2,8 @@
 
 Presets are **Super8** style configurations.
 
+[![DEMO Presets](images/demo-presets.gif)](https://super8.pigeonposse.com)
+
 ## 📚 Types of Presets
 
 There are two types of presets:
@@ -15,6 +17,8 @@ Presets can be created in several ways:
 
 - You can add the configuration directly in the 'Add Presets' section in 'More.'
 - Create a configuration and click the 'Add Preset' button.
+
+[![DEMO Add Presets](images/demo-add-presets.gif)](https://super8.pigeonposse.com)
 
 ## 🗑️ Delete a Preset
 

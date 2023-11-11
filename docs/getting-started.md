@@ -12,8 +12,8 @@ Our web version is easy to use and works in any modern browser. Just visit our w
 
 You can download the extension in your favorite browsers. It is available in Chrome and Firefox.
 
-- [Chrome](https://github.com/pigeonposse/super8)
-- [Firefox](https://github.com/pigeonposse/super8)
+- [Chrome](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibk)
+- [Firefox](https://addons.mozilla.org/es/firefox/addon/super8/)
 
 Once you have installed our extension, you will be able to adjust the styles of the videos according to your personal preferences. This allows you to enjoy your favorite videos online with a fully customized look.
 
@@ -42,10 +42,10 @@ Or you can copy this code to your terminal to automatically download.
 
 ## 🔌 WP plugin
 
-::: info We're excited to announce that a new WordPress plugin is on the horizon. 🚀
+::: info We're excited to announce that a new **WordPress** plugin is on the horizon. 🚀
 :::
 
-Stay tuned for their next release and get ready to boost your WordPress experience.
+Stay tuned for their next release and get ready to boost your **WordPress** experience.
 
 We can't wait to share it with you! ✨
 
