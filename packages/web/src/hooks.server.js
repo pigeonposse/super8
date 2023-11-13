@@ -4,8 +4,10 @@
  * @description TODO.
  */
 // @ts-nocheck
-import { defaultLocale, loadTranslations, locales } from '$lib/i18n'
-import { building }                                 from '$app/environment'
+import {
+	defaultLocale, loadTranslations, locales, 
+} from '$lib/i18n'
+import { building } from '$app/environment'
 
 const routeRegex = new RegExp( /^\/[^.]*([?#].*)?$/ )
 
@@ -37,7 +39,11 @@ export const handle = async ( { event, resolve } ) => {
 			const localeRegex = new RegExp( `^/${locale}` )
 			const location    = `${pathname}`.replace( localeRegex, '' ) || '/'
 
-			return new Response( undefined, { headers: { location }, status: 301 } )
+			return new Response( undefined, {
+				headers : {
+					location, 
+				}, status : 301, 
+			} )
 
 			// If route locale is not supported
 		
@@ -81,12 +87,20 @@ export const handle = async ( { event, resolve } ) => {
 			}
 
 			// 301 redirect
-			return new Response( undefined, { headers: { 'location': `/${locale}${pathname}` }, status: 301 } )
+			return new Response( undefined, {
+				headers : {
+					'location' : `/${locale}${pathname}`, 
+				}, status : 301, 
+			} )
 		
 		}
 
 		// Add html `lang` attribute
-		return resolve( { ...event, locals: { lang: locale } }, {
+		return resolve( {
+			...event, locals : {
+				lang : locale, 
+			}, 
+		}, {
 			transformPageChunk : ( { html } ) => html.replace( '%lang%', `${locale}` ),
 		} )
 	

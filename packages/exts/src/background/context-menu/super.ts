@@ -38,7 +38,9 @@ export class ContextMenuSuper extends Super{
 	
 	}
 
-	createMenuSeparator( id: string, content = [ this.contextTypeAction ] ){
+	createMenuSeparator( id: string, content = [
+		this.contextTypeAction, 
+	] ){
 
 		this.contextMenus.create( {
 			id       : id,

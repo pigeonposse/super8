@@ -2,18 +2,21 @@
 /* eslint-disable jsdoc/require-returns */
 /* eslint-disable jsdoc/require-file-overview */
 /* eslint-disable jsdoc/require-param */
+
 /**
- * Todo.
+ * Filters custom store.
  *
- * @description Todo.
+ * @description Define all Filters custom store functions in this file.
  */
 
-import { writable, derived, type Readable, get, type Writable } from 'svelte/store'
-import { filters as dataFilters }                               from '../../data/main'
-import { functs }                                               from '../../../_shared/main'
-import { locales }                                              from '../locales'
-import { sectionFunct }                                         from '../_shared/section'
-import { 
+import {
+	writable, derived, type Readable, get, type Writable, 
+} from 'svelte/store'
+import { filters as dataFilters } from '../../data/main'
+import { functs }                 from '../../../_shared/main'
+import { locales }                from '../locales'
+import { sectionFunct }           from '../_shared/section'
+import {
 	type FilterCustomIds,
 	type IFilterJsonValues, 
 	type IFiltersCustom,
@@ -22,7 +25,6 @@ import {
 	filtersSectionsIds,
 	type IFiltersCustomType,
 	type FiltersCustomToExport, 
-
 } from '../../../types'
 
 const customFuncts = () => {
@@ -41,7 +43,9 @@ const customFuncts = () => {
 
 		for ( const filts of Object.values( values ) ) {
 		
-			if ( filts && filts.value ) res = [ ...res, ...filts.value ]
+			if ( filts && filts.value ) res = [
+				...res, ...filts.value, 
+			]
 
 		}
 
@@ -90,11 +94,17 @@ const customFuncts = () => {
 	 *
 	 * @description Value from data merged with locales store.
 	 */
-	const valuesWithLocales = derived( [ value, locales ], ( [ $value, $locales ] ) => {
+	const valuesWithLocales = derived( [
+		value, locales, 
+	], ( [
+		$value, $locales, 
+	] ) => {
 		
 		const custom = $locales.custom
 
-		for ( const [ key, value ] of Object.entries( $value ) ) {
+		for ( const [
+			key, value, 
+		] of Object.entries( $value ) ) {
 			
 			const customSection = custom[key as keyof typeof custom]
 			const valueSection  = $value[key as keyof IFiltersCustomOpts]
@@ -217,7 +227,11 @@ const customFuncts = () => {
 	 *
 	 * @description Return array of filters.
 	 */
-	const values: Readable<IFiltersCustom> = derived( [ value ], ( [ $value ] ) => {
+	const values: Readable<IFiltersCustom> = derived( [
+		value, 
+	], ( [
+		$value, 
+	] ) => {
 
 		return valuesInArray( $value )
 
@@ -228,7 +242,11 @@ const customFuncts = () => {
 	 *
 	 * @description Return only id and value from values store.
 	 */
-	const objectValues = derived( [ values ], ( [ $values ] ) => {
+	const objectValues = derived( [
+		values, 
+	], ( [
+		$values, 
+	] ) => {
 
 		return valuesToExportInArray( $values )
 
@@ -239,7 +257,11 @@ const customFuncts = () => {
 	 *
 	 * @description Return only id and value from values store.
 	 */
-	const jsonValues = derived( [ objectValues ], ( [ $values ] ) => {
+	const jsonValues = derived( [
+		objectValues, 
+	], ( [
+		$values, 
+	] ) => {
 
 		return functs.objectToJson( $values )
 
@@ -265,7 +287,9 @@ const customFuncts = () => {
 
 		value.update( ( filters: IFiltersCustomOpts ) => {
 
-			for ( const [ key , filterArray ] of Object.entries( filters ) ) {
+			for ( const [
+				key , filterArray, 
+			] of Object.entries( filters ) ) {
 
 				if ( filterArray.value ) {
 
@@ -307,7 +331,11 @@ const customFuncts = () => {
 
 	}
 
-	const valuesNotInDefault = derived( [ objectValues ], ( [ $values ] ) => {
+	const valuesNotInDefault = derived( [
+		objectValues, 
+	], ( [
+		$values, 
+	] ) => {
 
 		const res: { [key in FilterCustomIds]: boolean } = {} as { [key in FilterCustomIds]: boolean }
 		
@@ -339,7 +367,9 @@ const customFuncts = () => {
 
 	const getValueCountBySection = ( id: string, value: { [key in FilterCustomIds]: boolean } ) => {
 
-		return Object.entries( value ).filter( ( [ k, v ] ) => v === true && k.startsWith( id ) ).length
+		return Object.entries( value ).filter( ( [
+			k, v, 
+		] ) => v === true && k.startsWith( id ) ).length
 
 	} 
 	
@@ -363,7 +393,11 @@ const customFuncts = () => {
 	
 	const limit: Writable<number|undefined> = writable( undefined )
 
-	const isBlocked = derived( [ valuesNotInDefaultCount, limit ], ( [ $values, $limit ] ) => {
+	const isBlocked = derived( [
+		valuesNotInDefaultCount, limit, 
+	], ( [
+		$values, $limit, 
+	] ) => {
 
 		if( $limit ) return $values >= $limit
 		return false

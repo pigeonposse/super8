@@ -1,7 +1,7 @@
 {
     "name": {
-      "message": "Super8",
-      "description": "El nombre de mi extensión"
+		"message": "Super8",
+		"description": "El nombre de mi extensión"
     },
     "description": {
       "message": "Agrega estilos a videos de YouTube, Vimeo, Netflix, Amazon, etc.",

@@ -1,5 +1,11 @@
 # @s-8/web
 
+## 0.2.5
+
+### Patch Changes
+
+- add tests and better ci
+
 ## 0.2.4
 
 ### Patch Changes

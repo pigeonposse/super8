@@ -10,9 +10,12 @@ name: Publish
 ###############################################################################
 
 on:
+
   push:
-    tags:
-      - '*'
+    branches:
+        - main
+    paths:
+        - 'packages/exts/package.json'
 
 
 ###############################################################################
@@ -60,8 +63,8 @@ jobs:
 
       - name: Install pkg dependencies
         run: |
-          pnpm install
-          pnpm build
+          pnpm install --no-frozen-lockfile
+          pnpm build:exts
 
 
       #########################################################################
@@ -109,7 +112,7 @@ jobs:
           # uuid is only necessary when updating an existing addon,
           # omitting it will create a new addon
           uuid: '{a2e191e8-b8eb-490b-b282-9f3d2c0332bf}'
-          xpi: packages/exts/dist/comp/firefox-${{ steps.package.outputs.name }}-${{ steps.package.outputs.version }}.zip
+          xpi: packages/exts/dist/comp/firefox-super8-${{ steps.package.outputs.version }}.zip
           manifest: dist/firefox/manifest.json
           # get keys in:
           # https://addons.mozilla.org/en-US/developers/addon/api/key/
@@ -124,10 +127,10 @@ jobs:
       - name: Create Github release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "dist/comp/*.zip"
+          artifacts: "packages/exts/dist/comp/*.zip"
           body: |
-            🧩 View changelog at: https://github.com/pigeonposse/wikipediaplus/blob/main/CHANGELOG.md
-            📜 View license: https://github.com/pigeonposse/wikipediaplus/blob/main/LICENSE
+            🧩 View CHANGELOG at: https://github.com/pigeonposse/super8/packages/exts/blob/main/CHANGELOG.md
+            📜 View LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
 
 
 ############################################################################### 

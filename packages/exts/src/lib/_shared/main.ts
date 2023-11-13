@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Shared functions.
  *
- * @description Todo.
+ * @description File for export shared.
  */
 
 export const getDateString = () => {

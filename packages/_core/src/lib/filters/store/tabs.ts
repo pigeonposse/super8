@@ -1,11 +1,13 @@
 /**
- * Todo.
+ * Filters tabs store.
  *
- * @description Todo.
+ * @description Define all Filters tabs store functions in this file.
  */
 
-import { writable, type Writable } from 'svelte/store'
-import type { ComponentTabs }      from '../../types'
+import {
+	writable, type Writable, 
+} from 'svelte/store'
+import type { ComponentTabs } from '../../types'
 
 const tabsFuncts = () => {
 

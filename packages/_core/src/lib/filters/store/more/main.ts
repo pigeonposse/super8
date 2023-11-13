@@ -1,16 +1,20 @@
 /**
- * Todo.
+ * Filters "more" store.
  *
- * @description Todo.
+ * @description Define all Filters "more" store functions in this file.
  */
 
-import { derived, get, writable, type Writable }                       from 'svelte/store'
-import { allowedFilterTabs, type AddPresetParams, filtersSectionsIds } from '../../../types'
-import { functs }                                                      from '../../../_shared/main'
-import { presets }                                                     from '../presets/main'
-import { tabs }                                                        from '../tabs'
-import { custom }                                                      from '../custom/main'
-import { sectionFunct }                                                from '../_shared/section'
+import {
+	derived, get, writable, type Writable, 
+}                       from 'svelte/store'
+import {
+	allowedFilterTabs, type AddPresetParams, filtersSectionsIds, 
+} from '../../../types'
+import { functs }       from '../../../_shared/main'
+import { presets }      from '../presets/main'
+import { tabs }         from '../tabs'
+import { custom }       from '../custom/main'
+import { sectionFunct } from '../_shared/section'
 
 type AddPresets = {
     name: AddPresetParams['name']

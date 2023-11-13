@@ -1,5 +1,5 @@
 /**
- * Export File.
+ * Export Library File.
  *
  * @description Export all components and functions in package.
  */

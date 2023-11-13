@@ -2,6 +2,8 @@
  * Export fa.
  *
  * @description Export icons.
+ * @see https://www.npmjs.com/package/svelte-fa
+ * @see https://fontawesome.com/search?o=r&m=free
  */
 
 export { default as Fa } from 'svelte-fa'

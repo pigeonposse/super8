@@ -1,12 +1,11 @@
 /**
- * APP.
- *
- * @description App file.
+ * App file.
+ * @description This is the main content for React application.
  */
-
-// import Comp from '../dist/lib/bundle'
-import Comp                                 from './lib/main'
-import { ComponentFilters, componentTypes } from './lib/types'
+import Comp                           from './lib/main'
+import {
+	ComponentFilters, componentTypes, 
+} from './lib/types'
 
 const App = () => {
 
@@ -31,7 +30,9 @@ const App = () => {
 		document     : document,
 		optionsLimit : 5,
 	}
-	const Filters                      = Comp.Filters as React.FC<ComponentFilters>
+	
+	const Filters = Comp.Filters as React.FC<ComponentFilters>
+	
 	return (
 		<>
 			<div>

@@ -56,7 +56,9 @@ export const waitForElement = ( selector: string, callback: () => void ) =>{
 
 		if ( element instanceof Element ) {
 
-			observer.observe( element, { childList: true, subtree: true } )
+			observer.observe( element, {
+				childList : true, subtree : true, 
+			} )
 		
 		}
 	

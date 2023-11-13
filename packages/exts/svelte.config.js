@@ -1,7 +1,7 @@
 /**
- * Vite config.
+ * Svelte config.
  *
- * @description Vite config.
+ * @description Svelte config.
  * @see https://kit.svelte.dev/docs/configuration
  * @see https://github.com/sveltejs/vite-plugin-svelte
  */

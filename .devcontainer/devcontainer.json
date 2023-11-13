@@ -1,5 +1,15 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+/** 
+* *****************************************************************************
+* .devcontainer/devcontainer.json Configuration
+* *****************************************************************************
+*
+* @description Configuration file for a development container in VSCode.
+* This file defines the development environment for your project, including tools, settings, and extensions.
+* @see https://aka.ms/devcontainer.json
+* @see https://github.com/devcontainers/templates/tree/main/src/typescript-node
+*
+* *****************************************************************************
+*/
 {
 	"name": "super-8",
 	"dockerComposeFile": [

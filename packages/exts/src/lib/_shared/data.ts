@@ -1,11 +1,13 @@
 /**
- * Todo.
+ * Data for extension.
  *
- * @description Todo.
+ * @description Data for extension.
  */
 
-import { images, pkg, pkgMain } from '../../man/manifest'
-import { browser }              from './main'
+import {
+	images, pkg, pkgMain, 
+} from '../../man/manifest'
+import { browser } from './main'
 
 export const openOptionsPage = () => browser.runtime.openOptionsPage()
 export const extImagesSrc = images

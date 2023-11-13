@@ -1,14 +1,19 @@
 #!/usr/bin/env ts-node
+
 /**
- * Zip config.
+ * Zip Distribution Files.
  *
- * @description Zip config.
+ * @description This script is used to create zip files for distribution. 
+ *  It checks the existence of the distribution code and zips it for both Chrome and Firefox.
  * @see https://www.npmjs.com/package/zip-a-folder
  */
 
-import { zip }                   from 'zip-a-folder'
-import { existsSync, mkdirSync } from 'node:fs'
-import { createRequire }         from 'node:module'
+import { zip }           from 'zip-a-folder'
+import { createRequire } from 'node:module'
+import {
+	existsSync, 
+	mkdirSync, 
+} from 'node:fs'
 
 const require = createRequire( import.meta.url )
 const pkg     = require( './package.json' )

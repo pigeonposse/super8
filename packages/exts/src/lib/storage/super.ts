@@ -1,26 +1,33 @@
 /**
- * Todo.
+ * Storage Management Super.
  *
- * @description Todo.
+ * @description This module provides utility functions for managing storage 
+ *  and defines storage properties and behaviors.
  */
 
-import { store }                                                                                                                                 from '../_shared/main'
-import { storageIds,storageSetIds, type StorageAppValues, storageGroupsIds, type StorageAppOptionValues, type StorageSetType, type StorageInit } from '../types'
-import { defaultData as allowedSitesData }                                                                                                       from '../../lib/components/allowed-sites/data'
-import { defaultData as filtersStyleData }                                                                                                       from '../../lib/components/filters-config/data'
-import { functs }                                                                                                                                from '@s-8/core'
+import { store }                                                                                                                           from '../_shared/main'
+import {
+	storageIds,storageSetIds, type StorageAppValues, storageGroupsIds, type StorageAppOptionValues, type StorageSetType, type StorageInit, 
+} from '../types'
+import { defaultData as allowedSitesData } from '../../lib/components/allowed-sites/data'
+import { defaultData as filtersStyleData } from '../../lib/components/filters-config/data'
+import { functs }                          from '@s-8/core'
 
 const getOptsDefaultValue = () => {
 
 	const res: StorageInit = {}
     
-	for ( const [ key, value ] of Object.entries( allowedSitesData ) ) {
+	for ( const [
+		key, value, 
+	] of Object.entries( allowedSitesData ) ) {
 
 		res[key] = value.defaultValue
             
 	}
 	
-	for ( const [ _key, _value ] of Object.entries( filtersStyleData ) ) {
+	for ( const [
+		_key, _value, 
+	] of Object.entries( filtersStyleData ) ) {
                 
 		res[_key] = _value.defaultValue
             

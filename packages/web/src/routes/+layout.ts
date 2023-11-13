@@ -3,9 +3,11 @@
  *
  * @description TODO.
  */
-import { addTranslations, setLocale, setRoute } from '$lib/i18n'
-import { styleClass }                           from '$lib'
-import type { LayoutRouteId }                   from './$types.js'
+import {
+	addTranslations, setLocale, setRoute, 
+} from '$lib/i18n'
+import { styleClass }         from '$lib'
+import type { LayoutRouteId } from './$types.js'
 
 // const defaultRoute = 	{
 // 	route : '/',

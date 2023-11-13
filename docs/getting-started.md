@@ -12,7 +12,7 @@ Our web version is easy to use and works in any modern browser. Just visit our w
 
 You can download the extension in your favorite browsers. It is available in Chrome and Firefox.
 
-- [Chrome](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibk)
+- [Chrome](https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
 - [Firefox](https://addons.mozilla.org/es/firefox/addon/super8/)
 
 Once you have installed our extension, you will be able to adjust the styles of the videos according to your personal preferences. This allows you to enjoy your favorite videos online with a fully customized look.

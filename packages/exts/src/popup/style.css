@@ -1,15 +1,16 @@
 /**
- * Super 8 styles.
+ * Super 8 Popup Styles.
  *
- * @description Styles for POPUP part.
+ * @description These are the styles for the Super 8 popup component.
  */
  
-/* tailwind */
+/* Include Tailwind CSS styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Set minimum dimensions for the body */
 body {
-    min-width:360px;
+    min-width: 360px;
     min-height: 600px;
 }

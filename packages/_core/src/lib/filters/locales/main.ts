@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Filters locales.
  *
- * @description Todo.
+ * @description Define all filters locales in this file.
  */
 import { filterCustomIds } from '../../types'
 

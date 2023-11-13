@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Color shared functions.
  *
- * @description Todo.
+ * @description File for set color shared functions.
  */
 
 import { colorList } from './color-list'
@@ -12,7 +12,9 @@ const _getRandomKeyValue = ( obj: ( { [key: string]: unknown } ) ) => {
 	const keys        = Object.keys( obj )
 	const randomKey   = keys[Math.floor( Math.random() * keys.length )]
 	const randomValue = obj[randomKey]
-	return { key: randomKey, value: randomValue }
+	return {
+		key : randomKey, value : randomValue, 
+	}
 
 }
 

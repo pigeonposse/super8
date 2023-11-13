@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Main Options Script.
  *
- * @description Todo.
+ * @description This script renders the main options component on DOMContentLoaded.
  */
 import { renderComponentOnDOMContentLoaded } from '../lib'
 import Options                               from './main.svelte'

@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.0.4
+
+### Patch Changes
+
+- add tests and better ci
+
 ## 0.0.3
 
 ### Patch Changes

@@ -1,12 +1,16 @@
 /**
- * Todo.
+ * Filter config data.
  *
- * @description Todo.
+ * @description This file defines Filter config data.
  */
 
-import { componentPositions, componentTypes }                          from '@s-8/core'
-import { optionsIds, type ComponentOptionsRecursive, optBtnStylesIds } from '../../types'
-import { browser }                                                     from '../../_shared/main'
+import {
+	componentPositions, componentTypes, 
+}                          from '@s-8/core'
+import {
+	optionsIds, type ComponentOptionsRecursive, optBtnStylesIds, 
+} from '../../types'
+import { browser } from '../../_shared/main'
 
 export const defaultData = {
 	[optionsIds.filtersSidebar.display] : {

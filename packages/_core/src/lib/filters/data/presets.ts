@@ -1,10 +1,12 @@
 /**
- * DEFINE DEFAULTS.
+ * DEFINE DEFAULTS PRESETS.
  *
- * @description Function to return defaults.
+ * @description Function to return defaults PRESETS.
  */
 
-import { filterCustomIds, type IFiltersPresets } from '../../types'
+import {
+	filterCustomIds, type IFiltersPresets, 
+} from '../../types'
 
 export const presets: IFiltersPresets = [
 	{

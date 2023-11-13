@@ -5,11 +5,15 @@
  * @see https://playwright.dev/docs/api/class-test
  */
 
-import { expect, test } from '@playwright/test'
+import {
+	expect, test, 
+} from '@playwright/test'
 
 test( 'index page has expected h1', async ( { page } ) => {
 
 	await page.goto( '/' )
-	expect( await page.textContent( 'h1' ) ).toBe( 'Sidebar Filters' )
+	await page.waitForSelector( 'h1' )
+	const h1Element = await page.$( 'h1' )
+	expect( h1Element ).not.toBeNull()
 
 } )

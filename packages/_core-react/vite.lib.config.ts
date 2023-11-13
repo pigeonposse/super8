@@ -14,18 +14,26 @@ export default defineConfig( {
 	plugins : [
 		react(),
 		svelte(),
-		dts( { include: [ 'src/lib' ] } ),
+		dts( {
+			include : [
+				'src/lib', 
+			], 
+		} ),
 	],
 	build : {
 		outDir : 'dist/lib',
 		lib    : {
-			entry    : resolve( __dirname, 'src/lib/main.ts' ),
-			formats  : [ 'es', 'cjs' ],
+			entry   : resolve( __dirname, 'src/lib/main.ts' ),
+			formats : [
+				'es', 'cjs', 
+			],
 			name     : 'bundle',
 			fileName : 'bundle',
 		},
 		rollupOptions : {
-			external : [ 'react', 'react/jsx-runtime' ],
+			external : [
+				'react', 'react/jsx-runtime', 
+			],
 		},
 	},
 } )

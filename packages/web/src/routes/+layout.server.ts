@@ -4,7 +4,9 @@
  * @description TODO.
  */
 
-import { loadTranslations, translations } from '$lib/i18n'
+import {
+	loadTranslations, translations, 
+} from '$lib/i18n'
 
 export const load = async ( { url, locals } ) => {
 
@@ -17,6 +19,10 @@ export const load = async ( { url, locals } ) => {
 
 	await loadTranslations( lang, route )
 
-	return { i18n: { route, lang }, translations: translations.get() }
+	return {
+		i18n : {
+			route, lang, 
+		}, translations : translations.get(), 
+	}
 
 }

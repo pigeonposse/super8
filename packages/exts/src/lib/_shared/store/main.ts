@@ -34,7 +34,9 @@ const get = async <Response>( key: string | null ): Promise<Response> => {
 
 const writeToStorage = <Type>( key: string, data: Type ) => {
 
-	browser.storage.sync.set( { [key]: data } )
+	browser.storage.sync.set( {
+		[key] : data, 
+	} )
 
 }
 

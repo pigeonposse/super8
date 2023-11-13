@@ -1,5 +1,5 @@
 ###############################################################################
-# DEPLOY WEBS TO CLOUDFLARE
+# PUBLISH CORE IN NPM 
 ###############################################################################
 
 name: Deploy webs
@@ -10,9 +10,14 @@ name: Deploy webs
 ###############################################################################
 
 on:
+  
     push:
-      branches:
-        - main
+        branches:
+            - main
+        paths:
+            - 'packages/core/package.json'
+            - 'packages/core-react/package.json'
+
 
 ###############################################################################
 # JOBS
@@ -20,17 +25,14 @@ on:
 
 jobs:
 
-    deploy:
-
-        name: Deploy SUPER8 webs
+    build:
+  
+        name: Publish core
         runs-on: ubuntu-latest
-        permissions:
-            contents: read
-            deployments: write
 
-        #######################################################################
+        ###########################################################################
         # STEPS
-        #######################################################################
+        ###########################################################################
 
         steps:
 
@@ -53,31 +55,18 @@ jobs:
             - name: 👨🏻‍💻 Install pkg dependencies
               run: |
                 pnpm install --no-frozen-lockfile
-                pnpm build-web
-            
+                pnpm build:core
 
             ###################################################################
-            # INIT & BUILD PKG
+            # PUBLISH
             ###################################################################
 
-            - name: 🌥 Deploy WEB in cloudflare pages
-              uses: cloudflare/pages-action@v1
-              with:
-                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-                branch: main
-                projectName: "super8"
-                directory: 'packages/web/.svelte-kit/cloudflare'
-                wranglerVersion: '3'
-
-            - name: 🌥 Deploy DOCS in cloudflare pages
-              uses: cloudflare/pages-action@v1
-              with:
-                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-                branch: main
-                projectName: "super8-docs"
-                directory: 'packages/docs/dist'
-                wranglerVersion: '3'
+            - name: Publish to npm
+              id: changesets
+              uses: changesets/action@v1
+              # with:
+              #   publish: pnpm release:core
+              env:
+                GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+                NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+  

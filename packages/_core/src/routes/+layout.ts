@@ -3,8 +3,10 @@
  *
  * @description TODO.
  */
-import { componentTypes, type ComponentFilters } from '$lib'
-import type { LayoutRouteId }                    from './$types.js'
+import {
+	componentTypes, type ComponentFilters, 
+} from '$lib'
+import type { LayoutRouteId } from './$types.js'
 
 const defaultRoute = 	{
 	route : '/',

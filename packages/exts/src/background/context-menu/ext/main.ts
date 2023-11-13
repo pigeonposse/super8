@@ -11,7 +11,9 @@ export class ContextMenuExt extends ContextMenuSuper {
 	#values(){
 
 		const id       = this.extensionId
-		const contexts = [ this.contextTypeAction ]
+		const contexts = [
+			this.contextTypeAction, 
+		]
 		
 		return [
 			{
@@ -71,11 +73,17 @@ export class ContextMenuExt extends ContextMenuSuper {
 			const createTabs = this.browser.tabs.create
 		
 			if ( info.menuItemId === this.extensionId + '_issues' )
-				createTabs( { url: this.data.extRepoBugsUrl } )
+				createTabs( {
+					url : this.data.extRepoBugsUrl, 
+				} )
 			if ( info.menuItemId === this.extensionId + '_contribute' )
-				createTabs( { url: this.data.extRepoUrl } )
+				createTabs( {
+					url : this.data.extRepoUrl, 
+				} )
 			if ( info.menuItemId === this.extensionId + '_reviews' )
-				createTabs( { url: this.data.extStoreUrl } )
+				createTabs( {
+					url : this.data.extStoreUrl, 
+				} )
 
 		} )
 	

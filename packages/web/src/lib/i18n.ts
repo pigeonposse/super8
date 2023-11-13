@@ -19,7 +19,9 @@ const langLoaderFunct = ( langKey: string ) => {
 		{
 			locale : langKey,
 			key    : 'home',
-			routes : [ '', '/' ],
+			routes : [
+				'', '/', 
+			],
 			loader : async () => ( await import( `../_locales/${langKey}/home.json` ) ).default,
 		},
 		// {
@@ -38,9 +40,15 @@ const LangLoaders     = langLoaderFunct( 'en' ).concat(
 
 const config = ( {
 	translations : {
-		en : { lang },
-		es : { lang },
-		ca : { lang },
+		en : {
+			lang, 
+		},
+		es : {
+			lang, 
+		},
+		ca : {
+			lang, 
+		},
 	},
 	loaders : LangLoaders,
 } )

@@ -1,3 +1,13 @@
+# #############################################################################
+# Dockerfile
+# #############################################################################
+#
+# @description Dockerfile for building a customized development container.
+# This file contains instructions to create an image that includes development tools, dependencies, and settings.
+# @see https://docs.docker.com/engine/reference/builder/
+#
+# #############################################################################
+
 # ADD ALPINE & NODE
 FROM node:21.1.0-alpine3.18
 

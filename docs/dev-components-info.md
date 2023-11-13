@@ -2,7 +2,7 @@
 
 The core of Super8 is built using the Svelte JavaScript framework. Here's a list of all the components and their properties for Super8 developers.
 
-> 19 components exported from @s-8/core@0.0.3.
+> 19 components exported from @s-8/core@0.0.4.
 
 ## Components
 

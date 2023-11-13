@@ -3,9 +3,13 @@
  *
  * @description Todo.
  */
-import type { IFilterJsonValues, IFiltersPresets } from '@s-8/core'
-import { persisted }                               from 'svelte-persisted-store'
-import { readable, writable, type Writable }       from 'svelte/store'
+import type {
+	IFilterJsonValues, IFiltersPresets, 
+} from '@s-8/core'
+import { persisted }                   from 'svelte-persisted-store'
+import {
+	readable, writable, type Writable, 
+}       from 'svelte/store'
 
 export const srcIframe = persisted( 's8-iframe-src','https://www.youtube.com/embed/wdTo_Kihcyw?si=ft5lmO6GP3GXi6e_' )
 export const filtersValue: Writable<IFilterJsonValues | undefined> = persisted( 's8-filters-value', undefined )

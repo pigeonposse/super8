@@ -1,22 +1,27 @@
 {
-  "name": "@s-8/web",
-  "version": "0.2.4",
-  "private": true,
-  "description": "Super8 Web Page.",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "rimraf dist && vite build && vite preview --host",
-    "coverage": "browserslist --coverage",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
-  },
-  "devDependencies": {
-    "@s-8/core": "0.0.3",
-    "@sveltejs/adapter-cloudflare": "^2.3.3",
-    "flowbite": "^1.8.1",
-    "flowbite-svelte": "^0.39.3",
-    "svelte-persisted-store": "^0.7.0",
-    "sveltekit-i18n": "^2.4.2"
-  }
+	"name": "@s-8/web",
+	"version": "0.2.5",
+	"private": true,
+	"description": "Super8 Web Page.",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"coverage": "browserslist --coverage",
+		"test": "playwright test",
+		"lint": "run-p lint:*",
+		"lint:js": "pnpm eslint .",
+		"lint:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json $@",
+		"lint-watch": "run-p lint-watch:*",
+		"lint-watch:svelte": "pnpm lint:svelte --watch"
+	},
+	"devDependencies": {
+		"@s-8/core": "0.0.4",
+		"@sveltejs/adapter-cloudflare": "^2.3.3",
+		"flowbite": "^1.8.1",
+		"flowbite-svelte": "^0.39.3",
+		"svelte-persisted-store": "^0.7.0",
+		"sveltekit-i18n": "^2.4.2"
+	}
 }

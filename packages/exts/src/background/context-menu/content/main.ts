@@ -4,8 +4,12 @@
  * @description Todo.
  */
 
-import { getDateString, messagesIds } from '../../../lib'
-import { getAllUrlPatterns, site }    from '../../../lib/components/allowed-sites/functs'
+import {
+	getDateString, messagesIds, 
+} from '../../../lib'
+import {
+	getAllUrlPatterns, site, 
+}    from '../../../lib/components/allowed-sites/functs'
 
 import { ContextMenuSuper } from '../super'
 
@@ -13,7 +17,9 @@ export class ContextMenuContent extends ContextMenuSuper {
 	
 	#values(){
 
-		const contexts = [ 'page', 'selection' ]
+		const contexts = [
+			'page', 'selection', 
+		]
 		
 		return [
 			{
@@ -37,9 +43,13 @@ export class ContextMenuContent extends ContextMenuSuper {
 				const siteData = await site( tab.url, true )
 	
 				if ( siteData?.isAllowed ) 
-					this.contextMenus.update( this.extensionPageId, { enabled: true } )
+					this.contextMenus.update( this.extensionPageId, {
+						enabled : true, 
+					} )
 				else 
-					this.contextMenus.update( this.extensionPageId, { enabled: false } )
+					this.contextMenus.update( this.extensionPageId, {
+						enabled : false, 
+					} )
 
 			}
 		
@@ -49,7 +59,9 @@ export class ContextMenuContent extends ContextMenuSuper {
 
 			if( tab && 'id' in tab && typeof tab.id !== 'undefined' ) {
 
-				this.browser.tabs.sendMessage( tab.id, { type: messagesIds.activeFilters, data: true } )  
+				this.browser.tabs.sendMessage( tab.id, {
+					type : messagesIds.activeFilters, data : true, 
+				} )  
 				this.browser.runtime.sendMessage( {
 					type : messagesIds.log,
 					data : {

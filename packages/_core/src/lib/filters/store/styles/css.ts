@@ -4,7 +4,9 @@
  * @description Class where filter styles are modified to CSS filters and added to an HTML style tag.
  */
 
-import { filterCustomIds, filtersSectionsIds, type InputRangeAttrs, type AddStylesConstructorParams } from '../../../types'
+import {
+	filterCustomIds, filtersSectionsIds, type InputRangeAttrs, type AddStylesConstructorParams, 
+} from '../../../types'
 
 export class StylesCSS {
 	

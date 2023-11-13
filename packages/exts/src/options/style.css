@@ -1,10 +1,10 @@
 /**
- * Super 8 styles.
+ * Super 8 Options Styles.
  *
- * @description Styles for options part.
+ * @description These are the styles for the Super 8 options component.
  */
  
-/* tailwind */
+/* Include Tailwind CSS styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Filters store file.
  *
- * @description Todo.
+ * @description Export all filters store functions.
  */
 
 import { custom }  from './custom/main'

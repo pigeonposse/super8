@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Filters active store.
  *
- * @description Todo.
+ * @description Define all Filters active store functions in this file.
  */
 
 import { writable } from 'svelte/store'

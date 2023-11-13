@@ -1,7 +1,7 @@
 /**
- * Tailwind config.
+ * Postcss config.
  *
- * @description Tailwind config.
+ * @description Postcss config.
  * @see https://tailwindcss.com/docs/
  * @see https://postcss.org/docs/
  * @see https://github.com/RadValentin/postcss-prefix-selector

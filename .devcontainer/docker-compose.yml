@@ -1,10 +1,24 @@
+# #############################################################################
+# Docker Compose Configuration
+# #############################################################################
+#
+# @description Docker Compose configuration file for a development environment.
+# This file defines the services, settings, and volumes for your development container.
+# @see https://docs.docker.com/compose/
+#
+# #############################################################################
+
 version: '3'
+
 services:
+
   super8-dev-env:
+
     build: .
     container_name: super8-dev-env
     restart: always
     volumes:
           - ..:/workspaces:cached
-    # Overrides default command so things don't shut down after the process ends.
+    # Overrides the default command to prevent services from shutting down.
+    # This command keeps the container running.
     command: /bin/sh -c "while sleep 1000; do :; done"

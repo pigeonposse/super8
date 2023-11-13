@@ -1,12 +1,18 @@
 /**
- * Todo.
+ * Default Filter data.
  *
- * @description Todo.
+ * @description This file defines default filter options and button styles for the application.
  */
-
-import { componentPositions, componentTypes, type ComponentFilters } from '@s-8/core'
-import { browser }                                                   from '../../_shared/main'
-import { optBtnStylesIds, type BtnStylesClasses }                    from '../../types'
+import {
+	optBtnStylesIds, 
+	type BtnStylesClasses, 
+}                    from '../../types'
+import {
+	componentPositions,
+	componentTypes, 
+	type ComponentFilters,
+} from '@s-8/core'
+import { browser } from '../../_shared/main'
 
 const filterOpts: Partial<ComponentFilters> = {
 	btn : {

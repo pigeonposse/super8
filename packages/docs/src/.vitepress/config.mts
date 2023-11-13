@@ -121,6 +121,7 @@ export default defineConfig({
             text: 'Development',
             items: [
               { text: 'Getting Started', link: '/dev-getting-started' },
+			  { text: 'Information', link: '/dev-info' },
               { text: 'Core components', link: '/dev-components-info' },
               { text: 'Todo', link: '/todo/v1' },
             ]

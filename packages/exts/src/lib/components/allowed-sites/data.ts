@@ -1,82 +1,113 @@
 /**
- * Todo.
+ * Options Data for Allowed Sites.
  *
- * @description Todo.
+ * @description This module defines default data for 'allowed sites' options and 
+ *  the component structure for the options page.
  */
 
-import { componentTypes }                                                                          from '@s-8/core'
-import { optionsIds, type AllowedSites, type ComponentOptionsRecursive, insertedAdjacentPosition } from '../../types'
-import { browser }                                                                                 from '../../_shared/browser/main'
-import { allowSites }                                                                              from '../../../man/manifest'
+import { componentTypes }                                                                    from '@s-8/core'
+import {
+	optionsIds, type AllowedSites, type ComponentOptionsRecursive, insertedAdjacentPosition, 
+} from '../../types'
+import { browser }    from '../../_shared/browser/main'
+import { allowSites } from '../../../man/manifest'
 
 export const defaultData: AllowedSites = {
 	[optionsIds.allowSites.youtube] : {
-		urlStarts      : allowSites.youtube,
+		urlStarts     : allowSites.youtube,
 		// CHECKED
-		videoSelector  : [ 'video' ],
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : true,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterbegin,
-			query    : '.ytp-right-controls',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterbegin,
+				query    : '.ytp-right-controls',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.vimeo] : {
-		urlStarts      : allowSites.vimeo,
+		urlStarts     : allowSites.vimeo,
 		// CHECKED but in home page multiple videos are with filters, maybe is not ok for user (?)
-		videoSelector  : [ 'video' ],
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : true,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterend,
-			query    : 'video',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterend,
+				query    : 'video',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.twitch] : {
-		urlStarts      : allowSites.twitch,
+		urlStarts     : allowSites.twitch,
 		// CHECKED
-		videoSelector  : [ 'video' ],
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : false,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterbegin,
-			query    : '.player-controls__right-control-group',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterbegin,
+				query    : '.player-controls__right-control-group',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.filmin] : {
-		urlStarts      : allowSites.filmin,
+		urlStarts     : allowSites.filmin,
 		// HALF CHECKED 
-		videoSelector  : [ 'video' ],
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : false,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterend,
-			query    : 'video',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterend,
+				query    : 'video',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.disney] : {
-		urlStarts      : allowSites.disney,
+		urlStarts     : allowSites.disney,
 		// HALF CHECKED because the element video exist but is not tested
-		videoSelector  : [ 'video' ],
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : false,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterend,
-			query    : 'video',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterend,
+				query    : 'video',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.netflix] : {
-		urlStarts      : allowSites.netflix,
-		videoSelector  : [ 'video' ],
+		urlStarts     : allowSites.netflix,
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : false,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterend,
-			query    : 'video',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterend,
+				query    : 'video',
+			}, 
+		],
 	},
 	[optionsIds.allowSites.primevideo] : {
-		urlStarts      : allowSites.primevideo,
-		videoSelector  : [ 'video' ],
+		urlStarts     : allowSites.primevideo,
+		videoSelector : [
+			'video', 
+		],
 		defaultValue   : false,
-		selectorForBtn : [ {
-			position : insertedAdjacentPosition.afterend,
-			query    : 'video',
-		} ],
+		selectorForBtn : [
+			{
+				position : insertedAdjacentPosition.afterend,
+				query    : 'video',
+			}, 
+		],
 	},
 }
 

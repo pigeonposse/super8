@@ -1,10 +1,12 @@
 /**
- * DEFINE DEFAULT CUSTOM FILTERS.
+ * DEFINE DEFAULT BORDER FILTERS.
  *
  * @description Function to return default filters.
  */
 
-import { filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom } from '../../types'
+import {
+	filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom, 
+} from '../../types'
 
 export const customBorder: IFiltersCustom = [
 	{

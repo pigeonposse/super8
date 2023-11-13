@@ -1,12 +1,13 @@
 /**
- * Todo.
+ * Functions for Allowed Sites.
  *
- * @description Todo.
+ * @description This module defines functions for 'allowed sites' options.
  */
-
-import { defaultData }                   from './data'
-import { storageIds, type OptionsStore } from '../../types'
-import { storage }                       from '../../storage/main'
+import { defaultData }             from './data'
+import { storage }                 from '../../storage/main'
+import {
+	storageIds, type OptionsStore, 
+} from '../../types'
 
 export const getAllUrlPatterns = () => {
 
@@ -43,7 +44,9 @@ export const site = async ( url: string | undefined = undefined, back = false ) 
 		
 		}
 	
-		for ( const [ key, value ] of Object.entries( defaultData ) ) {
+		for ( const [
+			key, value, 
+		] of Object.entries( defaultData ) ) {
 	
 			if( isAllowedOptionChecked( key as keyof typeof defaultData ) ) {
 	

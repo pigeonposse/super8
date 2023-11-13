@@ -20,10 +20,10 @@ const config = {
 			matchUtilities(
 				{
 					'text-shadow' : value => ( {
-						textShadow : value,
-					} ),
+						textShadow : value, 
+					} ), 
 				},
-				{ 
+				{
 					values : theme( 'textShadow' ), 
 				},
 			)

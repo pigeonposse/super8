@@ -1,10 +1,14 @@
 /**
- * Vite config.
+ * Copy Documentation File.
  *
- * @description Vite config.
+ * @description This script is used to copy documentation files from one directory to another. 
+ *  It can be configured to remove the destination folder before copying.
  */
-import { promises as fsPromises, constants } from 'fs'
-import path                                  from 'path'
+
+import {
+	promises as fsPromises, constants, 
+} from 'fs'
+import path from 'path'
 
 const args       = process.argv.slice( 2 )
 const removeDest = args.includes( '--rm-dest' )
@@ -14,7 +18,9 @@ const copyFolder = async ( sourceDir, targetDir ) => {
 	try {
 
 		// Create the target directory if it doesn't exist
-		await fsPromises.mkdir( targetDir, { recursive: true } )
+		await fsPromises.mkdir( targetDir, {
+			recursive : true, 
+		} )
 
 		const files = await fsPromises.readdir( sourceDir )
 
@@ -52,7 +58,9 @@ const rmDest = async route => {
 	try {
 
 		await fsPromises.access( route, constants.F_OK )
-		await fsPromises.rm( route, { recursive: true } )
+		await fsPromises.rm( route, {
+			recursive : true, 
+		} )
 		
 	} catch ( e ) {
 

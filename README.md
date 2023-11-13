@@ -34,10 +34,15 @@ FOR PIGEONPOSSE.COM
 
 ![SUPER8 HEADER](docs/images/banner.png)
 
-[![License](https://img.shields.io/github/license/pigeon-posse/pigeonsh?color=blue&label=License&style=flat-square)](https://npmjs.com/package/super8)
-[![Web](https://img.shields.io/badge/Web-grey?style=flat-square)](https://super8.pigeonposse.com/)
+[![Web](https://img.shields.io/badge/Collective%20Web-grey?style=flat-square)](https://super8.pigeonposse.com/)
 [![About us](https://img.shields.io/badge/About-us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate)
+
+[![License](https://img.shields.io/github/license/pigeon-posse/pigeonsh?label=License&style=flat-square)](https://npmjs.com/package/super8)
+[![Core](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2F_core%2Fpackage.json&style=flat-square&label=Core&color=blue)](https://super8.pigeonposse.com)
+[![super8 Web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fweb%2Fpackage.json&style=flat-square&label=S8%20web&color=blue)](https://super8.pigeonposse.com)
+[![CHROME](https://img.shields.io/chrome-web-store/v/aejkinmllndkgoodkfbhfkffnebmibkd?color=blue&style=flat-square)](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
+[![MOZILLA](https://img.shields.io/amo/v/{63bba7f4-510b-4478-b401-a2726a9703ba}?color=blue&style=flat-square)](https://addons.mozilla.org/es/firefox/addon/super8/)
 
 ## 🗒 Description
 
@@ -46,6 +51,8 @@ FOR PIGEONPOSSE.COM
 ### What does **Super8** do?
 
 Adds styles to web videos like _iFrames_, _YouTube_ and _Vimeo_ videos, _Netflix_, _Amazon_, etc.
+
+- [Documentation](https://docs.super8.pigeonposse.com)
 
 #### 🆕 Available in
 
@@ -82,7 +89,7 @@ _PigeonPosse_ is a ✨ **code development collective** ✨ focused on creating p
 |                                                                                    | Name         | Role         | Contribution | GitHub                                         |
 | ---------------------------------------------------------------------------------- | ------------ | ------------ | ------------ | ---------------------------------------------- |
 | <img src="https://github.com/AlejoMalia.png?size=72" style="border-radius:100%"/> | Alejo Malia  | Author       | Idea & UI Design | [@AlejoMalia](https://github.com/AlejoMalia) |
-| <img src="https://github.com/AngelEspejo.png?size=72" style="border-radius:100%"/> | Ángel Espejo | Author       | Idea & Development | [@AngelEspejo](https://github.com/AngelEspejo) |
+| <img src="https://github.com/AngelEspejo.png?size=72" style="border-radius:100%"/> | Ángel Espejo | Author       | Idea & Development & UI Design | [@AngelEspejo](https://github.com/AngelEspejo) |
 | <img src="https://github.com/PigeonPosse.png?size=72" style="border-radius:100%"/> | PigeonPosse  | Collective   | Distribution | [@PigeonPosse](https://github.com/PigeonPosse) |
 
 <br>

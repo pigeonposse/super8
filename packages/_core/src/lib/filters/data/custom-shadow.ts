@@ -1,10 +1,12 @@
 /**
- * DEFINE DEFAULT FILTERS.
+ * DEFINE DEFAULT SHADOW FILTERS.
  *
  * @description Function to return default filters.
  */
 
-import { filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom } from '../../types'
+import {
+	filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom, 
+} from '../../types'
 
 export const customShadow: IFiltersCustom = [
 	{

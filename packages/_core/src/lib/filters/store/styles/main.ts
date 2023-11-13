@@ -1,10 +1,12 @@
 /**
- * Todo.
+ * Filters styles store.
  *
- * @description Todo.
+ * @description Define all Filters styles store functions in this file.
  */
 
-import { writable, derived, get } from 'svelte/store'
+import {
+	writable, derived, get, 
+} from 'svelte/store'
 
 import { custom }                          from '../custom/main'
 import { presets }                         from '../presets/main'
@@ -14,7 +16,9 @@ import type { AddStylesConstructorParams } from '../../../types'
 
 const selectorsFuncts = () => {
 
-	const defaultValues = [ 'video' ]
+	const defaultValues = [
+		'video', 
+	]
 	const value         = writable( defaultValues )
     
 	return {
@@ -29,7 +33,11 @@ const stylesFuncts = ( ) => {
 	const sels        = selectorsFuncts()
 	const isHide      = writable( false )
 	const id          = writable( functs.generateRamdomID() ) // generate random ID by default
-	const stylesStore = derived( [ custom.values, presets.valueID, sels, isHide, id ], ( [ $values, $preset, $selectors, $hide, $id ] ) => {
+	const stylesStore = derived( [
+		custom.values, presets.valueID, sels, isHide, id, 
+	], ( [
+		$values, $preset, $selectors, $hide, $id, 
+	] ) => {
 
 		return { 
 			customValues : $values, 

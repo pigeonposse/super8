@@ -1,10 +1,12 @@
 /**
- * Todo.
+ * Filter Store: Shared features.
  *
- * @description Todo.
+ * @description Define all filter store shared functions in this file.
  */
 
-import { get, writable } from 'svelte/store'
+import {
+	get, writable, 
+} from 'svelte/store'
 
 export const sectionFunct = ( keys: string[], openDefault?: string ) => {
 

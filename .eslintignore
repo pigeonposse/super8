@@ -1,6 +1,12 @@
-
-.DS_Store
-**/.DS_Store
+# #############################################################################
+# .eslintignore config.
+# #############################################################################
+#
+# @description Specifies which files and directories should be ignored by ESLint,
+#              helping to exclude specific files from linting.
+# @see https://eslint.org/docs/user-guide/configuring/ignoring-code
+#
+# #############################################################################
 
 # builds or dev folders
 
@@ -44,3 +50,5 @@ yarn.lock
 **/__temp__
 /__cache__
 **/__cache__
+.DS_Store
+**/.DS_Store

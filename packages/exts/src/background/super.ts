@@ -3,9 +3,11 @@
  *
  * @description Todo.
  */
-import { browser }      from '../lib/index'
-import { pkg, pkgMain } from '../man/manifest'
-import * as data        from '../lib/_shared/data'
+import { browser } from '../lib/index'
+import {
+	pkg, pkgMain, 
+} from '../man/manifest'
+import * as data from '../lib/_shared/data'
 
 export class Super {
 

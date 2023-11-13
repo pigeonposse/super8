@@ -1,11 +1,15 @@
 /**
- * Todo.
+ * Options utils file.
  *
- * @description Todo.
+ * @description This file define Options utils functions.
  */
 
-import { componentTypes, type ComponentOption }                                                   from '@s-8/core'
-import type { ComponentOptionSection, ComponentOptions, ComponentOptionsRecursive, OptionsStore } from '../../types'
+import {
+	componentTypes, type ComponentOption, 
+}                                                   from '@s-8/core'
+import type {
+	ComponentOptionSection, ComponentOptions, ComponentOptionsRecursive, OptionsStore, 
+} from '../../types'
 
 export const updateOptions = ( optionsArray: ComponentOptionsRecursive, updateObject: OptionsStore ) => {
 

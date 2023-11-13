@@ -1,10 +1,12 @@
 /**
- * Todo.
+ * Filters locales store.
  *
- * @description Todo.
+ * @description Define all Filters locale store functions in this file.
  */
 
-import { get, writable }          from 'svelte/store'
+import {
+	get, writable, 
+}          from 'svelte/store'
 import { functs }                 from '../../_shared/functs'
 import { locales as localesData } from '../locales/main'
 import type { ComponentFilters }  from '../../types'

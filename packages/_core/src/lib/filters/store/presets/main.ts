@@ -1,13 +1,18 @@
 /**
- * Todo.
+ * Filters presets store.
  *
- * @description Todo.
+ * @description Define all Filters presets store functions in this file.
  */
-import { writable, get, derived, type Writable }                                                                       from 'svelte/store'
-import { filters as dataFilters }                                                                                      from '../../data/main'
-import { filterCustomIds, type AddPresetParams, type IFiltersPreset, type IFiltersPresets, type IFiltersPresetStyles } from '../../../types'
-import { functs }                                                                                                      from '../../../_shared/functs'
-import { custom }                                                                                                      from '../custom/main'
+
+import {
+	writable, get, derived, type Writable, 
+}                                                                       from 'svelte/store'
+import { filters as dataFilters }                                                                                from '../../data/main'
+import {
+	filterCustomIds, type AddPresetParams, type IFiltersPreset, type IFiltersPresets, type IFiltersPresetStyles, 
+} from '../../../types'
+import { functs } from '../../../_shared/functs'
+import { custom } from '../custom/main'
 
 const presetsFuncts = () => {
 
@@ -121,14 +126,16 @@ const presetsFuncts = () => {
 		
 		}else {
 
-			customL = [ ...customL, { 
-				id   : name,
-				name,
-				opts : {
-					color,
-				},
-				value,
-			} ]
+			customL = [
+				...customL, { 
+					id   : name,
+					name,
+					opts : {
+						color,
+					},
+					value,
+				}, 
+			]
 		
 		}
 
@@ -148,13 +155,21 @@ const presetsFuncts = () => {
 	
 	}
 	
-	const allList = derived( [ customList ], ( [ $customList ] ) => {
+	const allList = derived( [
+		customList, 
+	], ( [
+		$customList, 
+	] ) => {
 
 		return functs.mergeDeep( $customList, presetList )
 	
 	} )
 
-	const value = derived( [ valueID ], ( [ $valueID ] ) => {
+	const value = derived( [
+		valueID, 
+	], ( [
+		$valueID, 
+	] ) => {
 	
 		if( $valueID && $valueID !== defaultValue )
 			return getlistValue( $valueID )
@@ -163,7 +178,11 @@ const presetsFuncts = () => {
 	} )
 	
 	const awaitForValue = writable( false )
-	const isValueSet    = derived( [ value, valueID, custom.objectValues ], ( [ $presetValues, $presetID, $customValues ] ) => {
+	const isValueSet    = derived( [
+		value, valueID, custom.objectValues, 
+	], ( [
+		$presetValues, $presetID, $customValues, 
+	] ) => {
 
 		const fullPresetValue = ( $presetValues !== undefined && typeof $presetValues === 'object' && 'value' in $presetValues ) ? 
 			functs.mergeDeepById( custom.defaultToExport, $presetValues.value ) :

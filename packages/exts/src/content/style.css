@@ -1,10 +1,10 @@
 /**
- * Super 8 styles.
+ * Super 8 Content Styles.
  *
- * @description Styles for content part.
+ * @description These are the styles for the Super 8 Content component.
  */
  
-/* tailwind */
+/* Include Tailwind CSS styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

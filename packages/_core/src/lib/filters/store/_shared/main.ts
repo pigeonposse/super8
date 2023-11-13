@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Filter Store: Shared features.
  *
- * @description Todo.
+ * @description Export all filter store shared functions in this file.
  */
 
 export * from './section'

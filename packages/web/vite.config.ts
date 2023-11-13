@@ -10,10 +10,10 @@ import pkg              from './package.json'
 
 export default defineConfig( {
 	plugins : [
-		sveltekit(),
+		sveltekit(), 
 	],
 	build : {
-		chunkSizeWarningLimit : 1600,
+		chunkSizeWarningLimit : 1600, 
 	},
 	define : {
 		PKG      : pkg,

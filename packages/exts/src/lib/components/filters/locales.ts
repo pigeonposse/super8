@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Default Filter locales.
  *
- * @description Todo.
+ * @description This module defines extension filters locales.
  */
 
 import { filterCustomIds } from '@s-8/core'

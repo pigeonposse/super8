@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.0.3
+
+### Patch Changes
+
+- add tests and better ci
+
 ## 0.0.2
 
 ### Patch Changes

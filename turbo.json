@@ -1,21 +1,35 @@
 {
-    "$schema": "https://turbo.build/schema.json",
-    "pipeline": {
-      "build": {
-        "dependsOn": ["^build"],
-        "outputs": [".sveltekit/**"]
-      },
-      "deploy": {
-        "dependsOn": ["build", "test", "lint"]
-      },
-      "test": {
-        "dependsOn": ["build"],
-        "inputs": ["tests/**"]
-      },
-      "lint": {},
-      "dev": {
-        "cache": false,
-        "persistent": true
-      }
-    }
-  }
+	"$schema": "https://turbo.build/schema.json",
+	"pipeline": {
+		"build": {
+			"dependsOn": [
+				"^build"
+			],
+			"outputs": [
+				".sveltekit/**",
+				"dist/**"
+			]
+		},
+		"test": {
+			"dependsOn": [
+				"lint",
+				"build"
+			],
+			"inputs": [
+				"tests/**"
+			]
+		},
+		"deploy": {
+			"dependsOn": [
+				"build",
+				"test",
+				"lint"
+			]
+		},
+		"lint": {},
+		"dev": {
+			"cache": false,
+			"persistent": true
+		}
+	}
+}

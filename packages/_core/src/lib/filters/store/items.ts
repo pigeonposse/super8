@@ -1,10 +1,12 @@
 /**
- * Todo.
+ * Filters items store.
  *
- * @description Todo.
+ * @description Define all Filters items store functions in this file.
  */
 
-import { derived, get, writable }        from 'svelte/store'
+import {
+	derived, get, writable, 
+}        from 'svelte/store'
 import More                              from '../tabs/more/main.svelte'
 import Custom                            from '../tabs/custom/main.svelte'
 import Presets                           from '../tabs/presets/main.svelte'
@@ -21,8 +23,12 @@ const itemsFuncts = () => {
 	const allowedItems = writable< ComponentSidebarContentFilters['allowedItems']>( undefined )
     
 	const value = derived(
-		[ locales, allowedItems, custom.valuesNotInDefault.count, presets.isValueSet ], 
-		( [ $locales, $allowedItems, $customCount, $isPresetSet ] ) => {
+		[
+			locales, allowedItems, custom.valuesNotInDefault.count, presets.isValueSet, 
+		], 
+		( [
+			$locales, $allowedItems, $customCount, $isPresetSet, 
+		] ) => {
 
 			let items
 

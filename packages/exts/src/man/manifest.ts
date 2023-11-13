@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Shared Extension Manifest.
  *
- * @description Todo.
+ * @description This is the shared manifest configuration for the Super 8 extensions.
  * @see https://json.schemastore.org/chrome-manifest
  */
 
@@ -13,16 +13,21 @@ import pkg     from '../../package.json'
 
 const combineUrlsWithAsterisk = ( urlStarts: typeof allowSites ) => {
 
-	const combinedUrls = []
+	const combinedUrls = [] as string[]
 
 	for ( const site in urlStarts ) {
 
-		const urls = urlStarts[site].map( url => ( url.endsWith( '*' ) ? url : url + '*' ) )
-		combinedUrls.push( ...urls )
+		const urlList = urlStarts[site] as string[]
+		if( urlList && Array.isArray( urlList ) ) {
+
+			const urls = urlList.map( url => ( url.endsWith( '*' ) ? url : url + '*' ) )
+			combinedUrls.push( ...urls )
+		
+		}
 	
 	}
   
-	return combinedUrls
+	return combinedUrls as string[]
 
 }
 
@@ -38,7 +43,9 @@ export const csp = 'script-src \'self\' \'wasm-unsafe-eval\'; object-src \'self\
 // 	'script-src \'self\' \'wasm-unsafe-eval\'; object-src \'self\''
 
 // Convert from Semver (example: 0.1.0-beta6)
-const [ major, minor, patch ] = version
+const [
+	major, minor, patch, 
+] = version
 	// can only contain digits, dots, or dash
 	.replace( /[^\d.-]+/g, '' )
 	// split into version parts
@@ -47,13 +54,27 @@ const [ major, minor, patch ] = version
 export const imagesFolder = 'images/'
 
 export const allowSites = {
-	youtube    : [ 'https://www.youtube.com/' ],
-	vimeo      : [ 'https://vimeo.com/' ],
-	twitch     : [ 'https://www.twitch.tv/' ],
-	filmin     : [ 'https://www.filmin.es/' ],
-	disney     : [ 'https://www.disneyplus.com/' ],
-	netflix    : [ 'https://www.netflix.com/' ],
-	primevideo : [ 'https://www.primevideo.com/' ],
+	youtube : [
+		'https://www.youtube.com/', 
+	],
+	vimeo : [
+		'https://vimeo.com/', 
+	],
+	twitch : [
+		'https://www.twitch.tv/', 
+	],
+	filmin : [
+		'https://www.filmin.es/', 
+	],
+	disney : [
+		'https://www.disneyplus.com/', 
+	],
+	netflix : [
+		'https://www.netflix.com/', 
+	],
+	primevideo : [
+		'https://www.primevideo.com/', 
+	],
 }
 
 export const icons = {
@@ -89,7 +110,9 @@ export const manifest = {
 	default_locale  : 'en',
 	content_scripts : [
 		{
-			js      : [ path.contentMain ],
+			js : [
+				path.contentMain, 
+			],
 			matches : contentMatches,
 			run_at  : 'document_end',
 		},

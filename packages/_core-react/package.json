@@ -1,71 +1,63 @@
 {
-  "name": "@s-8/core-react",
-  "version": "0.0.1",
-  "type": "module",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "main": "./dist/lib/bundle.cjs",
-  "module": "./dist/lib/bundle.js",
-  "types": "./dist/lib/main.d.ts",
-  "files": [
-    "/dist/lib"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/lib/bundle.js",
-      "require": "./dist/lib/bundle.cjs"
-    },
-    "./style.css": "./dist/lib/style.css"
-  },
-  "author": {
-    "name": "Angelo",
-    "email": "angelo@pigeonposse.com",
-    "url": "https://pigeonposse.com"
-  },
-  "license": "GPL-3.0",
-  "funding": {
-    "type": "individual",
-    "url": "https://pigeonposse.com/?popup=donate"
-  },
-  "homepage": "https:/super8.pigeonposse.com/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/pigeonposse/super8.git",
-    "directory": "packages/_core-react"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build -c vite.lib.config.ts",
-    "build-app": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "svelte-adapter": "^0.5.0"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.7",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@s-8/core": "workspace:*",
-    "@types/react": "^18.2.34",
-    "@types/react-dom": "^18.2.14",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.1",
-    "@vitejs/plugin-react": "^4.1.1",
-    "eslint": "^8.52.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-typescript2": "^0.36.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.5.0"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
+	"name": "@s-8/core-react",
+	"version": "0.0.2",
+	"type": "module",
+	"publishConfig": {
+		"access": "public",
+		"registry": "https://registry.npmjs.org/"
+	},
+	"main": "./dist/lib/bundle.cjs",
+	"module": "./dist/lib/bundle.js",
+	"types": "./dist/lib/main.d.ts",
+	"files": [
+		"/dist/lib"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/lib/bundle.js",
+			"require": "./dist/lib/bundle.cjs"
+		},
+		"./style.css": "./dist/lib/style.css"
+	},
+	"author": {
+		"name": "Angelo",
+		"email": "angelo@pigeonposse.com",
+		"url": "https://pigeonposse.com"
+	},
+	"license": "GPL-3.0",
+	"funding": {
+		"type": "individual",
+		"url": "https://pigeonposse.com/?popup=donate"
+	},
+	"homepage": "https:/super8.pigeonposse.com/",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pigeonposse/super8.git",
+		"directory": "packages/_core-react"
+	},
+	"scripts": {
+		"dev": "vite",
+		"build": "run-p build:*",
+		"build:lib": "tsc && vite build -c vite.lib.config.ts",
+		"build:app": "tsc && vite build",
+		"preview": "vite preview",
+		"test": "playwright test",
+		"lint": "run-p lint:*",
+		"lint:js": "pnpm eslint ."
+	},
+	"dependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"svelte-adapter": "^0.5.0"
+	},
+	"devDependencies": {
+		"@s-8/core": "workspace:*",
+		"@types/react": "^18.2.34",
+		"@types/react-dom": "^18.2.14",
+		"@vitejs/plugin-react": "^4.1.1"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	}
 }

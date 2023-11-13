@@ -1,7 +1,7 @@
 /**
- * Todo.
+ * Genreal shared functions.
  *
- * @description Todo.
+ * @description File for set shared functions.
  */
 
 import { color } from './color/main'
@@ -153,12 +153,16 @@ export const mergeDeep = ( target, ...sources ) => {
 
 			if ( isObject( source[key] ) ) {
 
-				if ( !target[key] ) Object.assign( target, { [key]: {} } )
+				if ( !target[key] ) Object.assign( target, {
+					[key] : {}, 
+				} )
 				mergeDeep( target[key], source[key] )
 
 			} else {
 
-				Object.assign( target, { [key]: source[key] } )
+				Object.assign( target, {
+					[key] : source[key], 
+				} )
 
 			}
 
@@ -183,7 +187,9 @@ export const mergeDeepById = ( arr1: MergeDeepByIdItem[], arr2: MergeDeepByIdIte
 
 		if ( !merged[item.id] ) {
 
-			merged[item.id] = { ...item }
+			merged[item.id] = {
+				...item, 
+			}
 
 		} else {
 
@@ -198,7 +204,9 @@ export const mergeDeepById = ( arr1: MergeDeepByIdItem[], arr2: MergeDeepByIdIte
 
 		if ( !merged[item.id] ) {
 
-			merged[item.id] = { ...item }
+			merged[item.id] = {
+				...item, 
+			}
 
 		} else {
 

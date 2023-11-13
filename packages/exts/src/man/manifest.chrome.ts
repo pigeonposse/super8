@@ -1,12 +1,14 @@
 /**
- * Todo.
+ * Chrome Extension Manifest.
  *
- * @description Todo.
+ * @description This is the manifest configuration for the Super 8 Chrome extension.
  */
 
 /* eslint-disable camelcase */
 
-import{ manifest as man, icons, path, csp, imagesFolder, contentMatches } from './manifest'
+import{
+	manifest as man, icons, path, csp, imagesFolder, contentMatches, 
+} from './manifest'
 
 const icon = {
 	'16'  : icons[16],
@@ -38,8 +40,10 @@ export const manifestChrome = {
 	],
 	web_accessible_resources : [
 		{
-			resources : [ imagesFolder + '*' ],
-			matches   : contentMatches,
+			resources : [
+				imagesFolder + '*', 
+			],
+			matches : contentMatches,
 		},
 	],
 	content_security_policy : {

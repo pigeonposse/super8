@@ -1,10 +1,12 @@
 /**
- * DEFINE DEFAULT custom FILTERS.
+ * DEFINE DEFAULT CUSTOM FILTERS.
  *
  * @description Function to return default filters.
  */
 
-import { filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom } from '../../types'
+import {
+	filterCustomIds, filterCustomTypesIds, unitValues, type IFiltersCustom, 
+} from '../../types'
 
 export const customFilter: IFiltersCustom = [
 	{

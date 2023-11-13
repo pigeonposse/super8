@@ -10,7 +10,9 @@ export class ContextMenuOrg extends ContextMenuSuper {
 	#values(){
 
 		const id       = this.orgId
-		const contexts = [ this.contextTypeAction ]
+		const contexts = [
+			this.contextTypeAction, 
+		]
 		
 		return [
 			{
@@ -68,14 +70,22 @@ export class ContextMenuOrg extends ContextMenuSuper {
 			const createTabs = this.browser.tabs.create
 
 			if ( info.menuItemId === this.orgId + '_more' )
-				createTabs( { url: this.data.collectiveRepoUrl } )
+				createTabs( {
+					url : this.data.collectiveRepoUrl, 
+				} )
 			if ( info.menuItemId === this.orgId + '_about' )
-				createTabs( { url: this.data.collectiveAboutUrl } )
+				createTabs( {
+					url : this.data.collectiveAboutUrl, 
+				} )
 
 			if ( info.menuItemId === this.orgId + '_donate' )
-				createTabs( { url: this.data.collectiveFundingUrl } )
+				createTabs( {
+					url : this.data.collectiveFundingUrl, 
+				} )
 			if ( info.menuItemId === this.orgId + '_web' )
-				createTabs( { url: this.data.collectiveWebUrl } )
+				createTabs( {
+					url : this.data.collectiveWebUrl, 
+				} )
 
 		} )
 	

@@ -1,15 +1,18 @@
 /**
- * Todo.
+ * Main Extension Content Script.
  *
- * @description Todo.
+ * @description This content script loads the Super 8 extension UI on supported websites. 
+ *  The styles are added from the manifest to avoid conflicts with some websites such as YouTube.
  */
 
-// The styles are added from the manifest to avoid conflicts with some websites such as YouTube
 import './style.css'
-
-import Main                                                                        from './main.svelte'
-import { insertedAdjacentPosition, optionsIds, renderComponentOnDOMContentLoaded } from '../lib'
-import { site }                                                                    from '../lib/components/allowed-sites/functs'
+import {
+	insertedAdjacentPosition, 
+	optionsIds, 
+	renderComponentOnDOMContentLoaded, 
+} from '../lib'
+import Main     from './main.svelte'
+import { site } from '../lib/components/allowed-sites/functs'
 
 try {
 

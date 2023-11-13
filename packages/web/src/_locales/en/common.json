@@ -1,12 +1,12 @@
 {
-    "name": {
-        "message": "Super8",
-        "description": "The name of my extension"
-    },
-    "description": {
-        "message":  "Add styles to web iFrames, videos or media",
-        "description": "The description of my extension"
-    },
+	"name": {
+		"message": "Super8",
+		"description": "The name of my extension"
+	},
+	"description": {
+		"message": "Add styles to web iFrames, videos or media",
+		"description": "The description of my extension"
+	},
 	"web": {
 		"message": "Web",
 		"description": "For web Links"
@@ -19,11 +19,11 @@
 		"message": "More projects",
 		"description": "For more-projects Links"
 	},
-	"extMenuDesc" : {
+	"extMenuDesc": {
 		"message": "About extension",
 		"description": "For extension context Menu description"
 	},
-	"orgMenuDesc" : {
+	"orgMenuDesc": {
 		"message": "Developer Collective information",
 		"description": "For organization context Menu description"
 	},
@@ -43,22 +43,22 @@
 		"message": "Review",
 		"description": "For review Links."
 	},
-    "download": {
+	"download": {
 		"message": "Download"
 	},
 	"documentation": {
 		"message": "Documentation"
 	},
-    "learn": {
-        "message": "Learn more"
-      },
-    "show": {
-        "message": "View"
-    },
-    "goHome": {
+	"learn": {
+		"message": "Learn more"
+	},
+	"show": {
+		"message": "View"
+	},
+	"goHome": {
 		"message": "Go home"
 	},
-    "error": {
+	"error": {
 		"title": "Oh, dear...",
 		"404": "Page not found.",
 		"500": "Server internal error.",

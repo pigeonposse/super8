@@ -1,19 +1,28 @@
 /**
- * Todo.
+ * Storage Management Utility.
  *
- * @description Todo.
+ * @description This module provides utility functions for managing storage, 
+ *  including getting storage groups, clearing all storage, 
+ *  and initializing default storage values.
  */
 
-import { functs }                                                                                        from '@s-8/core'
-import { store }                                                                                         from '../_shared/main'
-import { storageGroupsIds, type StorageAppOptionValues, type StorageAppContentValues, type StorageInit } from '../types'
-import { storageApp }                                                                                    from './super'
+import {
+	storageGroupsIds, 
+	type StorageAppOptionValues, 
+	type StorageAppContentValues, 
+	type StorageInit, 
+} from '../types'
+import { storageApp } from './super'
+import { functs }     from '@s-8/core'
+import { store }      from '../_shared/main'
 
 export const getGroup = async ( type = storageGroupsIds.content ) => {
 
 	const res : StorageInit = {}
 
-	for ( const [ key, storage ] of Object.entries( storageApp ) ) {
+	for ( const [
+		key, storage, 
+	] of Object.entries( storageApp ) ) {
 
 		if( storage.group == storageGroupsIds[type] ) res[key] =  await storage.get()
 	

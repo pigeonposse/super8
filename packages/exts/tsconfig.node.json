@@ -1,20 +1,22 @@
 {
-    "compilerOptions": {
-        "composite": true,
-        "skipLibCheck": true,
-        "module": "ESNext",
-        "moduleResolution": "bundler",
-        "types": ["vite/client"],
-        "esModuleInterop": true,
-        "resolveJsonModule": true
-    },
-    "include": [
-        "./tsconfig.node.json",
-        "vite.config.ts", 
-        "src/man/manifest.ts",
-        "src/man/manifest.chrome.ts",
-        "src/man/manifest.firefox.ts",
-        "package.json",
-        "../../package.json"
-    ]
+	"compilerOptions": {
+		"composite": true,
+		"skipLibCheck": true,
+		"module": "ESNext",
+		"moduleResolution": "bundler",
+		"types": [
+			"vite/client"
+		],
+		"esModuleInterop": true,
+		"resolveJsonModule": true
+	},
+	"include": [
+		"./tsconfig.node.json",
+		"vite.config.ts", 
+		"src/man/manifest.ts",
+		"src/man/manifest.chrome.ts",
+		"src/man/manifest.firefox.ts",
+		"package.json",
+		"../../package.json"
+	]
 }

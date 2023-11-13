@@ -11,16 +11,18 @@
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 
-import { svelte }                               from '@sveltejs/vite-plugin-svelte'
-import type { PluginOption }                    from 'vite'
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
-import webExtension                             from 'vite-plugin-web-extension'
-import { join }                                 from 'node:path'
-import{ manifestChrome }                        from './src/man/manifest.chrome'
-import{ manifestFirefox }                       from './src/man/manifest.firefox'
-import pkg                                      from './package.json'
-import { include }                              from './tsconfig.node.json'
-import { isDev }                                from './src/man/manifest'
+import { svelte }                         from '@sveltejs/vite-plugin-svelte'
+import webExtension                       from 'vite-plugin-web-extension'
+import { join }                           from 'node:path'
+import{ manifestChrome }                  from './src/man/manifest.chrome'
+import{ manifestFirefox }                 from './src/man/manifest.firefox'
+import pkg                                from './package.json'
+import { include }                        from './tsconfig.node.json'
+import { isDev }                          from './src/man/manifest'
+import type { PluginOption }              from 'vite'
+import {
+	defineConfig, splitVendorChunkPlugin, 
+} from 'vite'
 
 const target     = process.env.TARGET || 'chrome'
 const distPath   = 'dist'
@@ -45,8 +47,10 @@ export default defineConfig( {
 		svelte(), 
 		webExtension( webExt ) as PluginOption,
 	],
-	assetsInclude : [ '**/*.png' ],
-	build         : {
+	assetsInclude : [
+		'**/*.png', 
+	],
+	build : {
 		terserOptions : {
 			mangle : false,
 			format : {

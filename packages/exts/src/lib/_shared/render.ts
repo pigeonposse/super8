@@ -1,11 +1,25 @@
+/* eslint-disable jsdoc/require-file-overview */
 /**
- * Todo.
+ * Render Component Utility Functions.
  *
- * @description Todo.
+ * @description This module contains utility functions for rendering Svelte components onto the DOM. 
+ *  It provides the ability to render a component on a specified target element or 
+ *  create a new target element using `insertAdjacentElement`. Additionally, 
+ *  it includes a function to wait for the DOMContentLoaded event before rendering the component.
  */
 
-import { insertedAdjacentPosition, type RenderComponentParams } from '../types'
+import {
+	insertedAdjacentPosition, 
+	type RenderComponentParams, 
+} from '../types'
 
+/**
+ * Render a Svelte component on a specified target element.
+ *
+ * @description                              This function renders a Svelte component on the specified target element or, 
+ *                                           if provided, inserts a new target element in the DOM using `insertAdjacentElement`.
+ * @param       {RenderComponentParams} args - The parameters for rendering the component.
+ */
 export const renderComponent = async ( { 
 	componentClass, 
 	querySelelctor = '#app',
@@ -40,10 +54,19 @@ export const renderComponent = async ( {
 	
 	}
 			
-	new componentClass( { target } )
+	new componentClass( {
+		target, 
+	} )
 
 }
 
+/**
+ * Render a Svelte component on DOMContentLoaded.
+ *
+ * @description                              This function renders a Svelte component on the specified target element or, 
+ *                                           if provided, inserts a new target element in the DOM using `insertAdjacentElement`. It waits for the DOMContentLoaded event before rendering the component.
+ * @param       {RenderComponentParams} args - The parameters for rendering the component.
+ */
 export const renderComponentOnDOMContentLoaded = async ( args: RenderComponentParams ) => {
 
 	const render = () => renderComponent( args )

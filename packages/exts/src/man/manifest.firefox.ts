@@ -1,11 +1,14 @@
 /**
- * Todo.
+ * Mozilla Extension Manifest.
  *
- * @description Todo.
+ * @description This is the manifest configuration for the Super 8 Mozilla extension.
  */
+
 /* eslint-disable camelcase */
 
-import{ manifest as man, icons,path, csp, imagesFolder, isDev } from './manifest'
+import{
+	manifest as man, icons,path, csp, imagesFolder, 
+} from './manifest'
 
 const popupIcons = {
 	'16'  : icons[16],
@@ -42,19 +45,16 @@ const manifestFirefoxConf = {
 		'menus',
 		'contextMenus',
 	],
-	web_accessible_resources : [ imagesFolder + '*' ],
-	content_security_policy  : csp,
-	...man,
-}
-
-if( isDev ) {
-
-	manifestFirefoxConf['browser_specific_settings'] = {
+	web_accessible_resources : [
+		imagesFolder + '*', 
+	],
+	content_security_policy   : csp,
+	browser_specific_settings : {
 		gecko : {
 			id : '{63bba7f4-510b-4478-b401-a2726a9703ba}', 
 		},
-	}
-
+	},
+	...man,
 }
 
 export const manifestFirefox = manifestFirefoxConf
