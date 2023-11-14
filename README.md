@@ -38,11 +38,11 @@ FOR PIGEONPOSSE.COM
 [![About us](https://img.shields.io/badge/About-us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate)
 
-[![License](https://img.shields.io/github/license/pigeon-posse/pigeonsh?label=License&style=flat-square)](https://npmjs.com/package/super8)
+[![License](https://img.shields.io/github/license/pigeon-posse/pigeonsh?label=License&style=flat-square)](https://github.com/pigeonposse/super8/blob/main/LICENSE)
 [![Core](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2F_core%2Fpackage.json&style=flat-square&label=Core&color=blue)](https://super8.pigeonposse.com)
-[![super8 Web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fweb%2Fpackage.json&style=flat-square&label=S8%20web&color=blue)](https://super8.pigeonposse.com)
-[![CHROME](https://img.shields.io/chrome-web-store/v/aejkinmllndkgoodkfbhfkffnebmibkd?color=blue&style=flat-square)](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
-[![MOZILLA](https://img.shields.io/amo/v/{63bba7f4-510b-4478-b401-a2726a9703ba}?color=blue&style=flat-square)](https://addons.mozilla.org/es/firefox/addon/super8/)
+[![super8 Web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fweb%2Fpackage.json&style=flat-square&label=Web&color=blue)](https://super8.pigeonposse.com)
+[![CHROME](https://img.shields.io/chrome-web-store/v/aejkinmllndkgoodkfbhfkffnebmibkd?color=blue&style=flat-square&label=Chrome)](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
+[![MOZILLA](https://img.shields.io/amo/v/{63bba7f4-510b-4478-b401-a2726a9703ba}?color=blue&style=flat-square&label=Mozilla)](https://addons.mozilla.org/es/firefox/addon/super8/)
 
 ## 🗒 Description
 

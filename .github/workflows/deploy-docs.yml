@@ -1,5 +1,5 @@
 ###############################################################################
-# DEPLOY WEBS TO CLOUDFLARE
+# DEPLOY DOCS WEB TO CLOUDFLARE
 ###############################################################################
 
 name: Deploy webs
@@ -27,7 +27,7 @@ jobs:
 
     deploy:
 
-        name: Deploy SUPER8 webs
+        name: Deploy SUPER8 documentation web
         runs-on: ubuntu-latest
         permissions:
             contents: read
@@ -51,26 +51,30 @@ jobs:
             # BUILD PKG
             #########################################################################
 
-            - name: 🏗 Install pnpm
+            - name: 🔑 Install PNPM
               uses: pnpm/action-setup@v2
               id: pnpm-install
 
-            - name: 👨🏻‍💻 Install pkg dependencies
-              run: |
-                pnpm install --no-frozen-lockfile
-                pnpm build:docs
-            
+            - name: 📦 Install pkg dependencies
+              run: pnpm install --no-frozen-lockfile
+
+            - name: 🌐 Install Playwright Browsers
+              run: npx playwright install --with-deps
+
             ###################################################################
-            # INIT & BUILD PKG
+            # BUILD AND DEPLOY
             ###################################################################
 
-            - name: 🌥 Deploy DOCS in cloudflare pages
+            - name: 🏗 Build package
+              run: pnpm run build:docs
+
+            - name: 🌥 Deploy in cloudflare pages
               uses: cloudflare/pages-action@v1
               with:
-                apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-                accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-                branch: main
-                projectName: "super8-docs"
-                directory: 'packages/docs/dist'
-                wranglerVersion: '3'
+               apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+               accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+               gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+               branch: main
+               projectName: "super8-docs"
+               directory: 'packages/docs/dist'
+               wranglerVersion: '3'

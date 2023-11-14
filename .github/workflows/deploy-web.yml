@@ -15,8 +15,7 @@ on:
       branches:
         - main
       paths:
-        - 'docs/**'
-        - 'packages/docs/package.json'
+        - 'packages/web/package.json'
 
 ###############################################################################
 # JOBS
@@ -26,7 +25,7 @@ jobs:
 
     deploy:
 
-        name: Deploy SUPER8 webs
+        name: Deploy SUPER8 web
         runs-on: ubuntu-latest
         permissions:
             contents: read
@@ -50,20 +49,24 @@ jobs:
             # BUILD PKG
             #########################################################################
 
-            - name: 🏗 Install pnpm
+            - name: 🔑 Install PNPM
               uses: pnpm/action-setup@v2
               id: pnpm-install
 
-            - name: 👨🏻‍💻 Install pkg dependencies
-              run: |
-                pnpm install --no-frozen-lockfile
-                pnpm build:web
-            
+            - name: 📦 Install pkg dependencies
+              run: pnpm install --no-frozen-lockfile
+
+            - name: 🌐 Install Playwright Browsers
+              run: npx playwright install --with-deps
+
             ###################################################################
-            # INIT & BUILD PKG
+            # BUILD AND DEPLOY
             ###################################################################
 
-            - name: 🌥 Deploy WEB in cloudflare pages
+            - name: 🏗 Build package
+              run: pnpm run build:web
+            
+            - name: 🌥 Deploy in cloudflare pages
               uses: cloudflare/pages-action@v1
               with:
                 apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}

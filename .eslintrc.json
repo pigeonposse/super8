@@ -15,7 +15,8 @@
 		"align-import",
 		"align-assignments",
 		"promise",
-		"jsonc"
+		"jsonc",
+		"yaml"
 	],
 	"extends": [
 		"eslint:recommended",
@@ -362,9 +363,6 @@
 			"files": [
 				"**/*.yaml",
 				"**/*.yml"
-			],
-			"plugins": [
-				"yaml"
 			],
 			"extends": [
 				"plugin:yaml/recommended"

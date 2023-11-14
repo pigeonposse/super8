@@ -15,8 +15,8 @@ on:
         branches:
             - main
         paths:
-            - 'packages/core/package.json'
-            - 'packages/core-react/package.json'
+            - 'packages/_core/package.json'
+            - 'packages/_core-react/package.json'
 
 
 ###############################################################################
@@ -55,13 +55,22 @@ jobs:
             - name: 👨🏻‍💻 Install pkg dependencies
               run: |
                 pnpm install --no-frozen-lockfile
-                pnpm build:core
+
+            - name: 🌐 Install Playwright Browsers
+              run: npx playwright install --with-deps
+
+            ###################################################################
+            # BUILD
+            ###################################################################
+            
+            - name: 🏗 Build package
+              run:  pnpm build:core
 
             ###################################################################
             # PUBLISH
             ###################################################################
 
-            - name: Publish to npm
+            - name: Publish to NPM
               id: changesets
               uses: changesets/action@v1
               # with:
