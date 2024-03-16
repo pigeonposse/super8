@@ -142,7 +142,10 @@
   />
 
   <Option
-    title={{value: 'Code Editor'}}
+    title={{
+		value: 'Code Editor',
+		link: 'https://pigeonposse.com'
+	}}
     id="cccc"
     type={componentTypes.option.codeEditor}
     value={'[]'}

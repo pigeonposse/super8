@@ -38,9 +38,9 @@ pnpm {{nameOfPackage}} dev
 
 ```bash
 # Recomended
-pnpm dev:web
+pnpm dev:app
 # or
-pnpm web dev
+pnpm app dev
 
 ```
 
@@ -60,12 +60,28 @@ pnpm {{nameOfPackage}} build
 
 ```bash
 # Recomended
-pnpm build:web
+pnpm build:app
 # or
-pnpm web build
+pnpm app build
 ```
 
 </details>
+
+## 📊 Init ios and android dev
+
+Prerequisites guide: <https://next--tauri.netlify.app/next/guides/getting-started/prerequisites/macos/#android>
+
+### Android
+
+- Android SDK
+- Maybe execute: ```rustup target add aarch64-linux-android x86_64-linux-android armv7-linux-androideabi i686-linux-android```
+- Because it is a monorepo, run android init and dev with the workspace command ```pnpm app tauri {more args}```. This is important to get ```runTauriCli``` working in the path ```packages/app/src-tauri/gen/android/buildSrc/src/main/java/com/pigeonposse/super8/kotlin/BuildTask.kt```.
+
+#### IOS
+
+- XCode >=14
+- Maybe: ```rustup target add aarch64-apple-ios x86_64-apple-ios aarch64-apple-ios-sim```
+- Maybe you have to install ``brew install cocoapods``
 
 ## 📊 Update packages version
 

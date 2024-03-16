@@ -1,11 +1,11 @@
 {
 	"name": "@s-8/docs",
-	"version": "0.2.4",
+	"version": "0.3.0",
 	"private": true,
 	"type": "module",
 	"description": "A Super8 Documentation site by PigeonPosse",
 	"scripts": {
-		"dev": "vitepress dev src --strictPort --open",
+		"dev": "vitepress dev src --open",
 		"build": "pnpm copy-docs && vitepress build src --force && pnpm rm-docs",
 		"preview": "vitepress preview src",
 		"test": "playwright test",
@@ -15,9 +15,9 @@
 	},
 	"devDependencies": {
 		"vitepress": "1.0.0-rc.24",
-		"vue": "^3.3.7"
+		"vue": "3.3.7"
 	},
 	"dependencies": {
-		"markdown-it-task-lists": "^2.1.1"
+		"markdown-it-task-lists": "2.1.1"
 	}
 }

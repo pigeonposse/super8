@@ -1,0 +1,67 @@
+
+shared:
+  id: super8
+  output: "./dist/exts"
+  input:
+    chromium: "./dist/chrome"
+    chromium-mv2: "./dist/firefox"
+    # firefox: "~/exts/firefox"
+    firefox-mv2: "./dist/firefox"
+build:
+  # For releases in tgz
+  - type: safari
+  - type: chrome
+  - type: chrome-mv2
+  - type: chromium
+  - type: chromium-mv2
+  - type: firefox-mv2
+  - type: edge
+  - type: edge-mv2
+  - type: yandex
+  - type: opera-gx
+  - type: opera
+  - type: brave
+  - type: yandex-mv2
+  - type: custom
+    browserName: vivaldi
+    input: "./dist/chrome"
+  # For releases in zip
+  - type: chrome
+    compress: zip
+  - type: chrome-mv2
+    compress: zip
+  - type: chromium
+    compress: zip
+  - type: chromium-mv2
+    compress: zip
+  - type: firefox-mv2
+    compress: zip
+  - type: edge
+    compress: zip
+  - type: edge-mv2
+    compress: zip
+  - type: yandex
+    compress: zip
+  - type: opera-gx
+    compress: zip
+  - type: opera
+    compress: zip
+  - type: brave
+    compress: zip
+  - type: yandex-mv2
+    compress: zip
+  - type: custom
+    browserName: vivaldi
+    input: "./dist/chrome"
+    compress: zip
+  # For store
+  - type: chrome
+    compress: zip
+    output: "./dist/store"
+  - type: edge
+    compress: zip
+    output: "./dist/store"
+  - type: firefox-mv2
+    filename: "{{id}}-firefox-{{version}}"
+    compress: zip
+    output: "./dist/store"

@@ -421,6 +421,8 @@ None.
 | id            | No       | <code>let</code> | No       | <code>string</code> | <code>""</code>        | --          |
 | type          | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
 | tooltip       | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
+| link          | No       | <code>let</code> | No       | --                  | <code>undefined</code> | --          |
+| linkTarget    | No       | <code>let</code> | No       | <code>string</code> | <code>'\_blank'</code> | --          |
 | customClasses | No       | <code>let</code> | No       | <code>string</code> | <code>''</code>        | --          |
 
 ### Slots

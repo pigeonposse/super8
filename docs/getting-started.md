@@ -1,6 +1,9 @@
+---
+outline: 2
+---
 # Getting started with Super8
 
-## 🌐 Web version
+## 🌐 Web
 
 We are happy to announce that we also offer a **web version** of our extension for those who prefer not to download any additional apps! With our web version, you can change video styles online directly from your web browser, without downloading or installing anything.
 
@@ -10,35 +13,44 @@ Our web version is easy to use and works in any modern browser. Just visit our w
 
 ## 🧩 Browser extension
 
-You can download the extension in your favorite browsers. It is available in Chrome and Firefox.
+You can download the extension in your favorite browsers.
 
-- [Chrome](https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
-- [Firefox](https://addons.mozilla.org/es/firefox/addon/super8/)
+It is available in: `Chrome`, `Edge`, `Firefox`, `Safari`, `Brave`, `Opera`, `Opera GX`, `Vivaldi`, `Yandex`
+
+- [Download](https://github.com/pigeonposse/super8/releases)
+
+### Download via Web Stores
+
+- [Chrome Store](https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
+- [Edge Store](https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
+- [Firefox Store](https://addons.mozilla.org/es/firefox/addon/super8/)
 
 Once you have installed our extension, you will be able to adjust the styles of the videos according to your personal preferences. This allows you to enjoy your favorite videos online with a fully customized look.
 
-<details>
-  <summary><b>Manual download</b></summary>
+### Download via GitHub releases
 
 You can download the extension from the releases section of the GitHub repository.
 
 - [Github releases](https://github.com/pigeonposse/super8/releases)
 
-Or you can copy this code to your terminal to automatically download.
+## 🖥️ Desktop App
 
-::: code-group
+You can download the app from the releases section of the _GitHub_ repository.
 
- ```bash [CHROME]
+It is available in: `Windows`, `Linux`, `Mac`
 
- gh release download --pattern 'chrome-*.zip' --repo "https://github.com/pigeonposse/super8"
- ```
+- [Download](https://github.com/pigeonposse/super8/releases)
 
- ```bash [FIREFOX]
- gh release download --pattern 'firefox-*.zip' --repo "https://github.com/pigeonposse/super8"
- ```
+## 📱 Mobile App
 
+::: info Coming soon. 🚀
 :::
-</details>
+
+## 🐳 Docker image
+
+You could use **super8** in a docker container too
+
+- [Docker hub](https://hub.docker.com/r/pigeonposse/super8)
 
 ## 🔌 WP plugin
 

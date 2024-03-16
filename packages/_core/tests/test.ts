@@ -17,3 +17,24 @@ test( 'index page has expected h1', async ( { page } ) => {
 	expect( h1Element ).not.toBeNull()
 
 } )
+
+test( 'Open sidebar clicking button & check taht CodeMirror is loaded', async ( { page } ) => {
+
+	const super8Sel    = '#ps-s8-styles-content'
+	const super8BtnSel = '#ps-s8-styles-btn'
+	const presetSel    = super8Sel + ' > div > div > button:last-child'
+	const codeSel      = super8Sel + ' .codemirror-wrapper'
+
+	await page.goto( '/' )
+	await page.click( super8BtnSel )
+	const psStylesContent = await page.$( super8Sel )
+	expect( psStylesContent ).toBeTruthy()
+	
+	await page.waitForSelector( presetSel )
+	await page.click( presetSel )
+	await page.waitForTimeout( 1000 )
+
+	const divs = await page.$$( codeSel )
+	expect( divs.length ).toBeGreaterThanOrEqual( 1 )
+
+} )

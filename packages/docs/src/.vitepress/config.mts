@@ -8,12 +8,43 @@
 
 import { DefaultTheme, defineConfig } from 'vitepress'
 import json from '../../../../package.json'
-import {join} from 'node:path'
 import MarkdownItTaskList from 'markdown-it-task-lists'
 
 const isDev = process.env.NODE_ENV !== 'production'
 const srcDir = isDev ? '../../../docs' : './__temp__/docs'
 const repoUrl = json.repository.url.endsWith('/') ? json.repository.url : json.repository.url +'/' ;
+function groupByType(data) {
+	const groupedByType = {};
+	// const extsMore = { text: "More browsers", items: [] }
+	// const extsMore = { text: "More browsers", link: '' }
+	for (const key in data) {
+	  const item = data[key];
+	  let { name, url, store } = item;
+	  
+	  name = name.replace('App', '').replace('extension', '').replace('Extension', '')
+	  
+	  const type = item.type;
+  
+	  if (!groupedByType[type]) {
+		groupedByType[type] = [];
+	  }
+	  groupedByType[type].push({ text: name, link: url });
+
+	//   if (type === "extension" && store !== true) {
+	// 	// @ts-ignore
+	// 	extsMore.items.push({ text: name, link: url })
+	//   } else {
+	// 	groupedByType[type].push({ text: name, link: url });
+	//   }
+	
+	}
+
+	// groupedByType['extension']?.push(extsMore)
+
+	return groupedByType;
+}
+// @ts-ignore
+const navDownload =groupByType(json.extra.downloadUrl)
 
 export default defineConfig({
   lang: 'en',
@@ -62,21 +93,36 @@ export default defineConfig({
         text: 'Download', 
         items: [
           { 
-            text: 'Chrome extension', 
-            link: json.extra.store.chrome.url
+            text: 'Desktop apps', 
+			// @ts-ignore
+            items: navDownload.desktop
           },
           { 
-            text: 'Firefox extension', 
-            link: json.extra.store.mozilla.url 
+            text: 'Mobile apps', 
+			// @ts-ignore
+            items: navDownload.mobile
           },
           { 
-            text: 'WP plugin', 
-            link: json.extra.store.wpPlugin.url 
+            text: 'Browser extensions', 
+			// @ts-ignore
+            items: navDownload.extension
           },
           { 
-            text: 'WP plugin (premium)', 
-            link: json.extra.store.wpPluginPremium.url
+            text: 'Wordpress plugins', 
+            items: navDownload["wp-plugin"]
           },
+          { 
+            text: 'Containers', 
+            items: navDownload["container"]
+          },
+        //   { 
+        //     text: 'WP plugin', 
+        //     link: json.extra.store.wpPlugin.url 
+        //   },
+        //   { 
+        //     text: 'WP plugin (premium)', 
+        //     link: json.extra.store.wpPluginPremium.url
+        //   },
         ]
       },
       { 

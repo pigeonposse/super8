@@ -354,6 +354,8 @@ export type ComponentCodeEditor= ComponentInputShared<typeof componentTypes.code
 export type ComponentTitle= ComponentInputShared<typeof componentTypes.title> & {
     value: string
     desc?: string
+	link?: string
+	linkTarget?: '_blank' | '__self'
     tooltip?: Partial<ComponentTooltip>
 }
 

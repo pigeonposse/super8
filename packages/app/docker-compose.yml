@@ -1,0 +1,32 @@
+######################### SUPER8 DOCKER-COMPOSE-DEV ########################
+#
+# BUILD REPO IN DOCKER WITH DOCKER COMPOSE 
+# 
+# @description File for build and run project with Docker.
+#              you can use npm script 'docker-compose-dev' for run or
+#              use cli 'docker-compose -f docker-compose-dev.yml up --build -d'
+###############################################################################
+
+version: "3.8"
+
+
+###############################################################################
+# SERVICES
+###############################################################################
+
+services:          
+
+  #############################################################################
+  # RUN DOCKER IMAGE WITH DOCKERFILE
+  #############################################################################
+  
+  super8:
+
+    container_name: ${SUPER8_CONTAINER_NAME:-super8}
+    build: .
+    ports:
+      - '${SUPER8_CONTAINER_PORT:-1312}:80'
+    restart: always
+
+
+######################### SUPER8 DOCKER-COMPOSE-DEV ########################

@@ -3,7 +3,6 @@
     import {Tooltip} from "../index";
     import { componentTypes, type ComponentTitle } from "../types";
 
-
     /**
      * VARIABLES
      */
@@ -12,6 +11,8 @@
     export let id: ComponentTitle['id'] = ""
     export let type: ComponentTitle['type'] = componentTypes.title.tooltipRight
     export let tooltip: ComponentTitle['tooltip'] = undefined
+	export let link: ComponentTitle['link'] = undefined
+	export let linkTarget: ComponentTitle['linkTarget'] = '_blank'
     export let customClasses: ComponentTitle['customClasses'] = '';
 
     /**
@@ -27,9 +28,11 @@
     {#if type === componentTypes.title.tooltipRight }
 
         {#if value}
-
+			{#if !link}
             <span {id} class="mr-1 {titleClass}">{value}</span>
-
+			{:else}
+				<a {id} class="mr-1 {titleClass}" href="{link}" target="{linkTarget}">{value}</a>
+			{/if}
         {/if}
 
     {/if}
@@ -47,11 +50,13 @@
     {/if}
 
     {#if type === componentTypes.title.tooltipLeft}
-
-        {#if value}
-
-            <span {id} class="ml-1 {titleClass}">{value}</span>
-
+        
+		{#if value}
+			{#if !link}
+            <span {id} class="mr-1 {titleClass}">{value}</span>
+			{:else}
+				<a {id} class="mr-1 {titleClass}" href="{link}" target="{linkTarget}">{value}</a>
+			{/if}
         {/if}
         
     {/if}

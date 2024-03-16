@@ -1,7 +1,7 @@
 {
 	"name": "@s-8/core",
 	"description": "Super8 core functionality",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"type": "module",
 	"publishConfig": {
 		"access": "public",
@@ -16,7 +16,7 @@
 		"prepublishOnly": "pnpm package",
 		"test": "playwright test",
 		"lint": "run-p lint:*",
-		"lint:js": "pnpm eslint .",
+		"lint:js": "pnpm eslint src",
 		"lint:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json $@",
 		"lint-watch": "run-p lint-watch:*",
 		"lint-watch:svelte": "pnpm lint:svelte --watch"
@@ -52,23 +52,24 @@
 	"homepage": "https:/super8.pigeonposse.com/",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/pigeonposse/super8.git",
+		"url": "https://github.com/pigeonposse/super8",
 		"directory": "packages/_core"
 	},
 	"dependencies": {
-		"@codemirror/lang-json": "^6.0.1",
-		"@codemirror/theme-one-dark": "^6.1.2",
-		"@fortawesome/free-brands-svg-icons": "^6.4.2",
-		"@fortawesome/free-solid-svg-icons": "^6.4.2",
-		"chroma-js": "^2.4.2",
-		"flowbite": "^1.8.1",
-		"flowbite-svelte": "^0.39.3",
-		"svelte-codemirror-editor": "^1.1.0",
-		"svelte-fa": "^3.0.4"
+		"@codemirror/lang-json": "6.0.0",
+		"@codemirror/theme-one-dark": "6.0.0",
+		"@fortawesome/free-brands-svg-icons": "6.5.1",
+		"@fortawesome/free-solid-svg-icons": "6.5.1",
+		"chroma-js": "2.4.2",
+		"codemirror": "6.0.0",
+		"flowbite": "1.8.1",
+		"flowbite-svelte": "0.39.3",
+		"svelte-codemirror-editor": "1.1.0",
+		"svelte-fa": "3.0.4"
 	},
 	"devDependencies": {
-		"@types/chroma-js": "^2.4.2",
-		"sveld": "^0.19.1"
+		"@types/chroma-js": "2.4.4",
+		"sveld": "0.19.1"
 	},
 	"peerDependencies": {
 		"svelte": "^4.0.0"

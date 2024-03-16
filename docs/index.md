@@ -8,10 +8,16 @@ What exactly is **Super8**? Our tool gives you the ability to adjust a wide vari
 
 ## Your Style Customization Tool
 
-**Super8** is much more than just a tool: it's your online personalization companion. Available in multiple formats, Super8 gives you the flexibility to tailor your web experience exactly how you want.
+**Super8** is much more than just a tool: it's your online personalization companion. Available in multiple formats, **Super8** gives you the flexibility to tailor your web experience exactly how you want.
 
-- 🌐 **Web Format**: In addition to the options above, we also offer a direct web format, so you can customize visual elements online without the need for extensions or plugins.
+- 🌐 [**Web Format**](/getting-started#🌐-web): In addition to the options above, we also offer a direct web format, so you can customize visual elements online without the need for extensions or plugins.
 
-- 🧩 **Browser Extension**: The Super8 browser extension, compatible with Chrome and Firefox, takes customization to the next level. You can modify videos from websites such as YouTube & Vimeo, Netflix, Amazon etc, adapting them to your personal preferences.
+- 🧩 [**Browser Extension**](/getting-started#🧩-browser-extension): The **Super8** browser extension, compatible with Chrome and Firefox, takes customization to the next level. You can modify videos from websites such as YouTube & Vimeo, Netflix, Amazon etc, adapting them to your personal preferences.
 
-- 🔌 **WordPress Plugin**: If you have a WordPress website, Super8 comes as a simple plugin. With it, you can customize and adjust the visual elements of your website, giving you complete control over its appearance.
+- 🖥️ [**Desktop app**](/getting-started#🖥%EF%B8%8F-desktop-app)
+
+- 📱[**Mobile app**](/getting-started#📱-mobile-app)
+
+- 🐳 [**Docker image**](/getting-started#🐳-docker-image)
+
+- 🔌 [**WordPress Plugin**](/getting-started#🔌-wp-plugin): If you have a WordPress website, **Super8** comes as a simple plugin. With it, you can customize and adjust the visual elements of your website, giving you complete control over its appearance.

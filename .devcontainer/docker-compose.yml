@@ -14,11 +14,27 @@ services:
 
   super8-dev-env:
 
-    build: .
+    # # node env
+    # container_name: super8-dev-env
+    # restart: always
+    # volumes:
+    #     - ..:/workspaces:cached
+    # # Overrides the default command to prevent services from shutting down.
+    # # This command keeps the container running.
+    # command: /bin/sh -c "while sleep 1000; do :; done"
+
+    # tauri env
+    build: 
+      context: .
+      dockerfile: Dockerfile.tauri
+      args:
+        NODE_VERSION: "20"
+        PNPM_VERSION: "8.11.0"
+        TAURI_CLI_VERSION: "2.0.0-alpha.17"
     container_name: super8-dev-env
     restart: always
     volumes:
-          - ..:/workspaces:cached
+        - ..:/workspaces:cached
     # Overrides the default command to prevent services from shutting down.
     # This command keeps the container running.
     command: /bin/sh -c "while sleep 1000; do :; done"

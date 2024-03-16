@@ -50,7 +50,7 @@ export const load = async ( args ) => {
 
 	const filterOpts: Omit<ComponentFilters, 'type' > = {
 		active : true,
-		id     : 'ps-s8-styless',
+		id     : 'ps-s8-styles',
 		btn    : { 
 			title     : 'Super 8',
 			indicator : {

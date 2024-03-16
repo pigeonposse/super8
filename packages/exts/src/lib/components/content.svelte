@@ -2,7 +2,7 @@
 
     import {Btn, componentTypes} from "@s-8/core";
     import { contentIds, type ContentType } from "../types";
-    import { browser, extStoreUrl, openOptionsPage, extWebUrl, collectiveFundingUrl, extRepoUrl, extImagesSrc, extVersion } from "../_shared/main";
+    import { browser, extStoreUrl, openOptionsPage, extWebUrl, collectiveFundingUrl, extRepoUrl, extImagesSrc, extVersion, docsUrl } from "../_shared/main";
 
     export let logo: boolean = true
     export let description: string = ""
@@ -63,6 +63,12 @@
                 { browser.i18n.getMessage( 'donate' )}  ☕   
             </Btn>
             <Btn
+                href={docsUrl}
+                color={componentTypes.btn.none}
+            >
+               {browser.i18n.getMessage( 'docs' )}  📖
+            </Btn>
+            <Btn
                 href={extWebUrl}
                 color={componentTypes.btn.none}
             >
@@ -111,6 +117,16 @@
                 }}
             >
                 ⭐️
+            </Btn>
+            <Btn
+                href={docsUrl}
+                color={componentTypes.btn.none}
+                customClasses={classFooterPopupLinks}
+                tooltip={{
+                    title: browser.i18n.getMessage( 'docs' )
+                }}
+            >
+                📖
             </Btn>
             <Btn
                 href={extWebUrl}

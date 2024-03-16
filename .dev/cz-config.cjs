@@ -71,7 +71,7 @@ module.exports = {
 			name : 'exts', 
 		},
 		{
-			name : 'web', 
+			name : 'app', 
 		},
 		{
 			name : 'all', 

@@ -20,13 +20,6 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter : adapter(),
 	},
-	// optimizeDeps : {
-	// 	exclude : [ 
-	// 		'codemirror', 
-	// 		'@codemirror/lang-json',
-	// 		'@codemirror/theme-one-dark', 
-	// 	],
-	// },
 }
 
 export default config

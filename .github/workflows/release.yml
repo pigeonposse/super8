@@ -1,0 +1,317 @@
+###############################################################################
+# PUBLISH CORE IN NPM 
+###############################################################################
+
+name: Deploy webs
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+  NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
+  REPO_TEST: ${{ github.repository }}:test
+  REPO_LATEST: ${{ github.repository }}:latest
+
+###############################################################################
+# JOBS
+###############################################################################
+
+jobs:
+  update: 
+    name: 🚀 Release
+    runs-on: ubuntu-latest
+    steps:
+
+      #########################################################################
+      # INIT
+      #########################################################################
+
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+
+      - name: '📦 Setup jq'
+        uses: dcarbone/install-jq-action@v2
+
+      - name: 🟢 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: 🥡 Install pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: Check GitHub API Rate Limit
+        id: rate_limit
+        run: |
+          response=$(gh api rate_limit)
+          limit=$(echo $response | jq -r '.resources.core.limit')
+          remaining=$(echo $response | jq -r '.resources.core.remaining')
+          echo "GitHub API Rate Limit: $remaining/$limit"
+
+          if [ "$remaining" -lt 10 ]; then
+              exit 1
+          fi
+        env:
+            GH_TOKEN: ${{ env.GITHUB_TOKEN }}
+
+      - name: 🧩 Install dependencies
+        run: |
+          pnpm install --no-frozen-lockfile
+
+      - name: 🌐 Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+
+      #########################################################################
+      # BUILD
+      #########################################################################
+
+      - name: 🏗 Build
+        run: pnpm build
+
+      #########################################################################
+      #########################################################################
+      # UPDATE VERSIONS
+      #########################################################################
+      #########################################################################
+
+      - name: 📣 Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          title: "chore(release): version packages 🦋"
+          publish: pnpm exec changeset publish
+          version: pnpm exec changeset version
+          commit: "chore(release): version packages 🦋 [skip ci]"
+          createGithubReleases: false
+        env:
+          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ env.NPM_TOKEN }}
+
+      - name: Get updated versions if exists
+        id: updated
+        run: |
+          docs_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "@s-8/docs") | .version')
+          exts_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "@s-8/exts") | .version')
+          app_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "@s-8/app") | .version')
+          core_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r 'map(select(.name == "@s-8/app" or .name == "@s-8/exts" or .name == "@s-8/core")) | .[0].version // empty' )
+          echo Set changesets outputs
+          echo '${{ steps.changesets.outputs }}' 
+          echo Set updated versions
+          echo "CORE=$core_version APP=$app_version EXTS=$exts_version DOCS=$docs_version"
+          echo "core_version=$core_version" >> $GITHUB_OUTPUT
+          echo "docs_version=$docs_version" >> $GITHUB_OUTPUT
+          echo "exts_version=$exts_version" >> $GITHUB_OUTPUT
+          echo "app_version=$app_version" >> $GITHUB_OUTPUT
+
+
+      #########################################################################
+      #########################################################################
+      # DOCS
+      #########################################################################
+      #########################################################################
+
+      #########################################################################
+      # DOCS - PUBLUSH WEB
+      #########################################################################
+
+      - name: 🌥 Deploy in cloudflare pages
+        if: steps.updated.outputs.docs_version != ''
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ env.GITHUB_TOKEN }}
+          branch: main
+          projectName: "super8-docs"
+          directory: 'packages/docs/dist'
+          wranglerVersion: '3'
+
+
+      #########################################################################
+      #########################################################################
+      # APP
+      #########################################################################
+      #########################################################################
+
+      #########################################################################
+      # APP - PUBLISH WEB
+      #########################################################################
+
+      - name: 🌥 Deploy in cloudflare pages
+        if: steps.updated.outputs.core_version != ''
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+          projectName: "super8"
+          directory: 'packages/app/build'
+          wranglerVersion: '3'
+
+      #########################################################################
+      # APP - RELEASE APPS
+      #########################################################################
+
+      - name: Call to workflow for create Github app releases
+        if: steps.updated.outputs.core_version != ''
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            https://api.github.com/repos/${{ github.repository }}/dispatches \
+            -d '{"event_type": "trigger-workflow", "client_payload": {"app_version": "${{ steps.updated.outputs.core_version }}"}}'
+
+      #########################################################################
+      # APP - PUSH DOCKER IMAGE
+      #########################################################################
+
+      - name: ☑️ Set up QEMU
+        if: steps.updated.outputs.core_version != ''
+        uses: docker/setup-qemu-action@v1
+      
+      - name: ☑️ Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        if: steps.updated.outputs.core_version != ''
+
+      - name: 🐳 Login to Docker Hub
+        if: steps.updated.outputs.core_version != ''
+        uses: docker/login-action@v1
+        with:
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+      - name: 🐳📝 (TEST) Build and load to test
+        if: steps.updated.outputs.core_version != ''
+        uses: docker/build-push-action@v4
+        with:
+          context: packages/app
+          load: true
+          # platforms: linux/amd64,linux/arm64
+          tags: ${{ env.REPO_TEST }}
+
+      - name: 🐳📝 (TEST) execute test
+        if: steps.updated.outputs.core_version != ''
+        run: |
+          docker run --rm ${{ env.REPO_TEST }}
+
+      - name: 🐳🚀 Build and push image
+        if: steps.updated.outputs.core_version != ''
+        uses: docker/build-push-action@v4
+        with:
+          context: packages/app
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: |
+            ${{ github.repository }}:${{ steps.updated.outputs.core_version }}
+            ${{ env.REPO_LATEST }}
+
+      - name: Get package.json description for docker hub
+        if: steps.updated.outputs.core_version != ''
+        id: docker
+        run: |
+          echo "description=$(jq -r '.description' ./package.json)" >> $GITHUB_OUTPUT
+
+      - name: 📝 Update Docker Hub metadata
+        if: steps.updated.outputs.core_version != ''
+        uses: docker/metadata-action@v3
+        with:
+          images: ${{ github.repository }}:${{ steps.updated.outputs.core_version }},$${{ env.REPO_LATEST }}
+          description: ${{ steps.docker.outputs.description }}
+          readme: README.md
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+
+      #########################################################################
+      #########################################################################
+      # EXTS
+      #########################################################################
+      #########################################################################
+
+      - name: Get package.json data
+        if: steps.updated.outputs.core_version != ''
+        id: pkg
+        run: |
+          echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
+          echo "exts_version=$(jq -r '.version' ./packages/exts/package.json)" >> $GITHUB_OUTPUT
+          echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
+
+      #########################################################################
+      #  EXTS - PUBLISH IN CHROME WEB STORE
+      #########################################################################
+
+    #   - name: Upload CHROME extension
+    #     uses: Klemensas/chrome-extension-upload-action@v1.3
+    #     with:
+    #       refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+    #       client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+    #       client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+    #       file-name: "packages/exts/dist/store/${{ steps.pkg.outputs.name }}-chrome-${{ steps.package.outputs.version }}.zip"
+    #       app-id: '${{steps.pkg.outputs.chrome_storeId}}'
+    #       publish: true
+
+
+      #########################################################################
+      # EXTS - PUBLISH IN EDGE WEB STORE
+      #########################################################################
+
+    #   - name: Upload EDGE extension
+    #     uses: inverse/edge-addon@v1.0.1
+    #     with:
+    #       product_id: ${{ secrets.EDGE_PRODUCT_ID }}
+    #       client_id: ${{ secrets.EDGE_CLIENT_ID }}
+    #       client_secret: ${{ secrets.EDGE_CLIENT_SECRET }}
+    #       access_token_url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
+    #       zip: packages/exts/dist/store/${{ steps.pkg.outputs.name }}-edge-${{ steps.package.outputs.version }}.zip
+    #       notes: New version upload # Could be derived from release notes
+
+
+      #########################################################################
+      #  EXTS - PUBLISH IN FIREFOX WEB STORE
+      #########################################################################
+
+      - name: Upload FIREFOX extension
+        if: steps.updated.outputs.core_version != ''
+        uses: trmcnvn/firefox-addon@v1
+        with:
+          # uuid is only necessary when updating an existing addon,
+          # omitting it will create a new addon
+          uuid: '${{ steps.pkg.outputs.firefox_storeId }}'
+          xpi: "packages/exts/dist/store/${{ steps.pkg.outputs.name }}-firefox-${{ steps.package.outputs.version }}.zip"
+          manifest: packages/exts/dist/firefox/manifest.json
+          # get keys in:
+          # https://addons.mozilla.org/en-US/developers/addon/api/key/
+          api-key: ${{ secrets.FIREFOX_API_KEY }}
+          api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+
+
+      #########################################################################
+      # EXTS - GITHUB RELEASES
+      #########################################################################
+
+      - name: Create Github release
+        if: steps.updated.outputs.core_version != ''
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.pkg.outputs.core_version }}"
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          artifacts: "packages/exts/dist/exts/*"
+          body: |
+            🧩 View CHANGELOG at: https://github.com/pigeonposse/super8/packages/exts/blob/main/CHANGELOG.md
+            📜 View LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
+
+
+############################################################################### 

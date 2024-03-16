@@ -2,34 +2,35 @@
 	"name": "@s-8/exts",
 	"description": "Super8 browser extensions",
 	"private": true,
-	"version": "0.0.3",
+	"version": "0.1.0",
 	"type": "module",
+	"license": "GPL-3.0",
 	"scripts": {
 		"dev": "run-p dev:chrome",
 		"dev:chrome": "rimraf dist/chrome && TARGET=chrome vite dev",
 		"dev:firefox": "rimraf dist/chrome && TARGET=firefox vite",
 		"watch:chrome": "NODE_ENV=development TARGET=chrome vite build --watch",
 		"watch:firefox": "NODE_ENV=development TARGET=firefox vite build --watch",
-		"build": "run-p build:* && pnpm zip",
+		"build": "run-p build:* && pnpm package",
 		"build:chrome": "rimraf dist/chrome && NODE_ENV=production TARGET=chrome vite build",
 		"build:firefox": "rimraf dist/firefox && NODE_ENV=production TARGET=firefox vite build",
-		"zip": "node zip.js",
+		"package": "bepp build --time",
 		"lint": "run-p lint:js",
 		"lint:js": "pnpm eslint .",
 		"lint:svelte": "svelte-check --tsconfig ./tsconfig.json",
-		"test": ""
+		"test": "playwright test"
 	},
 	"devDependencies": {
-		"@s-8/core": "0.0.4",
+		"@bepp/bepp": "1.2.3",
+		"@s-8/core": "workspace:*",
 		"@types/chrome": "0.0.243",
-		"@types/webextension-polyfill": "^0.10.5",
-		"flowbite": "^1.8.1",
-		"flowbite-svelte": "^0.39.3",
-		"lightningcss": "^1.22.0",
-		"postcss-prefix-selector": "^1.16.0",
-		"vite-plugin-web-extension": "^3.2.0",
-		"webextension-polyfill": "^0.10.0",
-		"zip-a-folder": "^2.0.2"
+		"@types/webextension-polyfill": "0.10.5",
+		"flowbite": "1.8.1",
+		"flowbite-svelte": "0.39.3",
+		"lightningcss": "1.22.0",
+		"postcss-prefix-selector": "1.16.0",
+		"vite-plugin-web-extension": "3.2.0",
+		"webextension-polyfill": "0.10.0"
 	},
 	"extra": {
 		"devServerPort": "5173"
@@ -37,7 +38,7 @@
 	"webExt": {
 		"run": {
 			"startUrl": [
-				"https://www.youtube.com/watch?v=UN1hu4e-VmM",
+				"https://www.youtube.com/watch?v=UQ5mbI44I1w",
 				"https://www.twitch.tv/",
 				"https://www.filmin.es/",
 				"https://vimeo.com",

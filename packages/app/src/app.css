@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+svg:focus {
+    outline: none;
+}
+/* ::-moz-selection {
+    color: black;
+    background: rgb(255 237 0 / var(--tw-text-opacity));
+}
+::selection {
+    color: black;
+    background: rgb(255 237 0 / var(--tw-text-opacity));
+} */
+
+@keyframes changeHue {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+}
+.change-hue {
+    animation: changeHue 5s linear infinite;
+}
+.hover-change-hue:hover {
+    animation: changeHue 5s linear infinite;
+}
+html {
+	color-scheme: dark;
+    font-family: sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+	html {
+	  color-scheme: dark;
+	}
+  }
+  
+  /* If the user prefers light mode, 
+  we still enforce color-scheme: dark, despite the user preference */
+@media (prefers-color-scheme: light) {
+	html {
+		color-scheme: dark !important;
+	}
+}
+  

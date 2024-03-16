@@ -11,6 +11,10 @@
 		"message": "Web",
 		"description": "For web Links"
 	},
+    "docs": {
+		"message": "Docs",
+		"description": "Per a enllaços web"
+	},
 	"about": {
 		"message": "About",
 		"description": "For about Links"

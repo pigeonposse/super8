@@ -32,7 +32,7 @@
     
     let compEl: SvelteComponent
     onMount(() => {
-      console.log(compEl.changeActive);
+    //   console.log(compEl.changeActive);
       // compEl.changeActive(true)
     })
 

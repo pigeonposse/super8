@@ -123,6 +123,7 @@ export const data: ComponentOptionsRecursive = [
 				type  : componentTypes.option.checkbox,
 				title : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_youtube' ),
+					link  : 'https://youtube.com',
 				},
 				value : defaultData[optionsIds.allowSites.youtube].defaultValue,
 			},
@@ -131,6 +132,7 @@ export const data: ComponentOptionsRecursive = [
 				type  : componentTypes.option.checkbox,
 				title : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_vimeo' ),
+					link  : 'https://vimeo.com',
 				},
 				value : defaultData[optionsIds.allowSites.vimeo].defaultValue,
 			},
@@ -139,6 +141,7 @@ export const data: ComponentOptionsRecursive = [
 				type  : componentTypes.option.checkbox,
 				title : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_twitch' ),
+					link  : 'https://twitch.tv',
 				},
 				value : defaultData[optionsIds.allowSites.twitch].defaultValue,
 			},
@@ -148,6 +151,7 @@ export const data: ComponentOptionsRecursive = [
 				type  : componentTypes.option.checkbox,
 				title : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_disney' ),
+					link  : 'https://disneyplus.com',
 				},
 				value : defaultData[optionsIds.allowSites.disney].defaultValue,
 			},
@@ -157,6 +161,7 @@ export const data: ComponentOptionsRecursive = [
 				type     : componentTypes.option.checkbox,
 				title    : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_netflix' ),
+					link  : 'https://netflix.com',
 				},
 				value : defaultData[optionsIds.allowSites.netflix].defaultValue,
 			},
@@ -166,6 +171,7 @@ export const data: ComponentOptionsRecursive = [
 				type     : componentTypes.option.checkbox,
 				title    : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_primevideo' ),
+					link  : 'https://primevideo.com',
 				},
 				value : defaultData[optionsIds.allowSites.primevideo].defaultValue,
 			},
@@ -175,6 +181,7 @@ export const data: ComponentOptionsRecursive = [
 				type  : componentTypes.option.checkbox,
 				title : {
 					value : browser.i18n.getMessage( 'opts_allowedSites_filmin' ),
+					link  : 'https://filmin.es',
 				},
 				value : defaultData[optionsIds.allowSites.filmin].defaultValue,
 			},

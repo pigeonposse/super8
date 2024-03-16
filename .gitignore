@@ -49,6 +49,12 @@ build
 /test-results
 **/test-results
 
+# tauri 
+/src-tauri/target
+**/src-tauri/target
+/src-tauri/gen
+**/src-tauri/gen
+
 # project 
 **/dist
 **/__temp__

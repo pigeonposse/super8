@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.0
+
+### Minor Changes
+
+- Update minor version
+
 ## 0.2.4
 
 ### Patch Changes
