@@ -1,0 +1,15 @@
+{
+	"name": "Super8 (WPA)",
+	"short_name": "Super8",
+	"icons": [
+	  {
+		"src": "/logo-144.png",
+		"sizes": "144x144",
+		"type": "image/png"
+	  }
+	],
+	"start_url": "/",
+	"theme_color": "#0D0D0D",
+	"background_color": "#0D0D0D",
+	"display": "standalone"
+  }

@@ -295,12 +295,6 @@
 				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_x86_64.AppImage.tar.gz",
 				"type": "desktop"
 			},
-			"android": {
-				"name": "Android App",
-				"logo": "android",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_x86_64.AppImage.tar.gz",
-				"type": "mobile"
-			},
 			"wpPlugin": {
 				"name": "Wordpress Plugin",
 				"logo": "wordpress",

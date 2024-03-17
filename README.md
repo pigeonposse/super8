@@ -34,13 +34,13 @@ FOR PIGEONPOSSE.COM
 
 ![SUPER8 HEADER](docs/images/banner.png)
 
-[![Web](https://img.shields.io/badge/Collective%20Web-grey?style=flat-square)](https://super8.pigeonposse.com/)
+[![Web](https://img.shields.io/badge/Collective%20Web-grey?style=flat-square)](https://pigeonposse.com/)
 [![About us](https://img.shields.io/badge/About-us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
 [![Donate](https://img.shields.io/badge/Donate-pink?style=flat-square)](https://pigeonposse.com/?popup=donate)
 
 [![License](https://img.shields.io/github/license/pigeon-posse/pigeonsh?label=License&style=flat-square)](https://github.com/pigeonposse/super8/blob/main/LICENSE)
-[![Core](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2F_core%2Fpackage.json&style=flat-square&label=Core&color=blue)](https://super8.pigeonposse.com)
-[![super8 Web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fweb%2Fpackage.json&style=flat-square&label=Web&color=blue)](https://super8.pigeonposse.com)
+[![Core](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2F_core%2Fpackage.json&style=flat-square&label=Core&color=blue)](https://www.npmjs.com/package/@s-8/core)
+[![super8 Web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fapp%2Fpackage.json&style=flat-square&label=Web&color=blue)](https://super8.pigeonposse.com)
 [![CHROME](https://img.shields.io/chrome-web-store/v/aejkinmllndkgoodkfbhfkffnebmibkd?color=blue&style=flat-square&label=Chrome)](https://chrome.google.com/webstore/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
 [![MOZILLA](https://img.shields.io/amo/v/{63bba7f4-510b-4478-b401-a2726a9703ba}?color=blue&style=flat-square&label=Mozilla)](https://addons.mozilla.org/es/firefox/addon/super8/)
 
@@ -88,8 +88,8 @@ _PigeonPosse_ is a ✨ **code development collective** ✨ focused on creating p
 
 |                                                                                    | Name         | Role         | Contribution | GitHub                                         |
 | ---------------------------------------------------------------------------------- | ------------ | ------------ | ------------ | ---------------------------------------------- |
-| <img src="https://github.com/AlejoMalia.png?size=72" style="border-radius:100%"/> | Alejo Malia  | Author       | Idea & UI Design | [@AlejoMalia](https://github.com/AlejoMalia) |
-| <img src="https://github.com/AngelEspejo.png?size=72" style="border-radius:100%"/> | Ángel Espejo | Author       | Idea & Development & UI Design | [@AngelEspejo](https://github.com/AngelEspejo) |
-| <img src="https://github.com/PigeonPosse.png?size=72" style="border-radius:100%"/> | PigeonPosse  | Collective   | Distribution | [@PigeonPosse](https://github.com/PigeonPosse) |
+| <img src="https://github.com/AlejoMalia.png?size=72" style="border-radius:100%" alt="logo"/> | Alejo Malia  | Author       | Idea & UI Design | [@AlejoMalia](https://github.com/AlejoMalia) |
+| <img src="https://github.com/AngelEspejo.png?size=72" style="border-radius:100%" alt="logo" /> | Ángel Espejo | Author       | Idea & Development & UI Design | [@AngelEspejo](https://github.com/AngelEspejo) |
+| <img src="https://github.com/PigeonPosse.png?size=72" style="border-radius:100%" alt="logo" /> | PigeonPosse  | Collective   | Distribution | [@PigeonPosse](https://github.com/PigeonPosse) |
 
 <br>

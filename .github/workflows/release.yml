@@ -12,7 +12,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
-  GITHUB_TOKEN: ${{ github.token }}
+  GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
   NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
   REPO_TEST: ${{ github.repository }}:test
   REPO_LATEST: ${{ github.repository }}:latest
@@ -30,6 +30,11 @@ jobs:
       #########################################################################
       # INIT
       #########################################################################
+
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.12.1
+        with:
+          access_token: ${{ env.GITHUB_TOKEN }}
 
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
@@ -171,7 +176,7 @@ jobs:
         run: |
           curl -X POST \
             -H "Accept: application/vnd.github.everest-preview+json" \
-            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Authorization: Bearer ${{ env.GITHUB_TOKEN }}" \
             https://api.github.com/repos/${{ github.repository }}/dispatches \
             -d '{"event_type": "trigger-workflow", "client_payload": {"app_version": "${{ steps.updated.outputs.core_version }}"}}'
 

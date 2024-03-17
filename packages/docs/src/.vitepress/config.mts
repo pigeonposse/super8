@@ -97,11 +97,10 @@ export default defineConfig({
 			// @ts-ignore
             items: navDownload.desktop
           },
-          { 
-            text: 'Mobile apps', 
-			// @ts-ignore
-            items: navDownload.mobile
-          },
+        //   { 
+        //     text: 'Mobile apps', 
+        //     items: navDownload.mobile
+        //   },
           { 
             text: 'Browser extensions', 
 			// @ts-ignore

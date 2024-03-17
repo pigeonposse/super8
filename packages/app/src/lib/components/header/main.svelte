@@ -57,33 +57,41 @@
                 <Fa icon={faChevronDown} class="ml-4 text-[13px]"/>
             </NavLi>
             <Dropdown>
-				{#if !isTauri}
+				{#if !isTauri && navDownload.desktop}
 					<DownloadLink 
 						title={'Desktop Applications'}
 						icon={faDesktop}
 						items={navDownload.desktop}
 					/>
 				{/if}
-				<DownloadLink 
-					title={'Mobile Applications'}
-					icon={faMobile}
-					items={navDownload.mobile}
-				/>
-				<DownloadLink 
-					title={'Browser extensions'}
-					icon={faPuzzlePiece}
-					items={navDownload.extension}
-				/>
-				<DownloadLink 
-					title={'Wordpress plugins'}
-					icon={Fab.faWordpressSimple}
-					items={navDownload['wp-plugin']}
-				/>
-				<DownloadLink 
-					title={'Containers'}
-					icon={Fab.faDocker}
-					items={navDownload['container']}
-				/>
+				{#if navDownload.mobile}
+					<DownloadLink 
+						title={'Mobile Applications'}
+						icon={faMobile}
+						items={navDownload.mobile}
+					/>
+				{/if}
+				{#if navDownload.extension}
+					<DownloadLink 
+						title={'Browser extensions'}
+						icon={faPuzzlePiece}
+						items={navDownload.extension}
+					/>
+				{/if}
+				{#if navDownload['wp-plugin']}
+					<DownloadLink 
+						title={'Wordpress plugins'}
+						icon={Fab.faWordpressSimple}
+						items={navDownload['wp-plugin']}
+					/>
+				{/if}
+				{#if navDownload['container']}
+					<DownloadLink 
+						title={'Containers'}
+						icon={Fab.faDocker}
+						items={navDownload['container']}
+					/>
+				{/if}
             </Dropdown>  
             <NavLi href="{mainPkg.extra.docsUrl}" target="_blank">{$t('common.documentation.message')}</NavLi>
             <NavLi href="{mainPkg.funding.url}" target="_blank">{$t('common.donate.message')}</NavLi>
