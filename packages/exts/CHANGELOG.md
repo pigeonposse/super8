@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.1.5
+
+### Patch Changes
+
+- Update cargo deps
+
 ## 0.1.4
 
 ## 0.1.3

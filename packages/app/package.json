@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/app",
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -24,6 +24,8 @@
 		"lint:svelte": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json $@",
 		"lint-watch": "run-p lint-watch:*",
 		"lint-watch:svelte": "pnpm lint:svelte --watch",
+		"update": "pnpm update:cargo",
+		"update:cargo": "cargo update --manifest-path src-tauri/Cargo.toml",
 		"docker-up": "docker-compose up --build -d",
 		"docker-down": "docker-compose down",
 		"coverage": "browserslist --coverage"
