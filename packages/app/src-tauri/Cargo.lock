@@ -3091,7 +3091,7 @@ checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
 
 [[package]]
 name = "super8"
-version = "0.0.0"
+version = "0.1.5"
 dependencies = [
  "serde_json",
  "tauri",

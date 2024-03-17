@@ -1,13 +1,27 @@
 [package]
+# Some of this are used in build process of tauri
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 name = "super8"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "0.1.5"
+description = "🎬🎨🧩 Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc"
+authors = ["angelo <angelo@pigeonposse.com>"]
 license = "GPL-3.0"
+license-file = "../../../LICENSE"
 repository = "https://github.com/pigeonposse/super8"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+homepage = "https://super8.pigeonposse.com/"
+documentation = "https://docs.super8.pigeonposse.com/"
+readme = "../../../README.md"
+keywords = [
+    "super-8",
+    "youtube",
+    "styles",
+    "video",
+    "iframe",
+    "browser-extension",
+    "chrome-extension",
+    "web"
+]
 
 [lib]
 name = "super8_lib"

@@ -49,6 +49,10 @@ build
 /test-results
 **/test-results
 
+# cargo
+.cargo
+**/.cargo
+
 # tauri 
 /src-tauri/target
 **/src-tauri/target

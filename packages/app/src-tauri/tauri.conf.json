@@ -1,4 +1,5 @@
 {
+	"$schema": "../node_modules/@tauri-apps/cli/schema.json",
 	"app": {
 		"macOSPrivateApi": true,
 		"security": {
@@ -28,11 +29,12 @@
 	},
 	"bundle": {
 		"active": true,
-		"category": "DeveloperTool",
-		"copyright": "",
-		"iOS": {
-			"developmentTeam": "97JQW2HSHQ"
-		},
+		"category": "Video",
+		"copyright": "Copyright © PigeonPosse",
+		"shortDescription": "Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
+		"longDescription": "A tool to modify video styles on websites like YouTube and Vimeo according to your personal preferences. Enjoy a fully personalized video viewing experience! 🎬🎨🧩",
+		"targets": "all",
+		"licenseFile": "../../../LICENSE",
 		"icon": [
 			"icons/32x32.png",
 			"icons/128x128.png",
@@ -40,7 +42,9 @@
 			"icons/icon.icns",
 			"icons/icon.ico"
 		],
-		"longDescription": "",
+		"iOS": {
+			"developmentTeam": "97JQW2HSHQ"
+		},
 		"macOS": {
 			"entitlements": null,
 			"exceptionDomain": "",
@@ -49,8 +53,6 @@
 			"providerShortName": null,
 			"signingIdentity": null
 		},
-		"shortDescription": "",
-		"targets": "all",
 		"windows": {
 			"certificateThumbprint": null,
 			"digestAlgorithm": "sha256",

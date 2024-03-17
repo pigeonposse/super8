@@ -1,6 +1,6 @@
 # SUPER8 App
 
-![SUPER8 HEADER](docs/images/banner.png)
+![SUPER8 HEADER](../../docs/images/banner.png)
 
 [![Web](https://img.shields.io/badge/Collective%20Web-grey?style=flat-square)](https://super8.pigeonposse.com/)
 [![About us](https://img.shields.io/badge/About-us-grey?style=flat-square)](https://pigeonposse.com/?popup=about)
@@ -16,10 +16,10 @@ Desktop:
 - Linux
 - Windows
 
-Phone:
+<!-- Phone:
 
 - Android
-- iOS
+- iOS -->
 
 ## Download in
 
