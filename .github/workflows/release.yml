@@ -2,7 +2,7 @@
 # PUBLISH CORE IN NPM 
 ###############################################################################
 
-name: Deploy webs
+name: 🚀 Release
 on:
     push:
         branches:
@@ -34,28 +34,7 @@ jobs:
       - name: ⬇️ Checkout
         uses: actions/checkout@v4
 
-      - name: '📦 Setup jq'
-        uses: dcarbone/install-jq-action@v2
-
-      - name: 🟢 Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: 🦀 Rust setup
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: aarch64-apple-darwin
-
-      - name: 🦀 Install dependencies for tauri (ubuntu only)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
-
-      - name: 🥡 Install pnpm
-        uses: pnpm/action-setup@v3
-
-      - name: :octocat Check GitHub API Rate Limit
+      - name: 🐙😺 Check GitHub API Rate Limit
         id: rate_limit
         run: |
           response=$(gh api rate_limit)
@@ -69,11 +48,19 @@ jobs:
         env:
             GH_TOKEN: ${{ env.GITHUB_TOKEN }}
 
-      - name: 🧩 Install dependencies
+      - name: ⬇️🟢 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: ⬇️🥡 Install pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: ⬇️📦 Install dependencies
         run: |
           pnpm install --no-frozen-lockfile
 
-      - name: 🌐 Install Playwright Browsers
+      - name: ⬇️🌐 Install Playwright Browsers
         run: npx playwright install --with-deps
 
 
@@ -90,7 +77,7 @@ jobs:
       #########################################################################
       #########################################################################
 
-      - name: 📣 Create Release Pull Request or Publish to npm
+      - name: 🦋 Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
         with:
@@ -103,7 +90,7 @@ jobs:
           GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ env.NPM_TOKEN }}
 
-      - name: Get updated versions if exists
+      - name: 🦋🗂️ Get updated versions if exists
         id: updated
         run: |
           docs_version=$(echo '${{ steps.changesets.outputs.publishedPackages }}' | jq -r '.[] | select(.name == "@s-8/docs") | .version')
@@ -119,6 +106,16 @@ jobs:
           echo "exts_version=$exts_version" >> $GITHUB_OUTPUT
           echo "app_version=$app_version" >> $GITHUB_OUTPUT
 
+      - name: 📦📄 Get package.json data
+        if: steps.updated.outputs.core_version != ''
+        id: pkg
+        run: |
+          echo "description=$(jq -r '.description' ./package.json)" >> $GITHUB_OUTPUT
+          echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
+          echo "exts_version=$(jq -r '.version' ./packages/exts/package.json)" >> $GITHUB_OUTPUT
+          echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
 
       #########################################################################
       #########################################################################
@@ -130,7 +127,7 @@ jobs:
       # DOCS - PUBLUSH WEB
       #########################################################################
 
-      - name: 🌥 Deploy in cloudflare pages
+      - name: 📚🌥 Deploy in cloudflare pages
         if: steps.updated.outputs.docs_version != ''
         uses: cloudflare/pages-action@v1
         with:
@@ -153,7 +150,7 @@ jobs:
       # APP - PUBLISH WEB
       #########################################################################
 
-      - name: 🌥 Deploy in cloudflare pages
+      - name: 🖥️🌥 Deploy in cloudflare pages
         if: steps.updated.outputs.core_version != ''
         uses: cloudflare/pages-action@v1
         with:
@@ -169,7 +166,7 @@ jobs:
       # APP - RELEASE APPS
       #########################################################################
 
-      - name: Call to workflow for create Github app releases
+      - name: 🖥️🐙😺➡️ Call to workflow for create Github app releases
         if: steps.updated.outputs.core_version != ''
         run: |
           curl -X POST \
@@ -182,11 +179,11 @@ jobs:
       # APP - PUSH DOCKER IMAGE
       #########################################################################
 
-      - name: ☑️ Set up QEMU
+      - name: 🐳☑️ Set up QEMU
         if: steps.updated.outputs.core_version != ''
         uses: docker/setup-qemu-action@v1
       
-      - name: ☑️ Set up Docker Buildx
+      - name: 🐳☑️ Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
         if: steps.updated.outputs.core_version != ''
 
@@ -223,18 +220,12 @@ jobs:
             ${{ github.repository }}:${{ steps.updated.outputs.core_version }}
             ${{ env.REPO_LATEST }}
 
-      - name: Get package.json description for docker hub
-        if: steps.updated.outputs.core_version != ''
-        id: docker
-        run: |
-          echo "description=$(jq -r '.description' ./package.json)" >> $GITHUB_OUTPUT
-
-      - name: 📝 Update Docker Hub metadata
+      - name: 🐳📝 Update Docker Hub metadata
         if: steps.updated.outputs.core_version != ''
         uses: docker/metadata-action@v3
         with:
           images: ${{ github.repository }}:${{ steps.updated.outputs.core_version }},$${{ env.REPO_LATEST }}
-          description: ${{ steps.docker.outputs.description }}
+          description: ${{ steps.pkg.outputs.description }}
           readme: README.md
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
@@ -247,21 +238,11 @@ jobs:
       #########################################################################
       #########################################################################
 
-      - name: Get package.json data
-        if: steps.updated.outputs.core_version != ''
-        id: pkg
-        run: |
-          echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
-          echo "exts_version=$(jq -r '.version' ./packages/exts/package.json)" >> $GITHUB_OUTPUT
-          echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
-          echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
-          echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
-
       #########################################################################
       #  EXTS - PUBLISH IN CHROME WEB STORE
       #########################################################################
 
-    #   - name: Upload CHROME extension
+    #   - name: 🧩 Upload CHROME extension
     #     uses: Klemensas/chrome-extension-upload-action@v1.3
     #     with:
     #       refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
@@ -276,7 +257,7 @@ jobs:
       # EXTS - PUBLISH IN EDGE WEB STORE
       #########################################################################
 
-    #   - name: Upload EDGE extension
+    #   - name: 🧩 Upload EDGE extension
     #     uses: inverse/edge-addon@v1.0.1
     #     with:
     #       product_id: ${{ secrets.EDGE_PRODUCT_ID }}
@@ -291,7 +272,7 @@ jobs:
       #  EXTS - PUBLISH IN FIREFOX WEB STORE
       #########################################################################
 
-      - name: Upload FIREFOX extension
+      - name: 🧩🦊 Upload FIREFOX extension
         if: steps.updated.outputs.core_version != ''
         uses: trmcnvn/firefox-addon@v1
         with:
@@ -310,7 +291,7 @@ jobs:
       # EXTS - GITHUB RELEASES
       #########################################################################
 
-      - name: Create Github release
+      - name: 🧩🗂️ Create Github release
         if: steps.updated.outputs.core_version != ''
         uses: ncipollo/release-action@v1
         with:
