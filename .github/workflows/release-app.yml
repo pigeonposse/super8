@@ -72,12 +72,20 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
 
-      - name: 📦 Install frontend dependencies
-        run: pnpm install --no-frozen-lockfile
+      - name: ⬇️📦 Install dependencies
+        run: |
+          pnpm install --no-frozen-lockfile
+
+      - name: ⬇️🌐 Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       #########################################################################
       # BUILD
       #########################################################################
+   
+      # important because app works with the core local package
+      - name: 🏗 Build
+        run: pnpm build:core
 
       - name: 🖥️ Build the app
         uses: tauri-apps/tauri-action@v0

@@ -2,6 +2,7 @@
 shared:
   id: super8
   output: "./dist/exts"
+  filename: "{{id}}-{{browser}}"
   input:
     chromium: "./dist/chrome"
     chromium-mv2: "./dist/firefox"
@@ -15,6 +16,7 @@ build:
   - type: chromium
   - type: chromium-mv2
   - type: firefox-mv2
+    output: "./dist/store"
   - type: edge
   - type: edge-mv2
   - type: yandex
@@ -35,6 +37,7 @@ build:
   - type: chromium-mv2
     compress: zip
   - type: firefox-mv2
+    output: "./dist/store"
     compress: zip
   - type: edge
     compress: zip
@@ -54,14 +57,3 @@ build:
     browserName: vivaldi
     input: "./dist/chrome"
     compress: zip
-  # For store
-  - type: chrome
-    compress: zip
-    output: "./dist/store"
-  - type: edge
-    compress: zip
-    output: "./dist/store"
-  - type: firefox-mv2
-    filename: "{{id}}-firefox-{{version}}"
-    compress: zip
-    output: "./dist/store"

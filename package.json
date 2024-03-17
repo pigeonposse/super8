@@ -47,10 +47,10 @@
 		"dev:docs": "turbo build --filter=core && turbo dev --filter=docs",
 		"dev-info": "md docs/dev-info.md",
 		"build": "turbo build",
-		"build:core": "turbo lint build test --filter=core --filter=core-react",
-		"build:exts": "turbo lint build test --filter=core --filter=exts",
-		"build:app": "turbo lint build test --filter=core --filter=app",
-		"build:docs": "turbo lint build test --filter=docs",
+		"build:core": "turbo build --filter=core --filter=core-react",
+		"build:exts": "turbo build --filter=core --filter=exts",
+		"build:app": "turbo build --filter=core --filter=app",
+		"build:docs": "turbo build --filter=docs",
 		"lint": "pnpm eslint .",
 		"lint-fix": "pnpm eslint . --fix",
 		"test": "turbo test",
@@ -151,6 +151,7 @@
 	},
 	"extra": {
 		"productName": "Super8",
+		"id": "super8",
 		"docsUrl": "https://docs.super8.pigeonposse.com",
 		"socialLinks": [
 			{
@@ -177,7 +178,7 @@
 				"type": "extension"
 			},
 			"chromeMv2": {
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-chrome-mv2.zip",
 				"id": "chrome-mv2",
 				"name": "Chrome (Manifest 2) Extension",
 				"logo": "googlechrome",
@@ -193,7 +194,7 @@
 				"type": "extension"
 			},
 			"edgeMv2": {
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-edge-mv2.zip",
 				"id": "edge-mv2",
 				"name": "Edge (Manifest 2) Extension",
 				"logo": "microsoftedge",
@@ -210,35 +211,35 @@
 			},
 			"safari": {
 				"id": "safari",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-safari.tar.gz",
 				"name": "Safari Extension",
 				"logo": "safari",
 				"type": "extension"
 			},
 			"brave": {
 				"id": "brave",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-brave.zip",
 				"name": "Brave Extension",
 				"logo": "brave",
 				"type": "extension"
 			},
 			"opera": {
 				"id": "opera",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-opera.zip",
 				"name": "Opera Extension",
 				"logo": "opera",
 				"type": "extension"
 			},
 			"operaGX": {
 				"id": "opera-gx",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-opera-gx.zip",
 				"name": "Opera GX Extension",
 				"logo": "operagx",
 				"type": "extension"
 			},
 			"vivaldi": {
 				"id": "vivaldi",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-vivaldi.zip",
 				"name": "Vivaldi Extension",
 				"logo": "vivaldi",
 				"type": "extension"
@@ -247,25 +248,25 @@
 				"id": "yandex",
 				"name": "Yandex extension",
 				"logo": "googlechrome",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-yandex.zip",
 				"type": "extension"
 			},
 			"yandexMv2": {
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-yandex-mv2.zip",
 				"id": "yandex-mv2",
 				"name": "Yandex (Manifest 2) Extension",
 				"logo": "googlechrome",
 				"type": "extension"
 			},
 			"chromium": {
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-chromium.zip",
 				"id": "chromium",
 				"name": "Chromium Extension",
 				"logo": "googlechrome",
 				"type": "extension"
 			},
 			"chromiumMv2": {
-				"url": "https://github.com/pigeonposse/super8/releases/latest/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/super8-chromium-mv2.zip",
 				"id": "chromium-mv2",
 				"name": "Chromium (Manifest 2) Extension",
 				"logo": "googlechrome",
@@ -298,7 +299,7 @@
 			"wpPlugin": {
 				"name": "Wordpress Plugin",
 				"logo": "wordpress",
-				"url": "https://es.wordpress.org/plugins/",
+				"url": "https://profiles.wordpress.org/pigeonposse/",
 				"comingsoon": true,
 				"icon": "wordpress",
 				"type": "wp-plugin"
