@@ -1,5 +1,11 @@
 # @s-8/app
 
+## 0.1.3
+
+### Patch Changes
+
+- FIX CI
+
 ## 0.1.2
 
 ### Patch Changes

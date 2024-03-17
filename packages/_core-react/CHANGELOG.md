@@ -1,5 +1,7 @@
 # @s-8/core-react
 
+## 0.1.3
+
 ## 0.1.2
 
 ### Patch Changes
