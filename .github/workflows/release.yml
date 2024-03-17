@@ -12,7 +12,7 @@ on:
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 env:
-  GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+  GITHUB_TOKEN: ${{ github.token }}
   NPM_TOKEN: ${{ secrets.NPM_ACCESS_TOKEN }}
   REPO_TEST: ${{ github.repository }}:test
   REPO_LATEST: ${{ github.repository }}:latest

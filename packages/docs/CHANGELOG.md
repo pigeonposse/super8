@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.2
+
+### Patch Changes
+
+- Update repo permissions
+
 ## 0.3.1
 
 ### Patch Changes

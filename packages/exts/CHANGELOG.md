@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.1.2
+
+### Patch Changes
+
+- Update repo permissions
+
 ## 0.1.1
 
 ## 0.1.0

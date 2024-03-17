@@ -55,11 +55,11 @@
 		"lint-fix": "pnpm eslint . --fix",
 		"test": "turbo test",
 		"cm": "cz",
-		"cm-origin": "git add . && pnpm cm && git push -f origin $@",
+		"push-origin": "git add . && pnpm cm && git push -f origin $@",
+		"push-main": "pnpm push-origin main",
+		"push-dev": "pnpm push-origin dev",
 		"update-version": "changeset && changeset version",
-		"push-main": "pnpm cm-origin main",
-		"push-dev": "pnpm cm-origin dev",
-		"publish-npm": "pnpm build:core && pnpm update-version && changeset publish",
+		"release": "changeset publish",
 		"todo": "node .dev/todo.mjs"
 	},
 	"commitlint": {
