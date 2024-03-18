@@ -2,7 +2,7 @@
 # PUBLISH CORE IN NPM 
 ###############################################################################
 
-name: 🚀 Release
+name: ✅ Test and check for updates
 on:
     push:
         branches:
@@ -20,8 +20,8 @@ env:
 ###############################################################################
 
 jobs:
-  update: 
-    name: 🚀 Release
+  checks: 
+    name: ✅ Test and check for updates
     runs-on: ubuntu-latest
     steps:
 

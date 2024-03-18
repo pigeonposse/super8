@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.9
+
+### Patch Changes
+
+- update ci
+
 ## 0.3.8
 
 ### Patch Changes

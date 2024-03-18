@@ -21,7 +21,7 @@ env:
 ###############################################################################
 
 jobs:
-  release: 
+  release_docs: 
     name: 🚀📚 Release Documentation
     runs-on: ubuntu-latest
     steps:

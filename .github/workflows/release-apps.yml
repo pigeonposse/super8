@@ -21,7 +21,7 @@ env:
 ###############################################################################
 
 jobs:
-  release:
+  release_apps:
     permissions:
       contents: write
       deployments: write
@@ -178,7 +178,7 @@ jobs:
           password: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
       - name: 🐳🚀 Build and push image
-        if: smatrix.settings.platform == 'ubuntu-22.04'
+        if: matrix.settings.platform == 'ubuntu-22.04'
         uses: docker/build-push-action@v4
         with:
           context: packages/app
