@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.1.10
+
+### Patch Changes
+
+- update ci
+
 ## 0.1.9
 
 ### Patch Changes

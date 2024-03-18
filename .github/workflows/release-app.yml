@@ -28,7 +28,7 @@ jobs:
         #   - platform: 'macos-latest'
           - platform: 'ubuntu-22.04'
           - platform: 'windows-latest'
-    timeout-minutes: 18
+    timeout-minutes: 20
     runs-on: ${{ matrix.settings.platform }}
     env:
       TAG_VERSION: ${{ github.event.client_payload.app_version }}
@@ -42,9 +42,17 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🦀 Rust setup
+        if: matrix.settings.platform == 'macos-latest'
         uses: dtolnay/rust-toolchain@stable
         with:
           target: 'aarch64-apple-darwin'
+
+      - name: 🦀 Rust setup
+        if: matrix.settings.platform != 'macos-latest'
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
       - name: 🦀 Rust cache
         uses: swatinem/rust-cache@v2
         with:
