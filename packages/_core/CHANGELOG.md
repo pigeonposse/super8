@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.1.8
+
+### Patch Changes
+
+- fix errors in build
+
 ## 0.1.7
 
 ### Patch Changes

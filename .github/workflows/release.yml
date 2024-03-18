@@ -130,6 +130,9 @@ jobs:
           echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
           echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
           echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "homepage=$(jq -r '.homepage' ./package.json)" >> $GITHUB_OUTPUT
+          echo "docs=$(jq -r '.extra.docsUrl' ./package.json)" >> $GITHUB_OUTPUT
+          echo "repo=$(jq -r '.repository.url' ./package.json)" >> $GITHUB_OUTPUT
 
       #########################################################################
       #########################################################################
@@ -277,14 +280,13 @@ jobs:
           allowUpdates: true
           artifacts: "packages/exts/dist/exts/*"
           body: |
-            ${{ steps.pkg.outputs.name }} apps and extensions v${{ steps.updated.outputs.core_version }}
-            ---
+            ${{ steps.pkg.outputs.name }} apps and extensions v${{ env.TAG_VERSION }}
             ${{ steps.pkg.outputs.description }}
             ---
-            🌐 WEB: https://super8.pigeonposse.com
-            📚 DOCUMENTATION: https://docs.super8.pigeonposse.com
-            🧩 CHANGELOG: https://github.com/pigeonposse/super8/packages/exts/blob/main/packages/app/CHANGELOG.md
-            📜 LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
+            🌐 WEB: ${{ steps.pkg.outputs.homepage }}
+            📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
+            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/packages/exts/blob/main/packages/app/CHANGELOG.md
+            📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
 
       #########################################################################
       #  EXTS - PUBLISH IN CHROME WEB STORE

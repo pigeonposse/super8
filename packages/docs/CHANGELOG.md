@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.5
+
+### Patch Changes
+
+- fix errors in build
+
 ## 0.3.4
 
 ### Patch Changes

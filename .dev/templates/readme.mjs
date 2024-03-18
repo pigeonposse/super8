@@ -85,12 +85,13 @@ ${
 }
 ${
 	imgUrl( {
-		name  : 'Super8 web', 
+		name  : 'Version', 
 		color : 'blue', 
 		type  : `github/package-json/v/${pkg.data.extra.repoId}?filename=packages%2Fapp%2Fpackage.json`,
 		url   : pkg.data.homepage,
 	} )
 }
+
 ${
 	imgUrl( {
 		name  : 'Chrome', 
@@ -134,7 +135,7 @@ const content = pkg => {
 
 ${pkg.data.description}
 
-[![DEMO](${joinUrl( pkg.data.extra.rawRepoUrl, '/main/docs/images/demo-filters.png' )})](${pkg.data.homepage})`
+[![DEMO](${joinUrl( pkg.data.extra.rawRepoUrl, '/main/docs/images/demo-filters.gif' )})](${pkg.data.homepage})`
 
 }
 

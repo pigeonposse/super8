@@ -37,7 +37,7 @@ build:
   - type: chromium-mv2
     compress: zip
   - type: firefox-mv2
-    output: "./dist/store"
+    filename: "{{id}}-firefox" ## Remove mv2 in filename
     compress: zip
   - type: edge
     compress: zip

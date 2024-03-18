@@ -37,7 +37,7 @@
 	"author": {
 		"name": "Angelo",
 		"email": "angelo@pigeonposse.com",
-		"url": "https://pigeonposse.com"
+		"url": "https://github.com/angelespejo"
 	},
 	"contributors": [
 		{
@@ -291,25 +291,25 @@
 			"macosUniversal": {
 				"name": "MacOS Universal App",
 				"logo": "apple",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_universal.app.tar.gz",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_universal.app.tar.gz",
 				"type": "desktop"
 			},
 			"macosIntel": {
 				"name": "MacOS Intel App",
 				"logo": "apple",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x64.app.tar.gz",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x64.app.tar.gz",
 				"type": "desktop"
 			},
 			"windows": {
 				"name": "Windows App",
 				"logo": "windows",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x86_64.msi.zip",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x86_64.msi.zip",
 				"type": "desktop"
 			},
 			"linux": {
 				"name": "Linux App",
 				"logo": "linux",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x86_64.AppImage.tar.gz",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x86_64.AppImage.tar.gz",
 				"type": "desktop"
 			},
 			"wpPlugin": {

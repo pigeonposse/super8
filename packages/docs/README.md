@@ -31,7 +31,7 @@
                                                 
 REPOSITORY: https://github.com/pigeonposse/super8
 AUTHORS: 
-	- Angelo (https://pigeonposse.com)
+	- Angelo (https://github.com/angelespejo)
 
 DEVELOPED BY Angelo 🐦🌈
 
@@ -54,7 +54,8 @@ DEVELOPED BY Angelo 🐦🌈
 
 [![License](https://img.shields.io/github/license/pigeonposse/super8?color=green&style=for-the-badge&logoColor=white)](/LICENSE)
 [![Core](https://img.shields.io/npm/v/@s-8/core?color=blue&style=for-the-badge&logoColor=white)](https://www.npmjs.com/package/@s-8/core)
-[![Super8 web](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fapp%2Fpackage.json?color=blue&style=for-the-badge&logoColor=white)](https://super8.pigeonposse.com/)
+[![Version](https://img.shields.io/github/package-json/v/pigeonposse/super8?filename=packages%2Fapp%2Fpackage.json?color=blue&style=for-the-badge&logoColor=white)](https://super8.pigeonposse.com/)
+
 [![Chrome](https://img.shields.io/chrome-web-store/v/aejkinmllndkgoodkfbhfkffnebmibkd?color=blue&style=for-the-badge&logoColor=white)](https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd)
 [![Mozilla](https://img.shields.io/amo/v/{63bba7f4-510b-4478-b401-a2726a9703ba}?color=blue&style=for-the-badge&logoColor=white)](https://addons.mozilla.org/es/firefox/addon/super8/)
 [![Edge](https://img.shields.io/badge/dynamic/json?label=microsoft%20edge%20store&query=%24.version&url=https://microsoftedge.microsoft.com/addons/getproductdetailsbycrxid/milbmbciipbjlbjlidhgfnlkempefffi?color=blue&style=for-the-badge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/milbmbciipbjlbjlidhgfnlkempefffi)
@@ -73,7 +74,7 @@ DEVELOPED BY Angelo 🐦🌈
 
 🎬🎨🧩 Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc
 
-[![DEMO](https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/demo-filters.png)](https://super8.pigeonposse.com/)
+[![DEMO](https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/demo-filters.gif)](https://super8.pigeonposse.com/)
 <!-- PIGEONPOSSE END CONTENT -->
 
 > **SUPER8** Documentation project
@@ -109,7 +110,7 @@ This software is licensed with **[GPL-3.0](/LICENSE)**.
 
 |                                                                                    | Name        | Role         | GitHub                                         |
 | ---------------------------------------------------------------------------------- | ----------- | ------------ | ---------------------------------------------- |
-| <img src="https://pigeonposse.com.png?size=72" alt="Angelo" style="border-radius:100%"/> | Angelo |   Idea & Development & UI Design   | [@Angelo](https://pigeonposse.com) |
+| <img src="https://github.com/angelespejo.png?size=72" alt="Angelo" style="border-radius:100%"/> | Angelo |   Idea & Development & UI Design   | [@Angelo](https://github.com/angelespejo) |
 | <img src="https://github.com/alejomalia.png?size=72" alt="Alejo" style="border-radius:100%"/> | Alejo |  Idea & UI Concept   | [@Alejo](https://github.com/alejomalia) |
 | <img src="https://github.com/PigeonPosse.png?size=72" alt="PigeonPosse" style="border-radius:100%"/> | PigeonPosse | Collective | [@PigeonPosse](https://github.com/PigeonPosse) |
 
