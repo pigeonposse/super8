@@ -50,7 +50,7 @@
 		"prepare": "husky install .dev/husky",
 		"core": "pnpm --filter core $@",
 		"core-react": "pnpm --filter core-react $@",
-		"docs": "pnpm --filter docs $@",
+		"doc": "pnpm --filter docs $@",
 		"exts": "pnpm --filter exts $@",
 		"app": "pnpm --filter app $@",
 		"dev": "turbo dev",

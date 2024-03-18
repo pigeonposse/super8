@@ -10,11 +10,13 @@ What exactly is **Super8**? Our tool gives you the ability to adjust a wide vari
 
 **Super8** is much more than just a tool: it's your online personalization companion. Available in multiple formats, **Super8** gives you the flexibility to tailor your web experience exactly how you want.
 
-- 🌐 [**Web Format**](/getting-started#🌐-web): In addition to the options above, we also offer a direct web format, so you can customize visual elements online without the need for extensions or plugins.
+- 🌐 [**Web**](/getting-started#🌐-web): In addition to the options above, we also offer a direct web format, so you can customize visual elements online without the need for extensions or plugins.
 
 - 🧩 [**Browser Extension**](/getting-started#🧩-browser-extension): The **Super8** browser extension, compatible with Chrome and Firefox, takes customization to the next level. You can modify videos from websites such as YouTube & Vimeo, Netflix, Amazon etc, adapting them to your personal preferences.
 
 - 🖥️ [**Desktop app**](/getting-started#🖥%EF%B8%8F-desktop-app)
+
+- 🌐 [**WPA**](/getting-started#🌐-web): In addition to the options above, we also offer a direct web format, so you can customize visual elements online without the need for extensions or plugins.
 
 - 📱[**Mobile app**](/getting-started#📱-mobile-app)
 

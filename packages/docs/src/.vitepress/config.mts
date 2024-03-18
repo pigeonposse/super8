@@ -149,6 +149,10 @@ export default defineConfig({
             link: '/guide-presets' 
           },
           { 
+            text: 'Docker', 
+            link: '/guide-docker' 
+          },
+          { 
             text: 'Extension', 
             link: '/guide-extension'
           },

@@ -50,6 +50,7 @@ It is available in: `Windows`, `Linux`, `Mac`
 
 You could use **super8** in a docker container too
 
+- [Read more](/guide-docker)
 - [Docker hub](https://hub.docker.com/r/pigeonposse/super8)
 
 ## 🔌 WP plugin

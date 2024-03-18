@@ -28,7 +28,7 @@ jobs:
         #   - platform: 'macos-latest'
           - platform: 'ubuntu-22.04'
           - platform: 'windows-latest'
-    timeout-minutes: 15
+    timeout-minutes: 18
     runs-on: ${{ matrix.settings.platform }}
     env:
       TAG_VERSION: ${{ github.event.client_payload.app_version }}
@@ -70,7 +70,7 @@ jobs:
           echo "repo=$(jq -r '.repository.url' ./package.json)" >> $GITHUB_OUTPUT
 
       - name: 🦀 install dependencies (ubuntu only)
-        if: matrix.platform == 'ubuntu-22.04'
+        if: matrix.settings.platform == 'ubuntu-22.04'
         run: |
           sudo apt-get update
           sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.1-dev libappindicator3-dev librsvg2-dev patchelf
@@ -106,7 +106,7 @@ jobs:
             ---
             🌐 WEB: ${{ steps.pkg.outputs.homepage }}
             📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
-            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/packages/exts/blob/main/packages/app/CHANGELOG.md
+            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md
             📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
           releaseDraft: false
           prerelease: false

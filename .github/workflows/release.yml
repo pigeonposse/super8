@@ -285,7 +285,7 @@ jobs:
             ---
             🌐 WEB: ${{ steps.pkg.outputs.homepage }}
             📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
-            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/packages/exts/blob/main/packages/app/CHANGELOG.md
+            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md
             📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
 
       #########################################################################
