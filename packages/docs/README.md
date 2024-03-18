@@ -38,7 +38,7 @@ DEVELOPED BY Angelo 🐦🌈
 -->
 <!-- PIGEONPOSSE END MARK -->
 
-# SUPER8 | Core & Components _(React)_
+# SUPER8 | Documentation
 
 <!-- PIGEONPOSSE START HEADER -->
 
@@ -76,25 +76,7 @@ DEVELOPED BY Angelo 🐦🌈
 [![DEMO](https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/demo-filters.png)](https://super8.pigeonposse.com/)
 <!-- PIGEONPOSSE END CONTENT -->
 
-The `@s-8/core-react` library is a collection of **React components**, specifically designed for integration with the **Super8** software. These components have been created to simplify the development of consistent and appealing user interfaces within the **Super8** application.
-
-> The `@s-8/core-react` is a conversion of `@s-8/core` for use with **React**.
-
-## Installation
-
-You can install this library via npm:
-
-```bash
-npm install @s-8/core-react
-// or
-pnpm i @s-8/core-react
-// or 
-yarn add @s-8/core-react
-```
-
-## Documentation
-
-Find detailed information about each component in [documentation](../../docs/dev-components-info.md).
+> **SUPER8** Documentation project
 
 <!-- PIGEONPOSSE START ORG -->
 ## 👨‍💻 Development

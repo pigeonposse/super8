@@ -43,7 +43,8 @@ jobs:
 
       - name: 🦀 Rust setup
         uses: dtolnay/rust-toolchain@stable
-          
+        with:
+          target: 'aarch64-apple-darwin'
       - name: 🦀 Rust cache
         uses: swatinem/rust-cache@v2
         with:
@@ -63,6 +64,7 @@ jobs:
         id: pkg
         run: |
           echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
+          echo "description=$(jq -r '.extra.description' ./package.json)" >> $GITHUB_OUTPUT
 
       - name: 🦀 install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-20.04'
@@ -91,13 +93,22 @@ jobs:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
         with:
+          # @see https://github.com/tauri-apps/tauri-action?tab=readme-ov-file#inputs
           projectPath: 'packages/app'
           tagName: "${{ env.TAG_VERSION }}" 
-          releaseName: '${{ steps.pkg.outputs.name }} v__VERSION__'
-          releaseBody: '${{ steps.pkg.outputs.name }} apps and extensions v__VERSION__'
+          releaseName: '${{ steps.pkg.outputs.name }} v${{ env.TAG_VERSION }}'
+          releaseBody: |
+            ${{ steps.pkg.outputs.name }} apps and extensions v${{ env.TAG_VERSION }}
+            ---
+            ${{ steps.pkg.outputs.description }}
+            ---
+            🌐 WEB: https:://super8.pigeonposse.com
+            📚 DOCUMENTATION: https:://docs.super8.pigeonposse.com
+            🧩 CHANGELOG: https://github.com/pigeonposse/super8/packages/exts/blob/main/packages/app/CHANGELOG.md
+            📜 LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
           releaseDraft: false
           prerelease: false
-          includeUpdaterJson: false
+          includeUpdaterJson: true
           updaterJsonKeepUniversal: true # @see https://github.com/tauri-apps/tauri-action?tab=readme-ov-file#build-options
           includeRelease: true
           args: ${{ matrix.settings.args }}

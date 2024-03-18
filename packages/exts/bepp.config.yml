@@ -16,7 +16,7 @@ build:
   - type: chromium
   - type: chromium-mv2
   - type: firefox-mv2
-    output: "./dist/store"
+    filename: "{{id}}-firefox" ## Remove mv2 in filename
   - type: edge
   - type: edge-mv2
   - type: yandex

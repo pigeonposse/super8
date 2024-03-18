@@ -141,7 +141,7 @@ jobs:
       # DOCS - PUBLUSH WEB
       #########################################################################
 
-      - name: 📚🌥 Deploy in cloudflare pages
+      - name: 📚🌥 Deploy DOCS in cloudflare pages
         if: steps.updated.outputs.docs_version != ''
         uses: cloudflare/pages-action@v1
         with:
@@ -164,7 +164,7 @@ jobs:
       # APP - PUBLISH WEB
       #########################################################################
 
-      - name: 🖥️🌥 Deploy in cloudflare pages
+      - name: 🖥️🌥 Deploy APP in cloudflare pages
         if: steps.updated.outputs.core_version != ''
         uses: cloudflare/pages-action@v1
         with:
@@ -262,6 +262,30 @@ jobs:
       #########################################################################
       #########################################################################
 
+
+      #########################################################################
+      # EXTS - GITHUB RELEASES
+      #########################################################################
+
+      - name: 🧩🗂️ Create Github release
+        if: steps.updated.outputs.core_version != ''
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ steps.updated.outputs.core_version }}"
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          artifacts: "packages/exts/dist/exts/*"
+          body: |
+            ${{ steps.pkg.outputs.name }} apps and extensions v${{ steps.updated.outputs.core_version }}
+            ---
+            ${{ steps.pkg.outputs.description }}
+            ---
+            🌐 WEB: https://super8.pigeonposse.com
+            📚 DOCUMENTATION: https://docs.super8.pigeonposse.com
+            🧩 CHANGELOG: https://github.com/pigeonposse/super8/packages/exts/blob/main/packages/app/CHANGELOG.md
+            📜 LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
+
       #########################################################################
       #  EXTS - PUBLISH IN CHROME WEB STORE
       #########################################################################
@@ -309,24 +333,6 @@ jobs:
           # https://addons.mozilla.org/en-US/developers/addon/api/key/
           api-key: ${{ secrets.FIREFOX_API_KEY }}
           api-secret: ${{ secrets.FIREFOX_API_SECRET }}
-
-
-      #########################################################################
-      # EXTS - GITHUB RELEASES
-      #########################################################################
-
-      - name: 🧩🗂️ Create Github release
-        if: steps.updated.outputs.core_version != ''
-        uses: ncipollo/release-action@v1
-        with:
-          tag: "${{ steps.pkg.outputs.core_version }}"
-          draft: false
-          prerelease: false
-          allowUpdates: true
-          artifacts: "packages/exts/dist/exts/*"
-          body: |
-            🧩 View CHANGELOG at: https://github.com/pigeonposse/super8/packages/exts/blob/main/CHANGELOG.md
-            📜 View LICENSE: https://github.com/pigeonposse/super8/blob/main/LICENSE
 
 
 ############################################################################### 

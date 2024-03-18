@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.1.7
+
+### Patch Changes
+
+- Update readme
+
 ## 0.1.6
 
 ## 0.1.5

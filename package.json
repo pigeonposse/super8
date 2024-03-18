@@ -1,7 +1,8 @@
 {
-	"name": "s-8",
+	"name": "super8",
 	"private": true,
 	"description": "🎬🎨🧩 Add styles to web video like iFrames, YouTube & Vimeo videos, Netflix, Amazon etc",
+	"license": "GPL-3.0",
 	"keywords": [
 		"super-8",
 		"youtube",
@@ -12,6 +13,14 @@
 		"chrome-extension",
 		"web"
 	],
+	"workspaces": [
+		"packages/*"
+	],
+	"packageManager": "pnpm@8.11.0",
+	"engines": {
+		"node": ">=20.0.0",
+		"pnpm": ">=8.10.0"
+	},
 	"homepage": "https://super8.pigeonposse.com/",
 	"bugs": {
 		"url": "https://github.com/pigeonposse/super8/issues",
@@ -30,8 +39,12 @@
 		"email": "angelo@pigeonposse.com",
 		"url": "https://pigeonposse.com"
 	},
-	"workspaces": [
-		"packages/*"
+	"contributors": [
+		{
+			"name": "Alejo",
+			"email": "alejo@pigeonposse.com",
+			"url": "https://github.com/alejomalia"
+		}
 	],
 	"scripts": {
 		"prepare": "husky install .dev/husky",
@@ -60,7 +73,9 @@
 		"push-dev": "pnpm push-origin dev",
 		"update-version": "changeset && changeset version",
 		"release": "changeset publish",
-		"todo": "node .dev/todo.mjs"
+		"todo": "node --experimental-modules .dev/todo.mjs",
+		"readme": "node --experimental-modules .dev/readme.mjs"
+
 	},
 	"commitlint": {
 		"extends": [
@@ -119,9 +134,10 @@
 		"eslint-plugin-svelte": "2.35.1",
 		"eslint-plugin-tailwindcss": "3.14.2",
 		"eslint-plugin-yaml": "0.5.0",
+		"figlet": "^1.7.0",
 		"husky": "8.0.3",
-		"internal-ip": "8.0.0",
 		"inquirer": "9.2.14",
+		"internal-ip": "8.0.0",
 		"jsonc-eslint-parser": "2.4.0",
 		"lint-staged": "15.2.2",
 		"markdownlint": "0.31.1",
@@ -145,15 +161,14 @@
 		"vite-plugin-dts": "3.7.2",
 		"web-ext": "7.11.0"
 	},
-	"packageManager": "pnpm@8.11.0",
-	"engines": {
-		"node": ">=20.0.0",
-		"pnpm": ">=8.10.0"
-	},
 	"extra": {
 		"productName": "Super8",
 		"id": "super8",
+		"libraryUrl": "https://www.npmjs.com/package/@s-8/core",
+		"libraryId": "@s-8/core",
 		"docsUrl": "https://docs.super8.pigeonposse.com",
+		"repoId": "pigeonposse/super8",
+		"rawRepoUrl": "https://raw.githubusercontent.com/pigeonposse/super8",
 		"socialLinks": [
 			{
 				"icon": "github",
@@ -276,25 +291,25 @@
 			"macosUniversal": {
 				"name": "MacOS Universal App",
 				"logo": "apple",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_universal.app.tar.gz",
+				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_universal.app.tar.gz",
 				"type": "desktop"
 			},
 			"macosIntel": {
 				"name": "MacOS Intel App",
 				"logo": "apple",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_x64.app.tar.gz",
+				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x64.app.tar.gz",
 				"type": "desktop"
 			},
 			"windows": {
 				"name": "Windows App",
 				"logo": "windows",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_x86_64.msi.zip",
+				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x86_64.msi.zip",
 				"type": "desktop"
 			},
 			"linux": {
 				"name": "Linux App",
 				"logo": "linux",
-				"url": "https://github.com/angelespejo/super8/releases/latest/download/super8_x86_64.AppImage.tar.gz",
+				"url": "https://github.com/angelespejo/super8/releases/latest/download/Super8_x86_64.AppImage.tar.gz",
 				"type": "desktop"
 			},
 			"wpPlugin": {
@@ -322,12 +337,18 @@
 			}
 		},
 		"collective": {
+			"id": "pigeonposse",
 			"name": "PigeonPosse",
 			"gh": "https://github.com/pigeonposse",
 			"about": "https://pigeonposse.com?popup=about",
 			"url": "https://pigeonposse.com",
 			"web": "https://pigeonposse.com",
-			"email": "dev@pigeonposse.com"
+			"email": "dev@pigeonposse.com",
+			"social": {
+				"twitter": "https://twitter.com/pigeonposse_",
+				"instagram": "https://www.instagram.com/pigeon.posse/",
+				"medium": "https://medium.com/@pigeonposse"
+			}
 		}
 	}
 }

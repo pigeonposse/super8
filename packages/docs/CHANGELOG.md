@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.4
+
+### Patch Changes
+
+- Update readme
+
 ## 0.3.3
 
 ### Patch Changes
