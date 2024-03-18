@@ -2,7 +2,7 @@
 # RELEASE EXTENSIONS
 ###############################################################################
 
-name: 🚀🧩 Release extension
+name: 🚀🧩 Release extensions
 on:
   workflow_dispatch:
     inputs:
@@ -22,7 +22,7 @@ env:
 
 jobs:
   release: 
-    name: 🚀🧩 Release extension
+    name: 🚀🧩 Release extensions
     runs-on: macos-latest # for safari build
     env:
       UPDATED_VERSION: ${{ github.event.inputs.version }}
