@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.1.11
+
+### Patch Changes
+
+- abstract CI
+
 ## 0.1.10
 
 ### Patch Changes

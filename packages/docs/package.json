@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/docs",
-	"version": "0.3.6",
+	"version": "0.3.7",
 	"private": true,
 	"type": "module",
 	"description": "A Super8 Documentation site by PigeonPosse",

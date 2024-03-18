@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/core-react",
-	"version": "0.1.10",
+	"version": "0.1.11",
 	"type": "module",
 	"publishConfig": {
 		"access": "public",

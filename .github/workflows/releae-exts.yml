@@ -1,0 +1,145 @@
+###############################################################################
+# RELEASE EXTENSIONS
+###############################################################################
+
+name: 🚀🧩 Release extension
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Set number for release version'
+        type: string
+        required: true
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+env:
+  GITHUB_TOKEN: ${{ github.token }}
+
+###############################################################################
+# JOBS
+###############################################################################
+
+jobs:
+  release: 
+    name: 🚀🧩 Release extension
+    runs-on: macos-latest # for safari build
+    env:
+      UPDATED_VERSION: ${{ github.event.inputs.version }}
+    steps:
+
+      #########################################################################
+      # INIT
+      #########################################################################
+
+      - name: ⬇️ Checkout
+        uses: actions/checkout@v4
+
+      - name: ⬇️🟢 Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: ⬇️🥡 Install pnpm
+        uses: pnpm/action-setup@v3
+
+      - name: ⬇️📦 Install dependencies
+        run: |
+          pnpm install --no-frozen-lockfile
+
+      - name: 📦📄 Get package.json data
+        id: pkg
+        run: |
+          echo "description=$(jq -r '.description' ./package.json)" >> $GITHUB_OUTPUT
+          echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
+          echo "id=$(jq -r '.extra.id' ./package.json)" >> $GITHUB_OUTPUT
+          echo "exts_version=$(jq -r '.version' ./packages/exts/package.json)" >> $GITHUB_OUTPUT
+          echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "homepage=$(jq -r '.homepage' ./package.json)" >> $GITHUB_OUTPUT
+          echo "docs=$(jq -r '.extra.docsUrl' ./package.json)" >> $GITHUB_OUTPUT
+          echo "repo=$(jq -r '.repository.url' ./package.json)" >> $GITHUB_OUTPUT
+
+      #########################################################################
+      # BUILD
+      #########################################################################
+
+      - name: 🏗 Build
+        run: pnpm core build && pnpm exts build
+
+      #########################################################################
+      # GITHUB RELEASES
+      #########################################################################
+
+      - name: 🧩🗂️ Create Github release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "${{ env.UPDATED_VERSION }}"
+          name: '${{ steps.pkg.outputs.name }} v${{ steps.updated.outputs.core_version }}'
+          draft: false
+          prerelease: false
+          allowUpdates: true
+          artifacts: "packages/exts/dist/exts/*"
+          body: |
+            ${{ steps.pkg.outputs.name }} apps and extensions v${{ env.UPDATED_VERSION }}
+            ${{ steps.pkg.outputs.description }}
+            ---
+            🌐 WEB: ${{ steps.pkg.outputs.homepage }}
+            📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
+            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md
+            📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
+
+      #########################################################################
+      #  PUBLISH IN CHROME WEB STORE
+      #########################################################################
+
+    #   - name: 🧩 Upload CHROME extension
+    #     uses: Klemensas/chrome-extension-upload-action@v1.3
+    #     with:
+    #       refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
+    #       client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
+    #       client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
+    #       file-name: "packages/exts/exts/${{ steps.pkg.outputs.id }}-chrome.zip"
+    #       app-id: '${{steps.pkg.outputs.chrome_storeId}}'
+    #       publish: true
+
+
+      #########################################################################
+      # PUBLISH IN EDGE WEB STORE
+      #########################################################################
+
+    #   - name: 🧩 Upload EDGE extension
+    #     uses: inverse/edge-addon@v1.0.1
+    #     with:
+    #       product_id: ${{ secrets.EDGE_PRODUCT_ID }}
+    #       client_id: ${{ secrets.EDGE_CLIENT_ID }}
+    #       client_secret: ${{ secrets.EDGE_CLIENT_SECRET }}
+    #       access_token_url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
+    #       zip: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-edge.zip"
+    #       notes: New version upload # Could be derived from release notes
+
+
+      #########################################################################
+      #  PUBLISH IN FIREFOX WEB STORE
+      #########################################################################
+      
+      # @see https://github.com/marketplace/actions/publish-firefox-add-on
+      - name: 🧩🦊 Upload FIREFOX extension
+        uses: wdzeng/firefox-addon@v1
+        with:
+          # uuid is only necessary when updating an existing addon,
+          # omitting it will create a new addon
+          addon-guid: '${{ steps.pkg.outputs.firefox_storeId }}'
+          xpi-path: "packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-firefox.zip"
+          manifest: packages/exts/dist/firefox/manifest.json
+          # get keys in:
+          # https://addons.mozilla.org/en-US/developers/addon/api/key/
+          jwt-issuer: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          jwt-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
+        continue-on-error: true
+
+
+############################################################################### 
+
+	  

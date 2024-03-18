@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.7
+
+### Patch Changes
+
+- abstract CI
+
 ## 0.3.6
 
 ### Patch Changes
