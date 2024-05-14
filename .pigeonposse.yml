@@ -13,7 +13,7 @@ web:
       - browser-extension
       - Chrome-extension
       - Firefox-extension
-    version: "{{package.version}}"
+    version: "0.0.13"
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
     repo: "https://github.com/pigeonposse/super8"
