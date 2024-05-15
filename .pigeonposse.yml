@@ -16,6 +16,7 @@ web:
     version: "0.0.13"
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
+    docs: "{{package.extra.docsUrl}}"
     repo: "https://github.com/pigeonposse/super8"
     logo: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/logo-short.png"
     banner: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/banner.png"
