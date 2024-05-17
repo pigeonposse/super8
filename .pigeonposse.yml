@@ -9,7 +9,7 @@ web:
     type:
       - web
       - wpa
-      - wordpress-plugin
+      - wp-plugin
       - browser-extension
       - chrome-extension
       - firefox-extension
