@@ -29,5 +29,10 @@ web:
     logo: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/logo-short.png"
     banner: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/banner.png"
     status: "active"
+    download: 
+      - name: "Chrome store"
+        url:  "https://chromewebstore.google.com/detail/super8/aejkinmllndkgoodkfbhfkffnebmibkd"
+      - name: "chrome manifest v2"
+        url: "https://github.com/pigeonposse/super8/releases/latest/download/super8-chrome-mv2.zip"
 
 ###############################################################################
