@@ -23,6 +23,7 @@ web:
     version: "0.0.13"
     description: "{{package.description}}"
     homepage: "{{package.homepage}}"
+    package: "https://www.npmjs.com/package/@s-8/core"
     docs: "{{package.extra.docsUrl}}"
     repo: "https://github.com/pigeonposse/super8"
     logo: "https://raw.githubusercontent.com/pigeonposse/super8/main/docs/images/logo-short.png"
