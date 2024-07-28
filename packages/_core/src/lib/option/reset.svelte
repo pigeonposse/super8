@@ -3,7 +3,7 @@
     import { Tooltip } from "flowbite-svelte";
     import Btn from "$lib/input/btn.svelte";
     import { componentTypes } from "$lib/types"
-    import { faTrash, Fa } from "$lib/fa/main"
+    import { faTrash } from "$lib/fa/main"
 
     /**
      * VARIABLES
@@ -16,8 +16,7 @@
 <Btn
     color={componentTypes.btn.none}
     on:click={onClick}
-    customClasses="!px-2 my-0 px-1 ml-1 mt-0"
->
-    <Fa icon={faTrash}></Fa>
-    <Tooltip class="text-xs">{text || 'Reset value'}</Tooltip>
-</Btn>
+    customClasses="!p-1 !my-1 ml-3 hover:opacity-50"
+	icon={faTrash}
+/>
+<Tooltip class="text-xs">{text || 'Reset value'}</Tooltip>

@@ -1,10 +1,10 @@
 <script lang="ts">
 
-    import { Badge, Not, componentTypes } from "@s-8/core";
+    import { Badge, Not, componentTypes, Option } from "@s-8/core";
     import { browser } from "../../_shared/main";
-    import { messagesIds, type Message } from "../../types";
+    import { type Message } from "../../types";
+	import { messagesIds } from "../../const";
     import { messageStore } from './store';
-    import {Option} from "../../index";
 
     browser.runtime.onMessage.addListener((message: Message) => {
 

@@ -7,9 +7,10 @@
 import {
 	componentPositions, componentTypes, 
 }                          from '@s-8/core'
+import { type ComponentOptionsRecursive } from '../../types'
 import {
-	optionsIds, type ComponentOptionsRecursive, optBtnStylesIds, 
-} from '../../types'
+	optionsIds, optBtnStylesIds, 
+} from '../../const'
 import { browser } from '../../_shared/main'
 
 export const defaultData = {

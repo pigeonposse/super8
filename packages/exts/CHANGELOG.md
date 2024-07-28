@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.2.0
+
+### Minor Changes
+
+- Fix errors and update libraries
+
 ## 0.1.13
 
 ### Patch Changes

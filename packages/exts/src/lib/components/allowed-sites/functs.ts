@@ -3,11 +3,10 @@
  *
  * @description This module defines functions for 'allowed sites' options.
  */
-import { defaultData }             from './data'
-import { storage }                 from '../../storage/main'
-import {
-	storageIds, type OptionsStore, 
-} from '../../types'
+import { defaultData }       from './data'
+import { storage }           from '../../storage/main'
+import { type OptionsStore } from '../../types'
+import { storageIds }        from '../../const'
 
 export const getAllUrlPatterns = () => {
 

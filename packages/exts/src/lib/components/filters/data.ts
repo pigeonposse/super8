@@ -3,10 +3,8 @@
  *
  * @description This file defines default filter options and button styles for the application.
  */
-import {
-	optBtnStylesIds, 
-	type BtnStylesClasses, 
-}                    from '../../types'
+import { type BtnStylesClasses } from '../../types'
+import { optBtnStylesIds }       from '../../const'
 import {
 	componentPositions,
 	componentTypes, 

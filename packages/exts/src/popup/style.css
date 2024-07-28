@@ -11,6 +11,6 @@
 
 /* Set minimum dimensions for the body */
 body {
-    min-width: 360px;
+    min-width: 400px;
     min-height: 600px;
 }

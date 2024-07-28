@@ -61,7 +61,7 @@
         {disabled}
     />
 
-    <Popover triggeredBy="#{id}">
+    <Popover triggeredBy="#{id}" trigger="click">
 
         <input 
             type="color" 
@@ -73,7 +73,7 @@
             {disabled}
         />
         
-        <div class="flex flex-row items-center">
+        <div class="flex flex-row items-center min-w-max">
             <Range
                 id="{id}-opacity" 
                 opts={{

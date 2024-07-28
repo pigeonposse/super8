@@ -6,14 +6,14 @@
  * @see https://flowbite.com/docs/
  */
 
-// /** @type {import('tailwindcss').Config} */
-const config = {
+module.exports = {
 	content : [
 		'./src/**/*.{html,js,svelte,ts}',
 		'./node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}',
 	],
 	plugins : [
 		require( 'flowbite/plugin' ),
+		require( 'tailwind-scrollbar-hide' ),
 	],
 	darkMode : 'class',
 	theme    : {
@@ -81,5 +81,3 @@ const config = {
 		},
 	},
 }
-
-module.exports = config

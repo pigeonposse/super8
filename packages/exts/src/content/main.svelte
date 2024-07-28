@@ -1,14 +1,15 @@
 <script lang="ts" >
     
-    import { browser, getDateString, messagesIds } from '../lib/index';
+    import {  getDateString, browser} from '../lib/_shared/main';
+	import {  messagesIds } from "../lib/const"
 
     let Content: ConstructorOfATypedSvelteComponent
     let loading = true
 
-    import('../lib/index')
+    import('../lib/components/filters/main.svelte')
         .then(module => {
   
-            Content = module.ContentFilters
+            Content = module.default
             loading = false
 
         })

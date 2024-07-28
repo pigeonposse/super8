@@ -6,11 +6,11 @@
  */
 
 import './style.css'
+import { renderComponentOnDOMContentLoaded } from '../lib/_shared/render'
 import {
 	insertedAdjacentPosition, 
 	optionsIds, 
-	renderComponentOnDOMContentLoaded, 
-} from '../lib'
+} from '../lib/const'
 import Main     from './main.svelte'
 import { site } from '../lib/components/allowed-sites/functs'
 
@@ -22,7 +22,7 @@ try {
 
 		if( isAllowed ) {
 
-			console.log( 'pataka' )
+			// console.log( 'pataka' )
 			renderComponentOnDOMContentLoaded( {
 				componentClass : Main,
 				querySelelctor : 'body',

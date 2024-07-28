@@ -38,7 +38,7 @@
      * CLASSES
      */
     let sectionOptionClass="p-2"
-    let optionClass="w-full bg-gray-200/50 dark:bg-gray-800 px-4 py-2 my-2 flex flex-row items-center justify-between rounded-lg relative hover:shadow-[0_0_20px_0px_rgba(0,0,0,0.3)] hover:shadow-gray-600/30"
+    let optionClass="w-full bg-gray-100/50 dark:bg-gray-800/50 px-4 py-2 my-2 gap-2 flex flex-row items-center justify-between rounded-lg relative hover:shadow-[0_0_20px_0px_rgba(0,0,0,0.3)] hover:shadow-gray-600/30"
     let optionDisabledClass="absolute z-10 inset-0 w-full h-full items-center justify-center bg-opacity-30 backdrop-blur-lg rounded-lg"
     let optionColClass="flex flex-row items-center"
 
@@ -102,7 +102,7 @@
 
         </div>
         
-        <div class="{optionColClass}">
+        <div class="{optionColClass} justify-end">
 
             {#if type === componentTypes.option.btn }
                 

@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/app",
-	"version": "0.1.13",
+	"version": "0.2.0",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -36,10 +36,10 @@
 	"devDependencies": {
 		"@s-8/core": "workspace:*",
 		"@tauri-apps/cli": "2.0.0-beta.2",
-		"flowbite": "1.8.1",
-		"flowbite-svelte": "0.39.3",
+		"flowbite": "2.4.1",
+		"flowbite-svelte": "0.46.15",
 		"svelte-persisted-store": "0.7.0",
-		"svelte-ripple-action": "1.0.5",
+		"svelte-ripple-action": "1.0.6",
 		"sveltekit-i18n": "2.4.2"
 	}
 }

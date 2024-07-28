@@ -1,9 +1,31 @@
 <script lang="ts">
 
-    import Tabs from "./tabs/main.svelte";
-    import Sidebar from "./sidebar/main.svelte";
+    // import Tabs from "./tabs/main.svelte";
+    // import Sidebar from "./sidebar/main.svelte";
     import { filters } from './store/main'
+	import { onMount } from 'svelte';
     import { componentTypes, type ComponentFilters, componentPositions, functs, type FiltersCustomToExport } from "../index";
+	
+	type TabsType = typeof import('./tabs/main.svelte').default
+	type SidebarType = typeof import('./sidebar/main.svelte').default
+
+	let Sidebar: SidebarType| undefined = undefined;
+	let Tabs: TabsType | undefined = undefined;
+
+	async function loadTabs() {
+		const module = await import('./tabs/main.svelte');
+		Tabs = module.default;
+	}
+
+	// Función para cargar el componente Sidebar
+	async function loadSidebar() {
+		const module = await import('./sidebar/main.svelte');
+		Sidebar = module.default;
+	}
+	onMount(async () => {
+		await loadTabs();
+		await loadSidebar();
+	})
 
     /**
      * VARIABLES 
@@ -136,31 +158,35 @@
 
 </script>
 
-{#if type === componentTypes.filters.sidebar}
+{#if Sidebar && Tabs}
 
-  <Sidebar {btn} {content} {position}>
+	{#if type === componentTypes.filters.sidebar}
 
-    <slot name="header" slot="header">
-    </slot>
-    <slot name="content" slot="content">
-    </slot>
-    <slot name="footer" slot="footer">
-    </slot>
+		<svelte:component this={Sidebar} {btn} {content} {position}>
 
-  </Sidebar>
+			<slot name="header" slot="header">
+			</slot>
+			<slot name="content" slot="content">
+			</slot>
+			<slot name="footer" slot="footer">
+			</slot>
 
-{:else if type === componentTypes.filters.main}
+		</svelte:component>
 
-  <Tabs {...content}>
+	{:else if type === componentTypes.filters.main}
 
-    <slot name="header" slot="header">
-    </slot>
-    <slot name="content" slot="content">
-    </slot>
-    <slot name="footer" slot="footer">
-    </slot>
+		<svelte:component this={Tabs} {...content}>
 
-  </Tabs>
+			<slot name="header" slot="header">
+			</slot>
+			<slot name="content" slot="content">
+			</slot>
+			<slot name="footer" slot="footer">
+			</slot>
+
+		</svelte:component>
+
+	{/if}
 
 {/if}
 

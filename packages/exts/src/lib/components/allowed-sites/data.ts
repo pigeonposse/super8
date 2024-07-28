@@ -5,10 +5,15 @@
  *  the component structure for the options page.
  */
 
-import { componentTypes }                                                                    from '@s-8/core'
+import { componentTypes }          from '@s-8/core'
 import {
-	optionsIds, type AllowedSites, type ComponentOptionsRecursive, insertedAdjacentPosition, 
+	type AllowedSites, 
+	type ComponentOptionsRecursive,
 } from '../../types'
+import {
+	optionsIds, 
+	insertedAdjacentPosition, 
+} from '../../const'
 import { browser }    from '../../_shared/browser/main'
 import { allowSites } from '../../../man/manifest'
 

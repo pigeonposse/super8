@@ -15,7 +15,7 @@
     /**
      * CLASSES
      */
-    let tabClass = "m-4 text-white"
+    let tabClass = "text-white flex flex-col h-full justify-start gap-2"
     let tabHeaderClass = "flex flex-row items-center justify-center"
     let tabHeaderBtnClass = "px-4 py-2 m-2 rounded-xl font-bold text-base relative"
     let shadowClass = {
@@ -38,7 +38,7 @@
 
             <button 
                 on:click={handleClick(item.value)}
-                class="{tabHeaderBtnClass} {shadowClass.neutral} {activeTabValue === item.value ? 'bg-primary-500 text-gray-800 '+shadowClass.primary : 'bg-gray-200 dark:bg-gray-500'} {customBtnClasses}"
+                class="{tabHeaderBtnClass} {shadowClass.neutral} {activeTabValue === item.value ? 'bg-primary-500 text-gray-800 '+shadowClass.primary : 'bg-gray-300/50 dark:bg-gray-600/50'} {customBtnClasses}"
                 title="{item.desc}"
             >
                 {item.name}
@@ -57,7 +57,7 @@
 
         {#if activeTabValue === item.value}
 
-            <div>
+            <div class="overflow-y-scroll h-full scrollbar-hide px-4 py-2">
                 <svelte:component 
                     this={item.component}
                     {...item.props}

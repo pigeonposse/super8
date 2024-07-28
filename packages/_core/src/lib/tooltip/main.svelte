@@ -22,7 +22,7 @@
      * CLASSES
      */
     let badgeClass = "!p-1 !font-semibold cursor-help focus:outline-none"
-    let popoverClass = "w-64 z-10 text-xs font-light cursor-auto" 
+    let popoverClass = "!bg-opacity-50 backdrop-blur-lg !bg-gray-800 w-64 z-10 text-xs font-light cursor-auto" 
 
 </script>
 
@@ -33,7 +33,9 @@
         type={componentTypes.badge.transparent} 
         customClasses="{badgeClass} {customClasses}"
     >
-        <Fa icon={icon}/>
+		{#if icon}
+			<Fa icon={icon}/>
+		{/if}
     </Badge>
     <Popover 
         class={popoverClass}

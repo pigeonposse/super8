@@ -3,7 +3,7 @@
  *
  * @description This script renders the main options component on DOMContentLoaded.
  */
-import { renderComponentOnDOMContentLoaded } from '../lib'
+import { renderComponentOnDOMContentLoaded } from '../lib/_shared/render'
 import Options                               from './main.svelte'
 
 try {

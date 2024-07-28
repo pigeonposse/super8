@@ -1,15 +1,10 @@
 <script lang="ts">
     
-  import {  
-    Tabs,
-    FiltersConfig, 
-    AllowedSites, 
-    Content, 
-    optionsTabs, 
-    browser, 
-    contentIds,
-    Debug
-  } from "../lib/index";
+  	import { Tabs } from "@s-8/core";
+
+  	import { Debug, AllowedSites, Content, FiltersConfig } from "../lib/components";
+	import { contentIds, optionsTabs } from "../lib/const";
+	import { browser } from "../lib/_shared/browser/main";
 
 </script>
 

@@ -1,7 +1,8 @@
 <script lang="ts">
 
     import {Btn, componentTypes} from "@s-8/core";
-    import { contentIds, type ContentType } from "../types";
+    import { type ContentType } from "../types";
+	import { contentIds } from "../const";
     import { browser, extStoreUrl, openOptionsPage, extWebUrl, collectiveFundingUrl, extRepoUrl, extImagesSrc, extVersion, docsUrl } from "../_shared/main";
 
     export let logo: boolean = true

@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/core-react",
-	"version": "0.1.13",
+	"version": "0.2.0",
 	"type": "module",
 	"publishConfig": {
 		"access": "public",
@@ -46,15 +46,15 @@
 		"lint:js": "pnpm eslint ."
 	},
 	"dependencies": {
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
+		"react": "18.3.1",
+		"react-dom": "18.3.1",
 		"svelte-adapter": "0.5.0"
 	},
 	"devDependencies": {
 		"@s-8/core": "workspace:*",
-		"@types/react": "18.2.34",
-		"@types/react-dom": "18.2.14",
-		"@vitejs/plugin-react": "4.1.1"
+		"@types/react": "18.3.3",
+		"@types/react-dom": "18.3.0",
+		"@vitejs/plugin-react": "4.3.1"
 	},
 	"peerDependencies": {
 		"react": "^18.2.0",

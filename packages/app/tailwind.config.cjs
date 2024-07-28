@@ -7,7 +7,10 @@
  */
 const plugin = require( 'tailwindcss/plugin' )
 
-const config = {
+module.exports = {
+	presets : [
+		require( '@s-8/core/tailwind-config' ),
+	],
 	content : [
 		'./src/**/*.{html,js,svelte,ts}',
 		'./node_modules/@s-8/core/**/*.{html,js,svelte,ts}',
@@ -88,5 +91,3 @@ const config = {
 		},
 	},
 }
-
-module.exports = config

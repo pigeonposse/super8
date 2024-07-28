@@ -15,7 +15,7 @@
     /**
      * VARIABLES
      */
-    let inputClass = "cursor-pointer"
+    let inputClass = "cursor-pointer [&>span]:!m-0"
 
 </script>
 

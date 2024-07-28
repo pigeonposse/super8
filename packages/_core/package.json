@@ -1,7 +1,7 @@
 {
 	"name": "@s-8/core",
 	"description": "Super8 core functionality",
-	"version": "0.1.13",
+	"version": "0.2.0",
 	"type": "module",
 	"publishConfig": {
 		"access": "public",
@@ -58,18 +58,19 @@
 	"dependencies": {
 		"@codemirror/lang-json": "6.0.0",
 		"@codemirror/theme-one-dark": "6.0.0",
-		"@fortawesome/free-brands-svg-icons": "6.5.1",
-		"@fortawesome/free-solid-svg-icons": "6.5.1",
+		"@fortawesome/free-brands-svg-icons": "6.6.0",
+		"@fortawesome/free-solid-svg-icons": "6.6.0",
 		"chroma-js": "2.4.2",
 		"codemirror": "6.0.0",
-		"flowbite": "1.8.1",
-		"flowbite-svelte": "0.39.3",
-		"svelte-codemirror-editor": "1.1.0",
-		"svelte-fa": "3.0.4"
+		"flowbite": "2.4.1",
+		"flowbite-svelte": "0.46.15",
+		"svelte-codemirror-editor": "1.4.0",
+		"svelte-fa": "4.0.2",
+		"tailwind-scrollbar-hide": "1.1.7"
 	},
 	"devDependencies": {
 		"@types/chroma-js": "2.4.4",
-		"sveld": "0.19.1"
+		"sveld": "0.20.0"
 	},
 	"peerDependencies": {
 		"svelte": "^4.0.0"

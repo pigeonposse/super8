@@ -29,7 +29,7 @@
     /**
      * CLASSES 
      */
-    let divClass = 'p-4 overflow-auto flex flex-col'
+    let divClass = 'py-6 px-4 flex flex-col overflow-y-scroll scrollbar-hide gap-2'
     let sectionClass = "flex flex-row items-center justify-center px-4 pb-4 w-full"
     let tabClass = "h-full"
 

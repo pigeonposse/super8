@@ -1,7 +1,8 @@
 <script lang="ts">
 
   import { Filters, type ComponentFilters, type ComponentBtnFilters, componentTypes } from "@s-8/core";
-  import { optionsIds, storageIds, type OptionsStore, type BtnStylesClasses, type FilterComponentProps, storageSetIds, storageGroupsIds, type StorageAppContentValues, type AllowedSitesValue, messagesIds } from "../../types";
+  import { type OptionsStore, type BtnStylesClasses, type FilterComponentProps, type StorageAppContentValues, type AllowedSitesValue } from "../../types";
+  import { optionsIds, storageIds,  messagesIds, storageSetIds, storageGroupsIds, } from "../../const";
   import { locales } from "./locales";
   import { browser } from "../../_shared/main";
   import { SvelteComponent, onMount } from "svelte";

@@ -5,16 +5,15 @@
  *  including getting storage groups, clearing all storage, 
  *  and initializing default storage values.
  */
-
+import { functs }           from '@s-8/core'
+import { storageGroupsIds } from '../const'
+import { storageApp }       from './super'
+import { store }            from '../_shared/main'
 import {
-	storageGroupsIds, 
 	type StorageAppOptionValues, 
 	type StorageAppContentValues, 
 	type StorageInit, 
 } from '../types'
-import { storageApp } from './super'
-import { functs }     from '@s-8/core'
-import { store }      from '../_shared/main'
 
 export const getGroup = async ( type = storageGroupsIds.content ) => {
 

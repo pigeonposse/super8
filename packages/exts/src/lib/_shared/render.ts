@@ -8,11 +8,8 @@
  *  it includes a function to wait for the DOMContentLoaded event before rendering the component.
  */
 
-import {
-	insertedAdjacentPosition, 
-	type RenderComponentParams, 
-} from '../types'
-
+import { type RenderComponentParams } from '../types'
+import { insertedAdjacentPosition }   from '../const'
 /**
  * Render a Svelte component on a specified target element.
  *

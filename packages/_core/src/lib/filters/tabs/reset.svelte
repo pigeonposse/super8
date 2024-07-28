@@ -19,8 +19,7 @@
     /**
      * CLASSES 
      */
-    let sectionClass = "flex flex-row items-center justify-end mx-4 mb-4"
-    let btnClass = 'ml-2'
+    let sectionClass = "flex flex-row items-center justify-end gap-2"
     let tooltipClass = 'text-xs'
 
 </script>
@@ -35,7 +34,6 @@
         presets.reset()
       }}
       icon={faTrash}
-      customClasses={btnClass}
     >
       {$locales.reset.title}
     </Btn>
@@ -47,7 +45,6 @@
     <Btn 
       color={$styles.isHide ? componentTypes.btn.primary : componentTypes.btn.neutral }
       on:click={() => styles.hide()}
-      customClasses={btnClass}
       icon={$styles.isHide ? faEye : faEyeSlash}
     >
       {$styles.isHide ? $locales.show.title : $locales.hide.title}

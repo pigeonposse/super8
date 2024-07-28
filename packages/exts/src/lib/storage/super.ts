@@ -5,13 +5,22 @@
  *  and defines storage properties and behaviors.
  */
 
-import { store }                                                                                                                           from '../_shared/main'
-import {
-	storageIds,storageSetIds, type StorageAppValues, storageGroupsIds, type StorageAppOptionValues, type StorageSetType, type StorageInit, 
-} from '../types'
+import { store } from '../_shared/main'
+
 import { defaultData as allowedSitesData } from '../../lib/components/allowed-sites/data'
 import { defaultData as filtersStyleData } from '../../lib/components/filters-config/data'
 import { functs }                          from '@s-8/core'
+import {
+	storageIds,
+	storageSetIds, 
+	storageGroupsIds,
+} from '../const'
+import {
+	type StorageAppValues, 
+	type StorageAppOptionValues, 
+	type StorageSetType, 
+	type StorageInit, 
+} from '../types'
 
 const getOptsDefaultValue = () => {
 

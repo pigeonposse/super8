@@ -31,7 +31,7 @@
      * CLASSES 
      */
 
-    let divClass = "bg-gray-100/80 dark:bg-gray-900/90 backdrop-blur-[20px] text-white p-4 rounded-lg shadow-[0_0_40px_0px_rgba(0,0,0,0.3)] shadow-gray-900/20 dark:shadow-gray-400/20"
+    let divClass = "bg-white/50 dark:bg-gray-900/90 backdrop-blur-[20px] text-white p-4 rounded-lg shadow-[0_0_40px_0px_rgba(0,0,0,0.3)] shadow-gray-900/20 dark:shadow-gray-400/20 font-sans font-medium"
     let classPosition = {
         [pValue.top]: 'fixed z-[3000000000000001] left-4 top-4 right-4',
         [pValue.bottom]: 'fixed z-[3000000000000001] left-4 bottom-4 right-4',
@@ -44,7 +44,7 @@
      * EVENTs 
      */
     const handleClickOutside = (event: Event) => {
-
+		
         event.preventDefault()
         const target = event.target as Node
 
@@ -59,7 +59,9 @@
         }
 
     }
-    
+	const stopPropagation = (event: Event) => {
+        event.stopPropagation();
+    };
     onMount(() => {
   
         btnClick = true
@@ -82,6 +84,8 @@
     in:fly={transition[p]} 
     out:fly={transition[p]}
     id="{$id}-sidebar"
+	role="presentation"
+	on:click={stopPropagation}
 >
 
     <Tabs {...content} >

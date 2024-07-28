@@ -3,7 +3,8 @@
     import { onMount } from "svelte";
     import Options from "./recursive/main.svelte"
 
-    import { type OptionsStore, storageIds, type ComponentOptionsRecursive } from "../../types";
+    import { type OptionsStore, type ComponentOptionsRecursive } from "../../types";
+	import { storageIds } from "../../const";
     import { updateOptions } from "./utils";
     import { storage } from "../../storage/main";
     
