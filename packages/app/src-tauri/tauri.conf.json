@@ -73,5 +73,6 @@
 			}
 		}
 	},
-	"productName": "Super8"
+	"productName": "Super8",
+	"version": "../package.json"
 }

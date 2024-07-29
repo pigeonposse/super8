@@ -30,6 +30,7 @@ jobs:
       matrix:
         settings:
           - platform: 'macos-latest'
+            tauriScript: 'tauri build'
         # args: '--target universal-apple-darwin'
         #   - platform: 'macos-latest'
         #     args: '--target x86_64-apple-darwin'
@@ -37,7 +38,9 @@ jobs:
         #     args: '--target aarch64-apple-darwin'
         #   - platform: 'macos-latest'
           - platform: 'ubuntu-22.04'
+            tauriScript: 'tauri build'
           - platform: 'windows-latest'
+            tauriScript: false
     timeout-minutes: 20
     runs-on: ${{ matrix.settings.platform }}
     env:
@@ -56,7 +59,7 @@ jobs:
         if: matrix.settings.platform == 'macos-latest'
         uses: dtolnay/rust-toolchain@stable
         with:
-          target: 'aarch64-apple-darwin'
+          targets: 'aarch64-apple-darwin,x86_64-apple-darwin,universal-apple-darwin'
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform != 'macos-latest'
@@ -136,7 +139,7 @@ jobs:
           includeUpdaterJson: true
           updaterJsonKeepUniversal: true # @see https://github.com/tauri-apps/tauri-action?tab=readme-ov-file#build-options
           includeRelease: true
-          tauriScript: pnpm tauri
+          tauriScript: ${{ matrix.settings.tauriScript }}
         #   args: ${{ matrix.settings.args }}
 
 
@@ -193,7 +196,7 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: ${{ github.repository }}:${{ env.UPDATED_VERSION }},$${{ env.REPO_LATEST }}
-          description: ${{ steps.pkg.outputs.description }}
+        #   description: ${{ steps.pkg.outputs.description }}
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
