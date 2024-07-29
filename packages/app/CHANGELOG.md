@@ -1,5 +1,11 @@
 # @s-8/app
 
+## 0.2.1
+
+### Patch Changes
+
+- Update tauri libraries
+
 ## 0.2.0
 
 ### Minor Changes

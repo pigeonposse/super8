@@ -1,5 +1,7 @@
 # @s-8/core-react
 
+## 0.2.1
+
 ## 0.2.0
 
 ### Minor Changes

@@ -14,17 +14,6 @@ module.exports = {
 	plugins : [
 		//Some plugins, like tailwindcss/nesting, need to run before Tailwind,
 		tailwindcss(),
-		// prefixer( {
-		// 	prefix : '.dark',
-		// 	transform( prefix, selector, prefixedSelector ) {
-
-		// 		if ( selector.match( /^(html|body)/ ) ) return selector
-		// 		if( selector.startsWith( '.dark' ) ) return selector.replace( '.dark', '' )
-		// 		else return prefixedSelector
-
-		// 	},
-		// } ),
-		//But others, like autoprefixer, need to run after,
 		autoprefixer,
 	],
 }
