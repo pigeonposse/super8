@@ -126,7 +126,7 @@ jobs:
           releaseBody: |
             <p><b>Apps & Extensions releases for ${{steps.pkg.outputs.name}} v${{ env.UPDATED_VERSION }}</b></p>
             <p>${{ steps.pkg.outputs.description }}</p>
-            ---
+
             🌐 [WEB](${{ steps.pkg.outputs.homepage }})
             📚 [DOCUMENTATION](${{ steps.pkg.outputs.docs }})
             🧩 [CHANGELOG](${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md)
