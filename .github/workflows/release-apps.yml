@@ -29,8 +29,8 @@ jobs:
       fail-fast: false
       matrix:
         settings:
-          - platform: 'macos-latest'
-            tauriScript: 'tauri build'
+          - platform: 'macos-13-arm64'
+            tauriScript: 'pnpm tauri'
         # args: '--target universal-apple-darwin'
         #   - platform: 'macos-latest'
         #     args: '--target x86_64-apple-darwin'
@@ -38,9 +38,9 @@ jobs:
         #     args: '--target aarch64-apple-darwin'
         #   - platform: 'macos-latest'
           - platform: 'ubuntu-22.04'
-            tauriScript: 'tauri build'
+            tauriScript: 'pnpm tauri'
           - platform: 'windows-latest'
-            tauriScript: false
+            tauriScript: 'pnpm exec tauri'
     timeout-minutes: 20
     runs-on: ${{ matrix.settings.platform }}
     env:
@@ -59,7 +59,7 @@ jobs:
         if: matrix.settings.platform == 'macos-latest'
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: 'aarch64-apple-darwin,x86_64-apple-darwin,universal-apple-darwin'
+          targets: 'aarch64-apple-darwin,x86_64-apple-darwin'
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform != 'macos-latest'

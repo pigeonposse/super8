@@ -23,7 +23,7 @@ env:
 jobs:
   release_exts: 
     name: 🚀🧩 Release extensions
-    runs-on: macos-latest # for safari build
+    runs-on: macos-13 # for safari build
     env:
       UPDATED_VERSION: ${{ github.event.inputs.version }}
     steps:

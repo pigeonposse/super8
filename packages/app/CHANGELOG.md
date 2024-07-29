@@ -1,5 +1,11 @@
 # @s-8/app
 
+## 0.2.4
+
+### Patch Changes
+
+- fix release
+
 ## 0.2.3
 
 ### Patch Changes
