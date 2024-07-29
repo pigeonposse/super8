@@ -28,19 +28,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
+        # @see https://github.com/actions/runner-images
         settings:
-          - platform: 'macos-13-xlarge'
-            tauriScript: 'pnpm tauri'
-        # args: '--target universal-apple-darwin'
-        #   - platform: 'macos-latest'
-        #     args: '--target x86_64-apple-darwin'
-        #   - platform: 'macos-latest'
-        #     args: '--target aarch64-apple-darwin'
-        #   - platform: 'macos-latest'
+          - platform: 'macos-latest'
           - platform: 'ubuntu-22.04'
-            tauriScript: 'pnpm tauri'
           - platform: 'windows-latest'
-            tauriScript: 'pnpm exec tauri' # this because script tauri has $@ and windows dont support it
+
     timeout-minutes: 20
     runs-on: ${{ matrix.settings.platform }}
     env:
@@ -57,15 +50,16 @@ jobs:
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform == 'macos-latest'
-        uses: dtolnay/rust-toolchain@stable
+        uses: dtolnay/rust-toolchain@master
         with:
           targets: 'aarch64-apple-darwin,x86_64-apple-darwin'
+          toolchain: nightly-2018-12-27
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform != 'macos-latest'
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: stable
+          toolchain: stable 
 
       - name: 🦀 Rust cache
         uses: swatinem/rust-cache@v2
@@ -107,7 +101,8 @@ jobs:
    
       # important because app works with the core local package
       - name: 🏗 Build
-        run: pnpm core build && pnpm app build
+        run: pnpm build:app
+        # run: pnpm --filter @s-8/core build && pnpm --filter @s-8/core build # Is necesary set manually for windows 
 
       #########################################################################
       # APP - BUILD & RELEASE DESKTOP APP
@@ -139,7 +134,7 @@ jobs:
           includeUpdaterJson: true
           updaterJsonKeepUniversal: true # @see https://github.com/tauri-apps/tauri-action?tab=readme-ov-file#build-options
           includeRelease: true
-          tauriScript: ${{ matrix.settings.tauriScript }}
+          tauriScript: pnpm exec tauri # This is because the tauri script has $@ and Windows does not support it.
         #   args: ${{ matrix.settings.args }}
 
 
