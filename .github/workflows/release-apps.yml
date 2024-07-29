@@ -31,6 +31,7 @@ jobs:
         # @see https://github.com/actions/runner-images
         settings:
           - platform: 'macos-latest'
+          - platform: 'macos-13'
           - platform: 'ubuntu-22.04'
           - platform: 'windows-latest'
 
@@ -50,10 +51,10 @@ jobs:
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform == 'macos-latest'
-        uses: dtolnay/rust-toolchain@master
+        uses: dtolnay/rust-toolchain@stable
         with:
-          targets: 'aarch64-apple-darwin,x86_64-apple-darwin'
-          toolchain: nightly-2018-12-27
+          targets: 'aarch64-apple-darwin'
+          toolchain: stable
 
       - name: 🦀 Rust setup
         if: matrix.settings.platform != 'macos-latest'
@@ -101,8 +102,7 @@ jobs:
    
       # important because app works with the core local package
       - name: 🏗 Build
-        run: pnpm build:app
-        # run: pnpm --filter @s-8/core build && pnpm --filter @s-8/core build # Is necesary set manually for windows 
+        run: pnpm --filter @s-8/core build && pnpm --filter @s-8/core build # Is necesary set manually for windows 
 
       #########################################################################
       # APP - BUILD & RELEASE DESKTOP APP
