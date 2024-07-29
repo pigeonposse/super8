@@ -30,7 +30,7 @@
 			disabled={item.comingsoon ? item.comingsoon : false}
 			class="hover:text-primary-600 dark:hover:text-primary-500"
 		>
-			<div class="flex items-center w-max-content">
+			<div class="flex items-center w-max">
 				{#if item.logo }
 					<img 
 						src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/{item.logo}.svg" 

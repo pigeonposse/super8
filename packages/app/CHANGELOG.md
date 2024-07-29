@@ -1,5 +1,11 @@
 # @s-8/app
 
+## 0.2.7
+
+### Patch Changes
+
+- Fix css code
+
 ## 0.2.6
 
 ### Patch Changes
