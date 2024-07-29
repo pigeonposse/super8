@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.12
+
+### Patch Changes
+
+- update release
+
 ## 0.3.11
 
 ### Patch Changes

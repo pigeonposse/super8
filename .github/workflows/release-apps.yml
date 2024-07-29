@@ -142,14 +142,14 @@ jobs:
       #########################################################################
       # APP - BUILD & RELEASE ARM LINUX
       #########################################################################
-      - name: 🖥️ Build linux APP ARM
-        if: matrix.settings.platform == 'ubuntu-22.04'
-        uses: Shiritai/xc-tauri-rasp-action@v0.1.2
-        with:
-            path: packages/app
-            arch: arm64
-            project-name: super8-aarch64
-        continue-on-error: true
+    #   - name: 🖥️ Build linux APP ARM
+    #     if: matrix.settings.platform == 'ubuntu-22.04'
+    #     uses: Shiritai/xc-tauri-rasp-action@v0.1.2
+    #     with:
+    #         path: packages/app
+    #         arch: arm64
+    #         project-name: super8-aarch64
+    #     continue-on-error: true
 
       #########################################################################
       # APP - PUBLISH WEB

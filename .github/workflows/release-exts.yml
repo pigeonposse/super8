@@ -84,27 +84,26 @@ jobs:
           allowUpdates: true
           artifacts: "packages/exts/dist/exts/*"
           body: |
-            ${{ steps.pkg.outputs.name }} apps and extensions v${{ env.UPDATED_VERSION }}
-            ${{ steps.pkg.outputs.description }}
+            <p><b>Apps & Extensions releases for ${{steps.pkg.outputs.name}} v${{ env.UPDATED_VERSION }}</b></p>
+            <p>${{ steps.pkg.outputs.description }}</p>
             ---
-            🌐 WEB: ${{ steps.pkg.outputs.homepage }}
-            📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
-            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md
-            📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
+            🌐 [WEB](${{ steps.pkg.outputs.homepage }})
+            📚 [DOCUMENTATION](${{ steps.pkg.outputs.docs }})
+            🧩 [CHANGELOG](${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md)
+            📜 [LICENSE](${{ steps.pkg.outputs.repo }}/blob/main/LICENSE)
 
       #########################################################################
       #  PUBLISH IN FIREFOX WEB STORE
       #########################################################################
       
       - name: 🧩🦊 Upload FIREFOX extension
-        uses: wdzeng/firefox-addon@v1
+        uses: trmcnvn/firefox-addon@v1
         with:
-          addon-guid: '${{ steps.pkg.outputs.firefox_storeId }}'
-          xpi-path: "packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-firefox.zip"
-          # get keys in:
-          # https://addons.mozilla.org/en-US/developers/addon/api/key/
-          jwt-issuer: ${{ secrets.FIREFOX_API_KEY }}
-          jwt-secret: ${{ secrets.FIREFOX_API_SECRET }}
+           uuid: ${{ steps.pkg.outputs.firefox_storeId }}
+           xpi: packages/exts/dist/exts/firefox-${{ steps.pkg.outputs.id }}.zip
+           manifest: packages/exts/dist/firefox/manifest.json
+           api-key: ${{ secrets.FIREFOX_API_KEY }}
+           api-secret: ${{ secrets.FIREFOX_API_SECRET }}
         continue-on-error: true
 
       #########################################################################
@@ -117,7 +116,7 @@ jobs:
           refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
           client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
           client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-          zip-path: "packages/exts/exts/${{ steps.pkg.outputs.id }}-chrome.zip"
+          zip-path: "packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-chrome.zip"
           extension-id: '${{steps.pkg.outputs.chrome_storeId}}'
         continue-on-error: true
 

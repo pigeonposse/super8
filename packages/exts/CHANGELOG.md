@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.2.6
+
+### Patch Changes
+
+- update release
+
 ## 0.2.5
 
 ### Patch Changes
