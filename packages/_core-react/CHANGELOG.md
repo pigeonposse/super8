@@ -1,5 +1,11 @@
 # @s-8/core-react
 
+## 0.2.2
+
+### Patch Changes
+
+- Update to stable version | fix isue with release
+
 ## 0.2.1
 
 ## 0.2.0

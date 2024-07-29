@@ -2,7 +2,7 @@
 	"name": "@s-8/exts",
 	"description": "Super8 browser extensions",
 	"private": true,
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"type": "module",
 	"license": "GPL-3.0",
 	"scripts": {

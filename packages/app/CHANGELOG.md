@@ -1,5 +1,11 @@
 # @s-8/app
 
+## 0.2.2
+
+### Patch Changes
+
+- Update to stable version | fix isue with release
+
 ## 0.2.1
 
 ### Patch Changes

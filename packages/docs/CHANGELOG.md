@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.10
+
+### Patch Changes
+
+- Update to stable version | fix isue with release
+
 ## 0.3.9
 
 ### Patch Changes
