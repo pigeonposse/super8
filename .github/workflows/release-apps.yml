@@ -30,9 +30,9 @@ jobs:
       matrix:
         settings:
           - platform: 'macos-latest'
-            args: '--target universal-apple-darwin'
-          - platform: 'macos-latest'
-            args: '--target x86_64-apple-darwin'
+        # args: '--target universal-apple-darwin'
+        #   - platform: 'macos-latest'
+        #     args: '--target x86_64-apple-darwin'
         #   - platform: 'macos-latest'
         #     args: '--target aarch64-apple-darwin'
         #   - platform: 'macos-latest'
@@ -137,7 +137,7 @@ jobs:
           updaterJsonKeepUniversal: true # @see https://github.com/tauri-apps/tauri-action?tab=readme-ov-file#build-options
           includeRelease: true
           tauriScript: pnpm tauri
-          args: ${{ matrix.settings.args }}
+        #   args: ${{ matrix.settings.args }}
 
 
       #########################################################################
