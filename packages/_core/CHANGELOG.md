@@ -1,5 +1,11 @@
 # @s-8/core
 
+## 0.2.5
+
+### Patch Changes
+
+- Add release links in projects
+
 ## 0.2.4
 
 ### Patch Changes

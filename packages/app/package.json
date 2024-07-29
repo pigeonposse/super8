@@ -1,6 +1,6 @@
 {
 	"name": "@s-8/app",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"type": "module",
 	"private": true,
 	"scripts": {
@@ -10,7 +10,6 @@
 		"build:app": "tauri build",
 		"build:web": "vite build",
 		"dev:web": "vite",
-		"update-version": "node .dev/update-cargo-version.js",
 		"dev:android": "tauri android dev",
 		"dev:ios": "tauri ios dev",
 		"preview:web": "vite preview",

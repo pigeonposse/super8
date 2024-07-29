@@ -5,7 +5,6 @@
       flowbite,
       Fa,
       faChevronDown,
-	  faChevronRight,
 	  Fab,
 	  faPuzzlePiece,
 	  faMobile,
@@ -15,26 +14,29 @@
 	import { page } from "$app/stores";
 	import { downloadLinks } from "./download-links";
 	import DownloadLink from "./download-link.svelte";
+	import { getFetchData } from "./fetch-link";
 
 	const {t, currLocaleRoute, mainPkg, locale, locales, classes, isTauri } = $page.data
 
     const Dropdown = flowbite.Dropdown
-    const DropdownItem = flowbite.DropdownItem
-
-    // const MegaMenu = flowbite.MegaMenu
     const Navbar = flowbite.Navbar
     const NavBrand = flowbite.NavBrand
     const NavHamburger = flowbite.NavHamburger
     const NavUl = flowbite.NavUl
     const NavLi = flowbite.NavLi
 
-	// @ts-ignore
-	const navDownload = downloadLinks(mainPkg.extra.downloadUrl)
-	
+	// let navDownload = downloadLinks(mainPkg.extra.downloadUrl as typeof MAIN_PKG['extra']['downloadUrl'])
+	let navDownload: Awaited<ReturnType<typeof getFetchData>> | undefined = undefined
+
     /**
      * CLASSES
      */
 	 let headerClass="flex w-full flex-row items-center justify-between m-2 z-[20000]"
+
+	const init = async () =>{
+		navDownload = await getFetchData()
+	}
+	init()
 
 </script>
 
@@ -56,7 +58,9 @@
                 {$t('common.download.message')}
                 <Fa icon={faChevronDown} class="ml-4 text-[13px]"/>
             </NavLi>
-            <Dropdown>
+			{#if navDownload}
+				
+            <Dropdown >
 				{#if !isTauri && navDownload.desktop}
 					<DownloadLink 
 						title={'Desktop Applications'}
@@ -92,7 +96,8 @@
 						items={navDownload['container']}
 					/>
 				{/if}
-            </Dropdown>  
+            </Dropdown> 
+			{/if} 
             <NavLi href="{mainPkg.extra.docsUrl}" target="_blank">{$t('common.documentation.message')}</NavLi>
             <NavLi href="{mainPkg.funding.url}" target="_blank">{$t('common.donate.message')}</NavLi>
             <NavLi>

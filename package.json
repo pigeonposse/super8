@@ -71,7 +71,8 @@
 		"push-origin": "git add . && pnpm cm && git push -f origin $@",
 		"push-main": "pnpm push-origin main",
 		"push-dev": "pnpm push-origin dev",
-		"update-version": "changeset && changeset version && pnpm app update-version",
+		"update-version": "changeset && changeset version && pnpm update-version-files",
+		"update-version-files": "node .dev/update-version/main.mjs",
 		"release": "changeset publish",
 		"todo": "node --experimental-modules .dev/todo.mjs",
 		"readme": "node --experimental-modules .dev/readme.mjs"
@@ -289,28 +290,57 @@
 				"type": "extension"
 			},
 			"macosUniversal": {
-				"name": "MacOS Universal App",
-				"logo": "apple",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_universal.app.tar.gz",
-				"type": "desktop"
-			},
-			"macosIntel": {
-				"name": "MacOS Intel App",
+				"name": "MacOS App (Universal)",
 				"logo": "apple",
 				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x64.app.tar.gz",
 				"type": "desktop"
 			},
-			"windows": {
-				"name": "Windows App",
-				"logo": "windows",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x86_64.msi.zip",
+			"macosIntel": {
+				"name": "MacOS App (Intel)",
+				"logo": "apple",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x64.app.tar.gz",
 				"type": "desktop"
 			},
-			"linux": {
-				"name": "Linux App",
-				"logo": "linux",
-				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_x86_64.AppImage.tar.gz",
+			"macosArm": {
+				"name": "MacOS App (ARM)",
+				"logo": "apple",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_aarch64.app.tar.gz",
 				"type": "desktop"
+			},
+			"windowsExe": {
+				"name": "Windows App (.exe)",
+				"logo": "windows",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_0.2.5_x64-setup.exe",
+				"type": "desktop",
+				"update-version": true
+			},
+			"windowsMSI": {
+				"name": "Windows App (.msi)",
+				"logo": "windows",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_0.2.5_x64-setup.nsis.zip",
+				"type": "desktop",
+				"update-version": true
+			},
+			"linuxAppImage": {
+				"name": "Linux App (.AppImage)",
+				"logo": "linux",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_0.2.5_amd64.AppImage.tar.gz",
+				"type": "desktop",
+				"update-version": true
+			},
+			"linuxDeb": {
+				"name": "Linux App (.deb)",
+				"logo": "linux",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8_0.2.5_amd64.deb",
+				"type": "desktop",
+				"update-version": true
+			},
+			"linuxRpm": {
+				"name": "Linux App (.rpm)",
+				"logo": "linux",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/download/Super8-0.2.5-1.x86_64.rpm",
+				"type": "desktop",
+				"update-version": true
 			},
 			"wpPlugin": {
 				"name": "Wordpress Plugin",
@@ -323,7 +353,7 @@
 			"wpPluginPremium": {
 				"name": "Wordpress Plugin (premium)",
 				"logo": "wordpress",
-				"url": "https://pigeonposse.gumroad.com/",
+				"url": "https://github.com/pigeonposse/super8/releases/latest/",
 				"comingsoon": true,
 				"icon": "wordpress",
 				"type": "wp-plugin"

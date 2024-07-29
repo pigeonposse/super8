@@ -15,7 +15,8 @@ export const match = ( param ) =>{
 	const slashPaths     = paths.map( l => `${l}/` )
 
 	return [
-		...paths, ...slashPaths, 
+		...paths, 
+		...slashPaths, 
 	].includes( param )
 
 }

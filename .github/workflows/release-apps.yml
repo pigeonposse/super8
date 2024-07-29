@@ -1,5 +1,7 @@
 ###############################################################################
 # RELEASE APPS
+# @observations: Only compatible commands must be entered for all platforms. 
+#                For example: avoid $@, since windows does not accept it
 ###############################################################################
 name: 🚀🖥️ Release APPs
 on:
@@ -30,8 +32,8 @@ jobs:
       matrix:
         # @see https://github.com/actions/runner-images
         settings:
-          - platform: 'macos-latest'
-          - platform: 'macos-13'
+          - platform: 'macos-14' # this is arm64
+          - platform: 'macos-13' 
           - platform: 'ubuntu-22.04'
           - platform: 'windows-latest'
 
@@ -122,13 +124,13 @@ jobs:
           tagName: "${{ env.UPDATED_VERSION }}" 
           releaseName: '${{ steps.pkg.outputs.name }} v${{ env.UPDATED_VERSION }}'
           releaseBody: |
-            ${{ steps.pkg.outputs.name }} apps and extensions v${{ env.UPDATED_VERSION }}
-            ${{ steps.pkg.outputs.description }}
+            <p><b>Apps & Extensions releases for ${{steps.pkg.outputs.name}} v${{ env.UPDATED_VERSION }}</b></p>
+            <p>${{ steps.pkg.outputs.description }}</p>
             ---
-            🌐 WEB: ${{ steps.pkg.outputs.homepage }}
-            📚 DOCUMENTATION:${{ steps.pkg.outputs.docs }}
-            🧩 CHANGELOG: ${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md
-            📜 LICENSE: ${{ steps.pkg.outputs.repo }}/blob/main/LICENSE
+            🌐 [WEB](${{ steps.pkg.outputs.homepage }})
+            📚 [DOCUMENTATION](${{ steps.pkg.outputs.docs }})
+            🧩 [CHANGELOG](${{ steps.pkg.outputs.repo }}/blob/main/packages/app/CHANGELOG.md)
+            📜 [LICENSE](${{ steps.pkg.outputs.repo }}/blob/main/LICENSE)
           releaseDraft: false
           prerelease: false
           includeUpdaterJson: true
@@ -137,6 +139,17 @@ jobs:
           tauriScript: pnpm exec tauri # This is because the tauri script has $@ and Windows does not support it.
         #   args: ${{ matrix.settings.args }}
 
+      #########################################################################
+      # APP - BUILD & RELEASE ARM LINUX
+      #########################################################################
+      - name: 🖥️ Build linux APP ARM
+        if: matrix.settings.platform == 'ubuntu-22.04'
+        uses: Shiritai/xc-tauri-rasp-action@v0.1.2
+        with:
+            path: packages/app
+            arch: arm64
+            project-name: super8-aarch64
+        continue-on-error: true
 
       #########################################################################
       # APP - PUBLISH WEB

@@ -1,31 +1,15 @@
 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
-
 /**
  * Download Links.
  *
  * @description Download Links.
  */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+import type { DownloadNav } from './types'
+export const downloadLinks = ( data: typeof MAIN_PKG['extra']['downloadUrl'] ) => {
 
-export type DownloadNavItem = {
-	name: string
-	href: string
-	target: string
-	logo?: string
-	comingsoon?: boolean
-}[]
-export type DownloadNav = {
-	desktop: DownloadNavItem
-	mobile: DownloadNavItem
-	extension: DownloadNavItem
-	container: DownloadNavItem
-	'wp-plugin': DownloadNavItem
-}
-
-export const downloadLinks = data => {
-
-	const groupedByType = {}
+	const groupedByType: DownloadNav = {}
 	// const extsMore = { text: "More browsers", items: [] }
 	// const extsMore = { text: "More browsers", link: '' }
 	for ( const key in data ) {
@@ -55,6 +39,6 @@ export const downloadLinks = data => {
 
 	// groupedByType['extension']?.push(extsMore)
 
-	return groupedByType as DownloadNav
+	return groupedByType
 
 }

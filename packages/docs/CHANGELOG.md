@@ -1,5 +1,11 @@
 # @s-8/docs
 
+## 0.3.11
+
+### Patch Changes
+
+- Add release links in projects
+
 ## 0.3.10
 
 ### Patch Changes

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Fa, faChevronRight, flowbite, type IconDefinition } from "$lib"
-	import type { DownloadNavItem } from "./download-links";
+	import type { DownloadNavItems } from "./types";
 
-	export let items: DownloadNavItem
+	export let items: DownloadNavItems
 	export let title: string
 	export let icon: IconDefinition
 	
@@ -30,10 +30,10 @@
 			disabled={item.comingsoon ? item.comingsoon : false}
 			class="hover:text-primary-600 dark:hover:text-primary-500"
 		>
-			<div class="flex items-center">
+			<div class="flex items-center w-max-content">
 				{#if item.logo }
 					<img 
-						src="https://simpleicons.org/icons/{item.logo}.svg" 
+						src="https://cdn.jsdelivr.net/npm/simple-icons@v12/icons/{item.logo}.svg" 
 						width="30" 
 						height="30" 
 						alt="icon"
