@@ -97,13 +97,12 @@ jobs:
       #########################################################################
       
       - name: 🧩🦊 Upload FIREFOX extension
-        uses: trmcnvn/firefox-addon@v1
+        uses: wdzeng/firefox-addon@v1
         with:
-           uuid: ${{ steps.pkg.outputs.firefox_store_id }}
-           xpi: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-firefox.zip
-           manifest: packages/exts/dist/firefox/manifest.json
-           api-key: ${{ secrets.FIREFOX_API_KEY }}
-           api-secret: ${{ secrets.FIREFOX_API_SECRET }}
+          addon-guid: '${{ steps.pkg.outputs.firefox_store_id }}'
+          xpi-path: "packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-firefox.zip"
+          jwt-issuer: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          jwt-secret: ${{ secrets.FIREFOX_JWT_SECRET }}
         continue-on-error: true
 
       #########################################################################

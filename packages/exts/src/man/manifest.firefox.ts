@@ -7,7 +7,7 @@
 /* eslint-disable camelcase */
 
 import{
-	manifest as man, icons,path, csp, imagesFolder, 
+	manifest as man, icons,path, csp, imagesFolder, pkgMain,
 } from './manifest'
 
 const popupIcons = {
@@ -51,7 +51,7 @@ const manifestFirefoxConf = {
 	content_security_policy   : csp,
 	browser_specific_settings : {
 		gecko : {
-			id : '{63bba7f4-510b-4478-b401-a2726a9703ba}', 
+			id : pkgMain.extra.downloadUrl.firefox.storeId, 
 		},
 	},
 	...man,
