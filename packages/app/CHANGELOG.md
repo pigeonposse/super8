@@ -1,5 +1,7 @@
 # @s-8/app
 
+## 0.2.8
+
 ## 0.2.7
 
 ### Patch Changes

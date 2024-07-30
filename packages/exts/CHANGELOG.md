@@ -1,5 +1,11 @@
 # @s-8/exts
 
+## 0.2.8
+
+### Patch Changes
+
+- fix ci
+
 ## 0.2.7
 
 ## 0.2.6

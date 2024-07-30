@@ -56,9 +56,9 @@ jobs:
           echo "name=$(jq -r '.extra.productName' ./package.json)" >> $GITHUB_OUTPUT
           echo "id=$(jq -r '.extra.id' ./package.json)" >> $GITHUB_OUTPUT
           echo "exts_version=$(jq -r '.version' ./packages/exts/package.json)" >> $GITHUB_OUTPUT
-          echo "firefox_storeId=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
-          echo "chrome_storeId=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
-          echo "edge_storeId=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "firefox_store_id=$(jq -r '.extra.downloadUrl.firefox.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "chrome_store_id=$(jq -r '.extra.downloadUrl.chrome.storeId' ./package.json)" >> $GITHUB_OUTPUT
+          echo "edge_store_id=$(jq -r '.extra.downloadUrl.edge.storeId' ./package.json)" >> $GITHUB_OUTPUT
           echo "homepage=$(jq -r '.homepage' ./package.json)" >> $GITHUB_OUTPUT
           echo "docs=$(jq -r '.extra.docsUrl' ./package.json)" >> $GITHUB_OUTPUT
           echo "repo=$(jq -r '.repository.url' ./package.json)" >> $GITHUB_OUTPUT
@@ -99,8 +99,8 @@ jobs:
       - name: 🧩🦊 Upload FIREFOX extension
         uses: trmcnvn/firefox-addon@v1
         with:
-           uuid: ${{ steps.pkg.outputs.firefox_storeId }}
-           xpi: packages/exts/dist/exts/firefox-${{ steps.pkg.outputs.id }}.zip
+           uuid: ${{ steps.pkg.outputs.firefox_store_id }}
+           xpi: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-firefox.zip
            manifest: packages/exts/dist/firefox/manifest.json
            api-key: ${{ secrets.FIREFOX_API_KEY }}
            api-secret: ${{ secrets.FIREFOX_API_SECRET }}
@@ -117,7 +117,7 @@ jobs:
           client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
           client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
           zip-path: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-chrome.zip
-          extension-id: '${{steps.pkg.outputs.chrome_storeId}}'
+          extension-id: '${{steps.pkg.outputs.chrome_store_id}}'
         continue-on-error: true
 
       #########################################################################
@@ -127,7 +127,7 @@ jobs:
       - name: 🧩 Upload EDGE extension
         uses: wdzeng/edge-addon@v1.2.3
         with:
-          product-id: ${{ steps.pkg.outputs.edge_storeId }}
+          product-id: ${{ steps.pkg.outputs.edge_store_id }}
           client-id: ${{ secrets.EDGE_CLIENT_ID }}
           client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
           access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
