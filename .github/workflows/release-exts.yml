@@ -116,7 +116,7 @@ jobs:
           refresh-token: '${{ secrets.CHOME_EXTENSION_REFRESH_TOKEN }}'
           client-id: '${{ secrets.CHOME_EXTENSION_CLIENT_ID }}'
           client-secret: '${{ secrets.CHOME_EXTENSION_CLIENT_SECRET }}'
-          zip-path: "packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-chrome.zip"
+          zip-path: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-chrome.zip
           extension-id: '${{steps.pkg.outputs.chrome_storeId}}'
         continue-on-error: true
 
@@ -131,7 +131,7 @@ jobs:
           client-id: ${{ secrets.EDGE_CLIENT_ID }}
           client-secret: ${{ secrets.EDGE_CLIENT_SECRET }}
           access-token-url: ${{ secrets.EDGE_ACCESS_TOKEN_URL }}
-          zip-path: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-edge.zip"
+          zip-path: packages/exts/dist/exts/${{ steps.pkg.outputs.id }}-edge.zip
         continue-on-error: true
 
 

@@ -47,7 +47,6 @@
 		}
 	],
 	"scripts": {
-		"prepare": "husky install .dev/husky",
 		"core": "pnpm --filter @s-8/core $@",
 		"core-react": "pnpm --filter @s-8/core-react $@",
 		"doc": "pnpm --filter @s-8/docs $@",
@@ -75,7 +74,8 @@
 		"update-version-files": "node .dev/update-version/main.mjs",
 		"release": "changeset publish",
 		"todo": "node --experimental-modules .dev/todo.mjs",
-		"readme": "node --experimental-modules .dev/readme.mjs"
+		"readme": "node --experimental-modules .dev/readme.mjs",
+		"prepare": "husky .dev/husky"
 	},
 	"commitlint": {
 		"extends": [
