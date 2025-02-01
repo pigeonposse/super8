@@ -10,7 +10,7 @@
 	  faMobile,
 	  faDesktop,
     } from "$lib";
-    import Logo from "$lib/assets/logo.png";
+    import Logo from "$lib/assets/logo-web.png";
 	import { page } from "$app/stores";
 	import { downloadLinks } from "./download-links";
 	import DownloadLink from "./download-link.svelte";

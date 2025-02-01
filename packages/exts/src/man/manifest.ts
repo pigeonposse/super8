@@ -88,7 +88,7 @@ export const icons = {
 export const images = {
 	icons,
 	background : `${imagesFolder}background.png`,
-	logo       : `${imagesFolder}logo.png`,
+	logo       : `${imagesFolder}logo-web.png`,
 }
 export const contentMatches = combineUrlsWithAsterisk( allowSites )
 

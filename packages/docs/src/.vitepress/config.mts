@@ -39,7 +39,7 @@ export default defineConfig({
     }
   ]],
   themeConfig: {
-    logo: '/logo.png', // use first "/" for child routes
+    logo: '/logo-web.png', // use first "/" for child routes
     siteTitle: false,
     editLink: {
       pattern: repoUrl+ 'edit/main/docs/:path',

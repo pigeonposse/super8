@@ -63,7 +63,7 @@
           bind:presetsValue={presetsValue}
         >
         <div slot="header" class="flex flex-col items-center">
-          <img src="/logo.png" alt="Logo" width="200px" >
+          <img src="/logo-web.png" alt="Logo" width="200px" >
         </div>
         <div slot="content">
           <Not >
